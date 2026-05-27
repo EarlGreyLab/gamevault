@@ -1316,17 +1316,61 @@ const GAMES=[
 {t:"Pizza Tower",y:2023,g:"platformer",vita:"yes",p:"PC",f:["must","solo"],d:"Manic SNES-style platformer. Peppino Spaghetti rescues his pizza. Speed, chaos, excellence."},
 ];
 
-const seen = new Set();
-const G = GAMES.filter(g => { if (seen.has(g.t)) return false; seen.add(g.t); return true; });
+const DATA_URL = 'data/games.json';
+const STRICT_EXTERNAL_DATA = false;
+let dataSource = 'inline';
+const IS_FILE_PROTOCOL = window.location.protocol === 'file:';
 
-// Update header stats
-document.getElementById('sTotal').textContent = GAMES.length;
-document.getElementById('sMust').textContent = GAMES.filter(g => g.f.includes('must')).length;
-const sOwned = document.getElementById('sOwned');
-if (sOwned) {
-  sOwned.textContent = GAMES.filter(g => g.f.includes('owned')).length;
+function refreshHeaderStats() {
+  document.getElementById('sTotal').textContent = GAMES.length;
+  document.getElementById('sMust').textContent = GAMES.filter(g => g.f.includes('must')).length;
+  const sOwned = document.getElementById('sOwned');
+  if (sOwned) {
+    sOwned.textContent = GAMES.filter(g => g.f.includes('owned')).length;
+  }
+  document.getElementById('sVita').textContent = GAMES.filter(g => g.vita === 'yes').length;
 }
-document.getElementById('sVita').textContent = GAMES.filter(g => g.vita === 'yes').length;
+
+function applyExternalData(payload) {
+  if (!payload || typeof payload !== 'object') return false;
+  if (!payload.IMG || !payload.GAMES) return false;
+  if (typeof payload.IMG !== 'object' || !Array.isArray(payload.GAMES)) return false;
+
+  for (const key of Object.keys(IMG)) delete IMG[key];
+  Object.assign(IMG, payload.IMG);
+
+  GAMES.splice(0, GAMES.length, ...payload.GAMES);
+  dataSource = 'external-json';
+  return true;
+}
+
+async function tryLoadExternalData() {
+  try {
+    const res = await fetch(DATA_URL, { cache: 'no-store' });
+    if (!res.ok) return false;
+    const payload = await res.json();
+    return applyExternalData(payload);
+  } catch {
+    return false;
+  }
+}
+
+// Transitional helper for Option A:
+// Run `exportGamevaultData()` in browser DevTools once to download data/games.json.
+window.exportGamevaultData = function exportGamevaultData() {
+  const payload = { IMG, GAMES };
+  const txt = JSON.stringify(payload, null, 2);
+  const blob = new Blob([txt], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'games.json';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(a.href);
+};
+
+refreshHeaderStats();
 
 // ── STATE ─────────────────────────────────────────────────────────────────
 let curGenre = 'all', curPlat = 'all', activeFlags = new Set();
@@ -1359,6 +1403,36 @@ function makeFallbackCover(g) {
   <text x="56" y="178" fill="rgba(255,255,255,0.92)" font-size="44" font-family="DM Sans, system-ui, sans-serif" font-weight="800">${title}</text>
   <text x="56" y="232" fill="rgba(255,255,255,0.62)" font-size="22" font-family="DM Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">${meta}</text>
   <text x="56" y="328" fill="rgba(255,255,255,0.52)" font-size="18" font-family="DM Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">No official cover set — generated locally</text>
+</svg>`;
+  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+}
+
+function makeFallbackPortrait(g) {
+  const plat = g.p || 'PC';
+  const pi = PC_PLAT[plat] || PC_PLAT.PC;
+  const ge = GE[g.g] || '🎮';
+  const title = (g.t || 'Unknown').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const meta = `${g.y || ''} · ${pi.l}`.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const svg =
+`<svg xmlns="http://www.w3.org/2000/svg" width="600" height="900" viewBox="0 0 600 900">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0b0f"/>
+      <stop offset="0.55" stop-color="#0a0a10"/>
+      <stop offset="1" stop-color="${pi.c}"/>
+    </linearGradient>
+    <radialGradient id="r" cx="22%" cy="18%" r="70%">
+      <stop offset="0" stop-color="${pi.c}" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="600" height="900" fill="url(#g)"/>
+  <rect width="600" height="900" fill="url(#r)"/>
+  <rect x="22" y="22" width="556" height="856" rx="22" fill="rgba(0,0,0,0.28)" stroke="rgba(255,255,255,0.12)"/>
+  <text x="56" y="140" fill="rgba(255,255,255,0.9)" font-size="58" font-family="DM Sans, system-ui, sans-serif" font-weight="800">${ge}</text>
+  <text x="56" y="230" fill="rgba(255,255,255,0.92)" font-size="44" font-family="DM Sans, system-ui, sans-serif" font-weight="800">${title}</text>
+  <text x="56" y="288" fill="rgba(255,255,255,0.62)" font-size="22" font-family="DM Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">${meta}</text>
+  <text x="56" y="820" fill="rgba(255,255,255,0.52)" font-size="18" font-family="DM Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">Generated cover</text>
 </svg>`;
   return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
 }
@@ -1560,7 +1634,7 @@ function openDetail(g) {
   // Portrait cover for sidebar: library_600x900.jpg
   const portraitSrc = appId
     ? `https://cdn.akamai.steamstatic.com/steam/apps/${appId}/library_600x900.jpg`
-    : null;
+    : makeFallbackPortrait(g);
 
   // Tag chips
   const flagDefs = [
@@ -1596,12 +1670,13 @@ function openDetail(g) {
     : '';
 
   // Portrait img or placeholder
-  const portraitHtml = portraitSrc
-    ? `<img class="modal-portrait" src="${portraitSrc}" alt="${g.t}"
-         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+  const portraitFallback = makeFallbackPortrait(g);
+  const portraitHtml =
+    `<img class="modal-portrait" src="${portraitSrc}" alt="${g.t}"
+         onerror="if(this.dataset.fbk){this.src=this.dataset.fbk;this.onerror=()=>this.remove();}else{this.remove();}"
+         data-fbk="${portraitFallback}"
          loading="lazy">
-       <div class="modal-portrait-ph" style="display:none">${ge}</div>`
-    : `<div class="modal-portrait-ph">${ge}</div>`;
+     <div class="modal-portrait-ph" style="display:none">${ge}</div>`;
 
   document.getElementById('MBody').innerHTML = `
     <div class="modal-layout">
@@ -1728,7 +1803,24 @@ document.addEventListener('keydown', e => {
 });
 
 // Initial render
-render();
+async function bootstrap() {
+  if (STRICT_EXTERNAL_DATA && !IS_FILE_PROTOCOL) {
+    for (const key of Object.keys(IMG)) delete IMG[key];
+    GAMES.splice(0, GAMES.length);
+    dataSource = 'external-json-required';
+  }
+
+  const loaded = await tryLoadExternalData();
+  if (!loaded && STRICT_EXTERNAL_DATA && !IS_FILE_PROTOCOL) {
+    console.error(`Failed to load ${DATA_URL}. The app is now in JSON-only mode.`);
+  } else if (!loaded && IS_FILE_PROTOCOL) {
+    console.warn('Running via file:// - external JSON fetch is blocked in many browsers, using inline fallback.');
+  }
+  refreshHeaderStats();
+  render();
+  console.info(`GAMEVAULT data source: ${dataSource}`);
+}
+bootstrap();
 
 </script>
 </body>
