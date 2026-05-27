@@ -4,26 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GAMEVAULT</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#07090d;--s1:#0d1117;--s2:#111820;--s3:#161f2c;--s4:#1c2840;
-  --acc:#63b3ed;--acc2:#9f7aea;--grn:#68d391;--ylw:#f6e05e;
-  --org:#f6ad55;--pnk:#f687b3;--tel:#4fd1c5;--red:#fc8181;
-  --t1:#e2e8f0;--t2:#94a3b8;--t3:#4a5568;--t4:#2d3748;
-  --bdr:rgba(99,179,237,.1);--bdrg:rgba(99,179,237,.28);
-  --fd:'Syne',sans-serif;--fm:'Space Mono',monospace;
+  --bg:#000000;--s1:#080808;--s2:#0f0f0f;--s3:#161616;--s4:#1e1e1e;
+  --acc:#7c9fff;--acc2:#a78bfa;--grn:#6ee7b7;--ylw:#fde68a;
+  --org:#fbbf24;--pnk:#f9a8d4;--tel:#67e8f9;--red:#fca5a5;
+  --t1:#f5f5f5;--t2:#a3a3a3;--t3:#525252;--t4:#262626;
+  --bdr:rgba(255,255,255,.07);--bdrg:rgba(124,159,255,.3);
+  --fd:'DM Sans',system-ui,sans-serif;--fm:'DM Mono',monospace;
   --r:10px;--rs:6px;
-  --sidebar:300px;
+  --sidebar:280px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;overflow:hidden}
-body{font-family:var(--fd);background:var(--bg);color:var(--t1);display:flex;flex-direction:column}
+body{font-family:var(--fd);background:#000;color:var(--t1);display:flex;flex-direction:column}
 
 /* BG */
 .bg{position:fixed;inset:0;z-index:0;pointer-events:none;
-  background:radial-gradient(ellipse 60% 50% at 20% 15%,rgba(99,179,237,.06) 0%,transparent 60%),
-  radial-gradient(ellipse 50% 40% at 80% 80%,rgba(159,122,234,.05) 0%,transparent 60%)}
+  background:radial-gradient(ellipse 70% 40% at 15% 10%,rgba(124,159,255,.04) 0%,transparent 60%),radial-gradient(ellipse 50% 30% at 85% 85%,rgba(167,139,250,.03) 0%,transparent 60%)}
 .bg-grid{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.018;
   background-image:linear-gradient(rgba(99,179,237,1) 1px,transparent 1px),linear-gradient(90deg,rgba(99,179,237,1) 1px,transparent 1px);
   background-size:60px 60px}
@@ -31,9 +30,9 @@ body{font-family:var(--fd);background:var(--bg);color:var(--t1);display:flex;fle
 /* TOPBAR */
 .topbar{position:relative;z-index:10;display:flex;align-items:center;gap:16px;
   padding:0 24px;height:52px;
-  background:rgba(13,17,23,.9);border-bottom:1px solid var(--bdr);
+  background:rgba(0,0,0,.92);border-bottom:1px solid rgba(255,255,255,.06);
   backdrop-filter:blur(12px);flex-shrink:0}
-.topbar-logo{font-family:var(--fm);font-size:15px;font-weight:700;letter-spacing:.08em;
+.topbar-logo{font-family:var(--fm);font-size:14px;font-weight:800;letter-spacing:-.01em;
   background:linear-gradient(135deg,#e2e8f0,#63b3ed,#9f7aea);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
   white-space:nowrap}
@@ -62,7 +61,7 @@ body{font-family:var(--fd);background:var(--bg);color:var(--t1);display:flex;fle
 
 /* SIDEBAR */
 .sidebar{width:var(--sidebar);flex-shrink:0;
-  background:rgba(13,17,23,.85);border-right:1px solid var(--bdr);
+  background:rgba(0,0,0,.85);border-right:1px solid rgba(255,255,255,.06);
   display:flex;flex-direction:column;overflow:hidden}
 .sidebar-inner{flex:1;overflow-y:auto;padding:16px 14px 24px}
 .sidebar-inner::-webkit-scrollbar{width:3px}
@@ -80,7 +79,7 @@ body{font-family:var(--fd);background:var(--bg);color:var(--t1);display:flex;fle
   user-select:none;-webkit-tap-highlight-color:transparent}
 .chip:hover{border-color:var(--bdrg);color:var(--t1)}
 .chip.active{color:var(--bg);border-color:transparent;box-shadow:0 2px 10px rgba(99,179,237,.15)}
-.chip[data-genre].active{background:var(--acc)}
+.chip[data-genre].active{background:var(--acc);color:#000}
 .chip[data-flag="must"].active{background:var(--red)}
 .chip[data-flag="owned"].active{background:var(--t2);color:var(--bg)}
 .chip[data-flag="classic"].active{background:var(--org);color:var(--bg)}
@@ -110,7 +109,7 @@ body{font-family:var(--fd);background:var(--bg);color:var(--t1);display:flex;fle
 .main{flex:1;display:flex;flex-direction:column;overflow:hidden}
 .main-toolbar{display:flex;align-items:center;justify-content:space-between;
   padding:8px 20px;border-bottom:1px solid var(--bdr);flex-shrink:0;
-  background:rgba(13,17,23,.5)}
+  background:rgba(0,0,0,.5)}
 .sort-row{display:flex;align-items:center;gap:6px}
 .sort-lbl{font-family:var(--fm);font-size:10px;color:var(--t3)}
 .sort-btn{font-family:var(--fm);font-size:10px;padding:3px 9px;
@@ -127,11 +126,11 @@ body{font-family:var(--fd);background:var(--bg);color:var(--t1);display:flex;fle
 .grid-scroll{flex:1;overflow-y:auto;padding:16px 20px}
 .grid-scroll::-webkit-scrollbar{width:4px}
 .grid-scroll::-webkit-scrollbar-thumb{background:var(--s3);border-radius:2px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
 .grid.list-v{grid-template-columns:1fr}
 
 /* CARD */
-.card{background:var(--s1);border:1px solid var(--bdr);border-radius:var(--r);
+.card{background:#0a0a0a;border:1px solid rgba(255,255,255,.07);border-radius:var(--r);
   overflow:hidden;display:flex;flex-direction:column;
   transition:transform .18s,border-color .18s,box-shadow .18s;
   cursor:pointer;position:relative;animation:fu .3s both}
@@ -164,9 +163,9 @@ body{font-family:var(--fd);background:var(--bg);color:var(--t1);display:flex;fle
   color:#fff;padding:1px 7px;border-radius:999px;letter-spacing:.04em;opacity:.9}
 /* Body */
 .cbody{padding:10px 12px 12px;display:flex;flex-direction:column;gap:5px;flex:1;min-width:0}
-.ctitle{font-size:12px;font-weight:700;line-height:1.3;color:var(--t1);letter-spacing:-.01em;
+.ctitle{font-size:12px;font-weight:700;line-height:1.25;color:#f5f5f5;letter-spacing:-.02em;
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.cdesc{font-size:11px;color:var(--t2);line-height:1.45;
+.cdesc{font-size:11px;color:#737373;line-height:1.45;
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .ctags{display:flex;flex-wrap:wrap;gap:3px;margin-top:auto;padding-top:2px}
 .ct{font-size:9px;padding:1px 6px;border-radius:999px;font-weight:600;white-space:nowrap;font-family:var(--fm)}
@@ -186,7 +185,7 @@ body{font-family:var(--fd);background:var(--bg);color:var(--t1);display:flex;fle
 
 /* DETAIL PANEL */
 .detail{width:380px;flex-shrink:0;display:flex;flex-direction:column;
-  background:rgba(11,15,21,.92);border-left:1px solid var(--bdr);
+  background:rgba(0,0,0,.92);border-left:1px solid rgba(255,255,255,.06);
   overflow-y:auto;transition:width .3s}
 .detail.closed{width:0;border-left:none;overflow:hidden}
 .detail::-webkit-scrollbar{width:3px}
@@ -214,9 +213,9 @@ body{font-family:var(--fd);background:var(--bg);color:var(--t1);display:flex;fle
 .empty span{font-size:36px;display:block;margin-bottom:12px;opacity:.3}
 
 /* SCROLLBAR GLOBAL */
-::-webkit-scrollbar{width:4px;height:4px}
+::-webkit-scrollbar{width:3px;height:3px}
 ::-webkit-scrollbar-track{background:transparent}
-::-webkit-scrollbar-thumb{background:var(--s3);border-radius:2px}
+::-webkit-scrollbar-thumb{background:#1e1e1e;border-radius:99px}
 
 @keyframes fu{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 </style>
@@ -242,7 +241,7 @@ body{font-family:var(--fd);background:var(--bg);color:var(--t1);display:flex;fle
     <div class="tstat"><span class="tstat-num" id="sVita">0</span> vita ok</div>
     <div class="tstat">showing <span class="tstat-num" id="sCount">0</span></div>
   </div>
-  <a href="mobile.html" style="font-family:var(--fm);font-size:10px;color:var(--t3);
+  <a href="gamevault_mobile.html" style="font-family:var(--fm);font-size:10px;color:var(--t3);
     border:1px solid var(--bdr);padding:4px 10px;border-radius:var(--rs);
     text-decoration:none;white-space:nowrap;background:var(--s2);flex-shrink:0"
     title="Mobile version">📱</a>
@@ -416,12 +415,14 @@ const IMG={
 "Guilty Gear Strive":S+'1384160'+H,"Injustice 2":S+'678960'+H,
 "Super Smash Bros. Brawl":'',"FIFA / EA FC":S+'2195250'+H,
 "Golf It!":S+'431240'+H,"NBA 2K24":S+'2338770'+H,"WWE 2K23":S+'1880560'+H,
+"Dying Light":S+'239140'+H,"Dying Light 2":S+'534380'+H,"Mad Max":S+'234140'+H,"Rage 2":S+'548610'+H,"Saints Row: The Third":S+'55230'+H,"Saints Row IV":S+'206420'+H,"Prototype 2":S+'218090'+H,"Crackdown 3":S+'887020'+H,"Quake (2021)":S+'2310'+H,"Quake II RTX":S+'1089130'+H,"DOOM Eternal":S+'782330'+H,"DOOM (2016)":S+'379720'+H,"Wolfenstein II: The New Colossus":S+'612880'+H,"Wolfenstein: The New Order":S+'201810'+H,"Metro 2033 Redux":S+'286690'+H,"Metro: Last Light Redux":S+'287390'+H,"Metro Exodus":S+'412020'+H,"Hunt: Showdown":S+'594650'+H,"Ready or Not":S+'1144200'+H,"Helldivers 2":S+'553850'+H,"Lethal Company":S+'1966720'+H,"The Finals":S+'2073850'+H,"Insurgency: Sandstorm":S+'581320'+H,"Squad":S+'393380'+H,"Battlefield 4":S+'1238820'+H,"Battlefield 1":S+'1238840'+H,"Call of Duty 4: Modern Warfare":S+'7940'+H,"Call of Duty: Modern Warfare 2 (2022)":S+'1938090'+H,"Warframe":S+'230410'+H,"Elden Ring":S+'1245620'+H,"Dark Souls II":S+'236430'+H,"Greedfall":S+'606880'+H,"Pathfinder: Wrath of the Righteous":S+'1184370'+H,"Pillars of Eternity II: Deadfire":S+'560130'+H,"Tyranny":S+'362960'+H,"Torment: Tides of Numenera":S+'272270'+H,"The Witcher 2":S+'20920'+H,"Kenshi":S+'233860'+H,"Divinity: Original Sin 1":S+'230230'+H,"Age of Empires IV":S+'1466860'+H,"Age of Empires II: Definitive Edition":S+'813780'+H,"Company of Heroes 3":S+'1677280'+H,"Offworld Trading Company":S+'271890'+H,"Humankind":S+'1124300'+H,"Victoria 3":S+'529340'+H,"Hearts of Iron IV":S+'394360'+H,"Stellaris":S+'281990'+H,"Homeworld Remastered":S+'244160'+H,"Frostpunk 2":S+'1904200'+H,"Against the Storm":S+'1336490'+H,"Factorio":S+'427520'+H,"Satisfactory":S+'526870'+H,"Dyson Sphere Program":S+'1366540'+H,"RimWorld":S+'294100'+H,"Dwarf Fortress (Steam)":S+'975370'+H,"Oxygen Not Included":S+'457140'+H,"They Are Billions":S+'644930'+H,"Iron Harvest":S+'1066780'+H,"Assetto Corsa Competizione":S+'805550'+H,"F1 24":S+'2488620'+H,"Dirt Rally 2.0":S+'690790'+H,"Trackmania (2020)":S+'2225070'+H,"BeamNG.drive":S+'284160'+H,"CarX Drift Racing Online":S+'635260'+H,"NFS: Heat":S+'1222680'+H,"NFS: Unbound":S+'1846250'+H,"The Crew Motorfest":S+'1685390'+H,"Riders Republic":S+'1240330'+H,"Nioh 2":S+'1325200'+H,"Nioh":S+'485510'+H,"Lies of P":S+'1627720'+H,"Lords of the Fallen (2023)":S+'1501750'+H,"Remnant: From the Ashes":S+'617290'+H,"Remnant II":S+'1282100'+H,"Atomic Heart":S+'668580'+H,"Deathloop":S+'1252330'+H,"Judgment":S+'2058650'+H,"Lost Judgment":S+'1845820'+H,"Yakuza: Like a Dragon Ishin!":S+'1842660'+H,"Metal Gear Solid V: The Phantom Pain":S+'287700'+H,"Splinter Cell: Blacklist":S+'235600'+H,"Dishonored: Death of the Outsider":S+'614570'+H,"Aragami 2":S+'1373630'+H,"Ghostrunner 2":S+'1466020'+H,"Star Wars Jedi: Fallen Order":S+'1172380'+H,"Star Wars Jedi: Survivor":S+'1775010'+H,"A Plague Tale: Innocence":S+'752590'+H,"A Plague Tale: Requiem":S+'1182900'+H,"Valheim":S+'892970'+H,"The Forest":S+'242760'+H,"Sons of the Forest":S+'1326470'+H,"Green Hell":S+'815370'+H,"Raft":S+'648800'+H,"Barotrauma":S+'602960'+H,"Tabletop Simulator":S+'286160'+H,"PlateUp!":S+'1599600'+H,"BioShock 2":S+'8850'+H,"System Shock (2023)":S+'482400'+H,"Observer: System Redux":S+'1386900'+H,"Vampire: The Masquerade - Swansong":S+'1580650'+H,"Shadowrun Returns":S+'234650'+H,"Shadowrun: Hong Kong":S+'346940'+H,"Mutant Year Zero: Road to Eden":S+'760060'+H,"Gears 5":S+'1097840'+H,"Gears of War 4":S+'1097900'+H,"Forza Motorsport (2023)":S+'2440510'+H,"Hi-Fi Rush":S+'1817230'+H,"Cocoon":S+'1497800'+H,"Pizza Tower":S+'2231450'+H,"Code Vein":S+'678960'+H,"Agents of Mayhem":S+'487360'+H,"Outer Worlds: Spacer's Choice Edition":S+'1905870'+H,
+
 "Slay the Spire":S+'646570'+H,"Monster Train":S+'1102190'+H,
 "Into the Breach":S+'590380'+H,"FTL: Faster Than Light":S+'212680'+H,
 "The Binding of Isaac: Repentance":S+'1426300'+H,"Darkest Dungeon":S+'262060'+H,
 "Moonlighter":S+'606150'+H,"Hyper Light Drifter":S+'257850'+H,
 "Nuclear Throne":S+'239820'+H,"Shovel Knight":S+'250760'+H,
-"Blasphemous":S+'774361'+H,"Ori and the Blind Forest":S+'261570'+H,
+"Blasphemous":S+'774361'+H,"Blasphemous 2":S+'2114740'+H,"Ori and the Blind Forest":S+'261570'+H,
 "Ori and the Will of the Wisps":S+'1057090'+H,"A Short Hike":S+'1055540'+H,
 "Untitled Goose Game":S+'837470'+H,"Spiritfarer":S+'972660'+H,
 "Night in the Woods":S+'481510'+H,"Gris":S+'683320'+H,
@@ -433,7 +434,7 @@ const IMG={
 "Baba Is You":S+'736260'+H,"Mini Metro":S+'287980'+H,
 "Sable":S+'757310'+H,"Undertale":S+'391540'+H,"Deltarune":S+'1671760'+H,
 "CrossCode":S+'368340'+H,"Iconoclasts":S+'393520'+H,
-"Axiom Verge":S+'332200'+H,"Axiom Verge 2":S+'1419220'+H,
+"Axiom Verge":S+'332200'+H,"Axiom Verge 2":S+'1419210'+H,
 "Momodora: Reverie Under the Moonlight":S+'428550'+H,
 "20 Minutes Till Dawn":S+'1966900'+H,
 "What Remains of Edith Finch":S+'501300'+H,
@@ -1010,7 +1011,121 @@ const GAMES=[
 {t:"Super Mario Party (Switch)",y:2018,g:"coop",vita:"no",p:"NSW",f:["must","party","couch"],d:"Classic Mario Party boards return. Gem of the Mario Party series with Joy-Con motion minigames."},
 {t:"Mario Strikers: Battle League",y:2022,g:"sports",vita:"no",p:"NSW",f:["party","couch","online"],d:"Aggressive arcade football. Hyper Strikes, gear upgrades, 4v4 couch chaos — most fun Mario sports."},
 {t:"Nintendo Switch Sports",y:2022,g:"sports",vita:"no",p:"NSW",f:["party","couch"],d:"Wii Sports for the modern era. Soccer, tennis, bowling, volleyball — motion controls perfected."},
-{t:"Arms (Switch)",y:2017,g:"fighting",vita:"no",p:"NSW",f:["party","couch","online"],d:"Extendable arms fighting game. Motion or traditional controls, 15 fighters, DNA Lab party mode."},
+{t:"Arms (Switch)",y:2017,g:"fighting",vita:"no",p:"NSW",f:["party","couch","online"],d:"Extendable arms fighting game. Motion or traditional controls, 15 fighters, DNA Lab party mode."},,
+// ── MORE OPEN WORLD ────────────────────────────────────────────────────────
+{t:"Dying Light",y:2015,g:"open-world",vita:"no",p:"PC",f:["must","coop","online","solo"],d:"Parkour zombie survival in an open world. Night mechanics create genuine tension. Co-op makes it legendary."},
+{t:"Dying Light 2",y:2022,g:"open-world",vita:"no",p:"PC",f:["coop","online","solo"],d:"Bigger city, expanded parkour, choices that reshape the world. Co-op throughout the campaign."},
+{t:"Mad Max",y:2015,g:"open-world",vita:"no",p:"PC",f:["solo"],d:"Post-apocalyptic car combat open world. Underrated Avalanche masterpiece — Fury Road as a video game."},
+{t:"Saints Row IV",y:2013,g:"open-world",vita:"no",p:"PC",f:["coop","online"],d:"Alien invasion, Matrix-style superpowers in Steelport. Even more absurd than The Third."},
+{t:"Prototype 2",y:2012,g:"open-world",vita:"no",p:"PC",f:["solo"],d:"Consume enemies to gain powers. New York open world with satisfying combat power progression."},
+{t:"Infamous: Second Son",y:2014,g:"open-world",vita:"no",p:"PS3",f:["must","solo"],d:"Neon and smoke powers in Seattle. Most visually impressive PS4 launch title. Great moral choices."},
+{t:"Valheim",y:2021,g:"open-world",vita:"no",p:"PC",f:["must","coop","online"],d:"Viking survival crafting in a procedural Norse world. Co-op with friends is magical and deep."},
+{t:"The Forest",y:2018,g:"open-world",vita:"no",p:"PC",f:["coop","online","solo"],d:"Plane crash survivor vs cannibal mutants. Build your shelter, explore caves, survive the island."},
+{t:"Sons of the Forest",y:2023,g:"open-world",vita:"no",p:"PC",f:["must","coop","online"],d:"Sequel with AI companion Kelvin. More building, bigger world, even more terrifying natives."},
+{t:"Green Hell",y:2019,g:"open-world",vita:"no",p:"PC",f:["coop","online","solo"],d:"Amazon rainforest survival. Most realistic survival game — manage sanity, infections, shelter."},
+{t:"Raft",y:2022,g:"open-world",vita:"no",p:"PC",f:["coop","online"],d:"Survive on a raft in the ocean. Grow it into a floating city with friends. Relaxing and deep."},
+{t:"Rage 2",y:2019,g:"open-world",vita:"no",p:"PC",f:["solo"],d:"Neon wasteland shooter with the best gunplay in any open world. Fast, brutal, gorgeous colors."},
+{t:"Agents of Mayhem",y:2017,g:"open-world",vita:"no",p:"PC",f:["solo"],d:"Saints Row spin-off with hero-switching mechanics. Seoul open world, underrated chaos game."},
+// ── MORE SHOOTERS ──────────────────────────────────────────────────────────
+{t:"DOOM (2016)",y:2016,g:"shooter",vita:"no",p:"PC",f:["must","solo"],d:"Rip and tear resurrected. The FPS revival. Fast, brutal, no regenerating health — masterclass in design."},
+{t:"DOOM Eternal",y:2020,g:"shooter",vita:"no",p:"PC",f:["must","solo"],d:"Combat as movement puzzle. The most mechanically demanding and rewarding FPS ever made."},
+{t:"Wolfenstein: The New Order",y:2014,g:"shooter",vita:"no",p:"PC",f:["must","solo"],d:"The shooter that proved single-player campaigns still matter. Emotional, brutal, brilliant story."},
+{t:"Wolfenstein II: The New Colossus",y:2017,g:"shooter",vita:"no",p:"PC",f:["must","solo"],d:"BJ Blazkowicz in Nazi America. Incredible story, great gunplay, stylish and unforgettable."},
+{t:"Metro 2033 Redux",y:2014,g:"shooter",vita:"no",p:"PC",f:["must","solo"],d:"Post-nuclear Moscow metro. Survival horror FPS with atmosphere unlike anything else on PC."},
+{t:"Metro: Last Light Redux",y:2013,g:"shooter",vita:"no",p:"PC",f:["must","solo"],d:"The atmospheric peak of the Metro series. Story, tension, and world-building at their finest."},
+{t:"Metro Exodus",y:2019,g:"shooter",vita:"no",p:"PC",f:["must","solo"],d:"Metro goes open world. Train journey across post-nuclear Russia — stunning varied environments."},
+{t:"Helldivers 2",y:2024,g:"shooter",vita:"no",p:"PC",f:["must","coop","online"],d:"Spread managed democracy. Co-op third-person shooter with stratagem system. 2024 phenomenon."},
+{t:"Ready or Not",y:2023,g:"shooter",vita:"no",p:"PC",f:["coop","online"],d:"SWAT tactical shooter. Plan, breach, neutralize. The most tense co-op experience on PC."},
+{t:"Hunt: Showdown",y:2019,g:"shooter",vita:"no",p:"PC",f:["coop","online"],d:"PvPvE bounty hunting in 1895 Louisiana. Tension through the roof — every session is a story."},
+{t:"Lethal Company",y:2023,g:"shooter",vita:"no",p:"PC",f:["coop","online","party"],d:"Scavenge moons for the Company. Horror co-op with procedural monsters. Friendship destroyer."},
+{t:"The Finals",y:2023,g:"shooter",vita:"no",p:"PC",f:["online","coop"],d:"Destruction-based team shooter. Every wall is destroyable. Free to play, incredibly fresh gameplay."},
+{t:"Insurgency: Sandstorm",y:2018,g:"shooter",vita:"no",p:"PC",f:["online","coop"],d:"Tactical mil-sim shooter. One-shot kills, minimal HUD — the most realistic feeling FPS on PC."},
+{t:"Battlefield 4",y:2013,g:"shooter",vita:"no",p:"PC",f:["must","online"],d:"The peak Battlefield. 64-player conquest, levelution, spectacular set pieces. Still populated."},
+{t:"Battlefield 1",y:2016,g:"shooter",vita:"no",p:"PC",f:["must","online"],d:"WWI Battlefield. Most emotional BF story. Operations mode at scale is completely unmatched."},
+{t:"Call of Duty 4: Modern Warfare",y:2007,g:"shooter",vita:"no",p:"PC",f:["must","online","classic"],d:"The FPS that changed everything. Killstreak system, prestige, All Ghillied Up — iconic forever."},
+{t:"Call of Duty: Modern Warfare 2 (2022)",y:2022,g:"shooter",vita:"no",p:"PC",f:["online","coop"],d:"Modern reboot with great gunplay. DMZ extraction mode, Al-Mazrah open world map."},
+{t:"Warframe",y:2013,g:"shooter",vita:"no",p:"PC",f:["coop","online"],d:"Free to play space ninja looter shooter. Thousands of hours of content if you fully dive in."},
+{t:"Quake (2021)",y:2021,g:"shooter",vita:"no",p:"PC",f:["must","online","coop","classic"],d:"The remaster that added co-op campaign. Tight arena combat, atmospheric Gothic horror, perfect feel."},
+{t:"Gears 5",y:2019,g:"shooter",vita:"no",p:"PC",f:["must","coop","online","couch"],d:"Best Gears since 2. Kait's story, open world sections, 4-player co-op. Criminally underrated."},
+{t:"Gears of War 4",y:2016,g:"shooter",vita:"no",p:"PC",f:["coop","online","couch"],d:"Series revival. JD Fenix, new Swarm enemies, excellent Horde mode is the star of the show."},
+{t:"BioShock 2",y:2010,g:"shooter",vita:"no",p:"PC",f:["must","solo","classic"],d:"Rapture from the Big Daddy perspective. Eleanor's story, multiplayer, underrated in the series."},
+{t:"System Shock (2023)",y:2023,g:"shooter",vita:"no",p:"PC",f:["must","solo"],d:"Faithful remake of the cyberpunk classic. SHODAN is terrifying. Grandfather of BioShock."},
+{t:"Hi-Fi Rush",y:2023,g:"action",vita:"no",p:"PC",f:["must","solo"],d:"Rhythm action game where everything moves to the beat. Microsoft's surprise drop of the decade."},
+{t:"Squad",y:2020,g:"shooter",vita:"no",p:"PC",f:["online","coop"],d:"100-player military teamwork simulator. Communication and coordination win games here."},
+// ── MORE RPG ───────────────────────────────────────────────────────────────
+{t:"Elden Ring",y:2022,g:"rpg",vita:"no",p:"PC",f:["must","solo","coop"],d:"FromSoftware's magnum opus. Open world Souls with Miyazaki and George R.R. Martin. Unmissable."},
+{t:"Dark Souls II",y:2014,g:"rpg",vita:"no",p:"PC",f:["solo","coop"],d:"The divisive Souls. Unique NG+ system, best DLC in the series, deeply underappreciated depth."},
+{t:"Bloodborne",y:2015,g:"rpg",vita:"no",p:"PS3",f:["must","solo"],d:"Gothic Lovecraftian horror action RPG. The fastest FromSoftware game. An absolute masterpiece."},
+{t:"Greedfall",y:2019,g:"rpg",vita:"warn",p:"PC",f:["solo"],d:"Colonial-era fantasy RPG. Small studio, big ambition — faction politics and great companion system."},
+{t:"Pathfinder: Wrath of the Righteous",y:2021,g:"rpg",vita:"yes",p:"PC",f:["solo"],d:"Deep CRPG with mythic powers. Crusade management, branching story, hundreds of build options."},
+{t:"Pillars of Eternity II: Deadfire",y:2018,g:"rpg",vita:"yes",p:"PC",f:["solo"],d:"Pirate CRPG with ship combat. Gorgeous writing, deep lore, excellent companion stories."},
+{t:"Tyranny",y:2016,g:"rpg",vita:"yes",p:"PC",f:["solo"],d:"CRPG where evil has already won. Play as a servant of the overlord — brilliant moral complexity."},
+{t:"Torment: Tides of Numenera",y:2017,g:"rpg",vita:"yes",p:"PC",f:["solo"],d:"Spiritual Planescape successor. Philosophical sci-fantasy with combat as last resort."},
+{t:"Kenshi",y:2018,g:"rpg",vita:"no",p:"PC",f:["solo"],d:"Post-apocalyptic open world with zero hand-holding. Build a squad, found a city, survive everything."},
+{t:"Divinity: Original Sin 1",y:2014,g:"rpg",vita:"yes",p:"PC",f:["must","coop","online","couch"],d:"The CRPG revival. Environmental interactions, co-op puzzles, great humor — where DOS2 started."},
+{t:"Nioh",y:2017,g:"action",vita:"no",p:"PC",f:["must","solo"],d:"Samurai souls-like in feudal Japan. William Adams' story, deep ki-pulse system, 100+ hours."},
+{t:"Nioh 2",y:2021,g:"action",vita:"no",p:"PC",f:["must","solo","coop","online"],d:"Team Ninja's masterpiece. Deeper than Dark Souls with ki pulse. Co-op for all missions."},
+{t:"Lies of P",y:2023,g:"action",vita:"no",p:"PC",f:["must","solo"],d:"Pinocchio Souls-like. Best non-FromSoftware game in the genre. Incredible weapon crafting system."},
+{t:"Remnant: From the Ashes",y:2019,g:"action",vita:"no",p:"PC",f:["must","coop","online"],d:"Souls-like third-person shooter. Procedural world, co-op up to 3 players, great build variety."},
+{t:"Remnant II",y:2023,g:"action",vita:"no",p:"PC",f:["must","coop","online"],d:"Sequel that surpasses the original. Archetype system, stunning worlds, 3-player co-op throughout."},
+{t:"Lords of the Fallen (2023)",y:2023,g:"action",vita:"no",p:"PC",f:["solo","coop"],d:"Dual-world Souls-like. Switch between living and dead realms. Beautiful and punishing throughout."},
+{t:"Code Vein",y:2019,g:"action",vita:"no",p:"PC",f:["solo","coop"],d:"Anime Dark Souls with blood code system. Deep customization, co-op, great post-apocalyptic atmosphere."},
+{t:"Vampire: The Masquerade - Swansong",y:2022,g:"rpg",vita:"warn",p:"PC",f:["solo"],d:"Political vampire RPG. Three characters, three interweaving stories in Boston. Very choice-heavy."},
+{t:"Shadowrun Returns",y:2013,g:"rpg",vita:"yes",p:"PC",f:["solo","classic"],d:"Cyberpunk meets fantasy turn-based RPG. Hacker elves, samurai trolls — brilliant unique setting."},
+{t:"Shadowrun: Hong Kong",y:2015,g:"rpg",vita:"yes",p:"PC",f:["solo"],d:"Best Shadowrun game. Hong Kong neon and spirit world. Incredible writing from start to finish."},
+{t:"Observer: System Redux",y:2020,g:"action",vita:"no",p:"PC",f:["solo"],d:"Cyberpunk detective noir. Jack into criminal minds, explore dystopian Krakow. Rutger Hauer."},
+// ── MORE STRATEGY ──────────────────────────────────────────────────────────
+{t:"Age of Empires IV",y:2021,g:"strategy",vita:"no",p:"PC",f:["must","online"],d:"The RTS revival done right. Eight asymmetric civilizations, ranked ladder, documentary cinematics."},
+{t:"Age of Empires II: Definitive Edition",y:2019,g:"strategy",vita:"no",p:"PC",f:["must","online","classic"],d:"The greatest RTS of all time, remastered. 45 civilizations, ranked ladder, thousands of hours."},
+{t:"Company of Heroes 3",y:2023,g:"strategy",vita:"no",p:"PC",f:["online","coop"],d:"WWII RTS with destructible environments and tactical pause. Italy and North Africa campaigns."},
+{t:"Hearts of Iron IV",y:2016,g:"strategy",vita:"no",p:"PC",f:["online","coop"],d:"WWII grand strategy. Control any nation, reshape history. Mod scene is absolutely incredible."},
+{t:"Stellaris",y:2016,g:"strategy",vita:"no",p:"PC",f:["online","solo"],d:"4X space grand strategy. Build an empire, encounter alien civilizations, ascend to godhood."},
+{t:"Victoria 3",y:2022,g:"strategy",vita:"no",p:"PC",f:["solo"],d:"Paradox grand strategy in the 1800s. Industrialization, politics, pops — the deepest sim."},
+{t:"Humankind",y:2021,g:"strategy",vita:"no",p:"PC",f:["online"],d:"Amplitude's Civilization alternative. Mix cultures across eras, shape your unique nation."},
+{t:"Homeworld Remastered",y:2015,g:"strategy",vita:"no",p:"PC",f:["solo","classic"],d:"3D space RTS with a devastating story. One of gaming's most emotionally powerful experiences."},
+{t:"Factorio",y:2020,g:"strategy",vita:"no",p:"PC",f:["must","solo","coop","online"],d:"Build and automate a factory on an alien planet. The most addictive game ever made. Period."},
+{t:"Satisfactory",y:2024,g:"strategy",vita:"no",p:"PC",f:["must","coop","online"],d:"First-person factory builder on an alien planet. Co-op with friends becomes a complete obsession."},
+{t:"Dyson Sphere Program",y:2021,g:"strategy",vita:"no",p:"PC",f:["solo"],d:"Build a galactic industrial empire around a star. Visually stunning factory game with exploration."},
+{t:"RimWorld",y:2018,g:"strategy",vita:"no",p:"PC",f:["must","solo"],d:"Colony survival storytelling simulator. Every playthrough generates a completely unique narrative."},
+{t:"Dwarf Fortress (Steam)",y:2022,g:"strategy",vita:"no",p:"PC",f:["must","solo"],d:"The original colony sim. Infinite depth, procedural history, legendary failures. Losing is fun."},
+{t:"Oxygen Not Included",y:2019,g:"strategy",vita:"no",p:"PC",f:["solo"],d:"Space colony survival with real thermodynamics. Manage duplicants, air, water, heat — brilliant."},
+{t:"They Are Billions",y:2019,g:"strategy",vita:"no",p:"PC",f:["solo"],d:"Steampunk RTS survival. One breach and your entire colony collapses. Brutal and satisfying."},
+{t:"Frostpunk 2",y:2024,g:"strategy",vita:"no",p:"PC",f:["must","solo"],d:"Society-scale decisions in a frozen world. Bigger, more complex, even more morally brutal."},
+{t:"Against the Storm",y:2023,g:"strategy",vita:"yes",p:"PC",f:["solo"],d:"Roguelite city builder. Each settlement is a run — build, adapt, survive the eternal storm."},
+{t:"Mutant Year Zero: Road to Eden",y:2018,g:"strategy",vita:"yes",p:"PC",f:["solo"],d:"XCOM meets stealth in post-apocalypse. Anthropomorphic mutants, great atmosphere, unique hybrid."},
+{t:"Barotrauma",y:2023,g:"strategy",vita:"no",p:"PC",f:["coop","online"],d:"Submarine crew co-op survival under Europa's ocean. Roles matter, pressure kills, trust is tested."},
+{t:"Iron Harvest",y:2020,g:"strategy",vita:"no",p:"PC",f:["online","coop"],d:"1920+ diesel-punk RTS with mechs. Alternate history Europe, great campaign and multiplayer."},
+{t:"PlateUp!",y:2022,g:"coop",vita:"no",p:"PC",f:["coop","couch","party"],d:"Overcooked meets base building. Design your restaurant then cook in it. Couch co-op perfection."},
+{t:"Tabletop Simulator",y:2015,g:"coop",vita:"yes",p:"PC",f:["party","online","couch"],d:"Every board game virtual. Catan, poker, chess, D&D — thousands of community-made games."},
+// ── MORE RACING ────────────────────────────────────────────────────────────
+{t:"Assetto Corsa Competizione",y:2019,g:"racing",vita:"no",p:"PC",f:["online"],d:"GT3 racing simulation. The most accurate racing game ever made. VR support is incredible."},
+{t:"Dirt Rally 2.0",y:2019,g:"racing",vita:"no",p:"PC",f:["must","online"],d:"Most authentic rally game. No assists, no mercy — master it and nothing compares. Pure skill."},
+{t:"Trackmania (2020)",y:2020,g:"racing",vita:"no",p:"PC",f:["must","online","party"],d:"Arcade time trial racing with insane community tracks. Free to play entry. Competitive and fun."},
+{t:"BeamNG.drive",y:2015,g:"racing",vita:"no",p:"PC",f:["solo"],d:"Soft body physics crash simulator. Every crash is physically simulated. Unreal and deeply addictive."},
+{t:"CarX Drift Racing Online",y:2017,g:"racing",vita:"no",p:"PC",f:["online","coop"],d:"Best drift game on PC. Realistic tire model, great tracks, active competitive drift community."},
+{t:"NFS: Heat",y:2019,g:"racing",vita:"no",p:"PC",f:["online","coop"],d:"Night vs day risk-reward system. Best NFS since Most Wanted. Night cops are absolutely brutal."},
+{t:"NFS: Unbound",y:2022,g:"racing",vita:"no",p:"PC",f:["online"],d:"Anime-inspired NFS with cel-shaded effects. ASAP Rocky soundtrack. Best modern Need for Speed."},
+{t:"The Crew Motorfest",y:2023,g:"racing",vita:"no",p:"PC",f:["online","coop"],d:"Hawaii open world racing festival. Huge variety of vehicle classes, playlist events, great fun."},
+{t:"Riders Republic",y:2021,g:"racing",vita:"no",p:"PC",f:["online","coop","party"],d:"Extreme sports open world — bike, ski, wingsuit, snowboard. Massive multiplayer mass races."},
+{t:"Forza Motorsport (2023)",y:2023,g:"racing",vita:"no",p:"PC",f:["online"],d:"The sim racing reboot. Car mastery system, dynamic rubber buildup, 500+ cars on real tracks."},
+{t:"F1 24",y:2024,g:"racing",vita:"no",p:"PC",f:["online","couch"],d:"Official F1 simulation with all teams and tracks. Career mode, My Team, multiplayer ranked."},
+// ── MORE ACTION ────────────────────────────────────────────────────────────
+{t:"Atomic Heart",y:2023,g:"action",vita:"no",p:"PC",f:["solo"],d:"Soviet sci-fi BioShock-like. Stunning aesthetics, robot enemies, unique retro-futurist setting."},
+{t:"Deathloop",y:2021,g:"action",vita:"no",p:"PC",f:["must","solo"],d:"Groundhog Day assassination puzzle. Combine powers, break the loop, Arkane at their most stylish."},
+{t:"Judgment",y:2021,g:"action",vita:"no",p:"PC",f:["must","solo"],d:"Yakuza spin-off as a detective. Two fighting styles, deep mystery story in Kamurocho."},
+{t:"Lost Judgment",y:2022,g:"action",vita:"no",p:"PC",f:["must","solo"],d:"Sequel with improved combat and skateboarding. School investigation mechanics are genuinely unique."},
+{t:"Yakuza: Like a Dragon Ishin!",y:2023,g:"action",vita:"no",p:"PC",f:["solo"],d:"Yakuza in Edo-period Japan. Samurai Ryoma story with action combat instead of turn-based."},
+{t:"Metal Gear Solid V: The Phantom Pain",y:2015,g:"action",vita:"no",p:"PC",f:["must","solo","online"],d:"Open world stealth masterpiece. Afghanistan, D-Dog, Quiet — incredible systems depth."},
+{t:"Splinter Cell: Blacklist",y:2013,g:"action",vita:"no",p:"PC",f:["must","solo","coop"],d:"Last great Splinter Cell. Spy vs Merc multiplayer returns, excellent co-op missions included."},
+{t:"Dishonored: Death of the Outsider",y:2017,g:"action",vita:"no",p:"PC",f:["must","solo"],d:"Standalone expansion. Billie Lurk's story, bank heist mission — best single Dishonored level."},
+{t:"Ghostrunner 2",y:2023,g:"action",vita:"no",p:"PC",f:["solo"],d:"Cyberpunk parkour sequel. Motorbike levels, new abilities, same one-hit-kill flow state."},
+{t:"Star Wars Jedi: Fallen Order",y:2019,g:"action",vita:"no",p:"PC",f:["must","solo"],d:"Souls-influenced Star Wars action. Cal Kestis, Force powers, incredible planet set pieces."},
+{t:"Star Wars Jedi: Survivor",y:2023,g:"action",vita:"no",p:"PC",f:["must","solo"],d:"Sequel that expands everything. More Force powers, new planet Koboh, emotional continuation."},
+{t:"A Plague Tale: Innocence",y:2019,g:"action",vita:"no",p:"PC",f:["must","solo"],d:"Amicia and Hugo flee the Inquisition through rat-infested France. Emotional, cinematic, beautiful."},
+{t:"A Plague Tale: Requiem",y:2022,g:"action",vita:"no",p:"PC",f:["must","solo"],d:"Stunning sequel. More rats, more emotion, incredible graphics. One of the best looking games ever."},
+{t:"Aragami 2",y:2021,g:"action",vita:"no",p:"PC",f:["coop","online"],d:"Shadow stealth ninja game with 3-player co-op. Kill from darkness, chain assassinations."},
+{t:"Cocoon",y:2023,g:"platformer",vita:"yes",p:"PC",f:["must","solo"],d:"Worlds within worlds puzzle game. Created by Limbo/Inside dev. Jaw-dropping design throughout."},
+{t:"Pizza Tower",y:2023,g:"platformer",vita:"yes",p:"PC",f:["must","solo"],d:"Manic SNES-style platformer. Peppino Spaghetti rescues his pizza. Speed, chaos, excellence."},
 ];
 
 const seen=new Set();
