@@ -1,0 +1,8 @@
+{
+  "name": "gamevault",
+  "private": true,
+  "scripts": {
+    "start": "npx --yes serve . -p 3000",
+    "build:cutover": "node scripts/cutover-build.js"
+  }
+}
