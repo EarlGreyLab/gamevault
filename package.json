@@ -1,6 +1,7 @@
 {
   "name": "gamevault",
   "private": true,
+  "type": "module",
   "scripts": {
     "start": "npx --yes serve . -p 3000",
     "dev": "vite",

@@ -108,6 +108,11 @@
   /* ── LAYOUT CONSTANTS ─────────────────────────────────────────────────────
      Platform-specific values are further overridden in desktop/mobile CSS  */
   --sidebar: 280px;   /* desktop sidebar width */
+
+  /* ── TOPBAR ────────────────────────────────────────────────────────────────── */
+  --topbar-bg:  rgba(7, 8, 13, .96);
+  --topbar-bdr: rgba(255, 255, 255, .11);
+  --topbar-t:   #ffffff;
 }
 
 /* =============================================================================
@@ -116,6 +121,9 @@
 
 html[data-theme="light"] {
   --bg:  #f1f4f9;
+  --topbar-bg:  rgba(241, 244, 249, .97);
+  --topbar-bdr: rgba(0, 0, 0, .10);
+  --topbar-t:   #0f1117;
   --s1:  #ffffff;
   --s2:  #f4f6fb;
   --s3:  #e8ecf4;

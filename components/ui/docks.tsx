@@ -28,16 +28,16 @@ export const Component = () => {
     } catch {}
   }, [theme]);
 
-  const activeClass = 'bg-black/15 dark:bg-white/15';
+  const activeClass = 'bg-black/20 dark:bg-white/20';
 
   return (
     <div
       className="
         inline-flex rounded-lg overflow-hidden relative
-        bg-white/20 dark:bg-black/40
+        bg-black/10 dark:bg-white/10
         backdrop-blur-md
         shadow-lg shadow-black/20
-        border border-gray-300 dark:border-black/60
+        border border-black/20 dark:border-white/20
         transition-colors duration-500
       "
     >
@@ -50,7 +50,7 @@ export const Component = () => {
           hover:bg-black/10 dark:hover:bg-white/10
           transition-colors duration-300
           focus:outline-none focus:ring-0
-          border-r border-gray-300 dark:border-black/60
+          border-r border-black/20 dark:border-white/20
           group
           ${theme === 'light' ? activeClass : 'bg-transparent'}
         `}
@@ -78,7 +78,7 @@ export const Component = () => {
           hover:bg-black/10 dark:hover:bg-white/10
           transition-colors duration-300
           focus:outline-none focus:ring-0
-          border-r border-gray-300 dark:border-black/60
+          border-r border-black/20 dark:border-white/20
           group
           ${theme === 'dark' ? activeClass : 'bg-transparent'}
         `}
