@@ -1,6 +1,24 @@
+import { useState, useEffect } from 'react';
 import { Sun, Moon, Settings } from 'lucide-react';
 
+type Theme = 'light' | 'dark';
+
 export const Component = () => {
+  const [theme, setTheme] = useState<Theme>(() =>
+    document.documentElement.classList.contains('dark') ? 'dark' : 'light'
+  );
+  const [settingsOpen, setSettingsOpen] = useState(false);
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [theme]);
+
+  const activeClass = 'bg-black/15 dark:bg-white/15';
+
   return (
     <div
       className="
@@ -13,18 +31,20 @@ export const Component = () => {
       "
     >
       <button
-        className="
+        onClick={() => setTheme('light')}
+        className={`
           px-4 py-2 rounded-l-lg
           flex items-center gap-2
           text-black dark:text-white
-          bg-transparent
           hover:bg-black/10 dark:hover:bg-white/10
           transition-colors duration-300
           focus:outline-none focus:ring-0
           border-r border-gray-300 dark:border-black/60
           group
-        "
+          ${theme === 'light' ? activeClass : 'bg-transparent'}
+        `}
         aria-label="Toggle Light Mode"
+        aria-pressed={theme === 'light'}
       >
         <Sun
           className="
@@ -37,19 +57,22 @@ export const Component = () => {
         />
         <span className="select-none">Light</span>
       </button>
+
       <button
-        className="
+        onClick={() => setTheme('dark')}
+        className={`
           px-4 py-2
           flex items-center gap-2
           text-black dark:text-white
-          bg-transparent
           hover:bg-black/10 dark:hover:bg-white/10
           transition-colors duration-300
           focus:outline-none focus:ring-0
           border-r border-gray-300 dark:border-black/60
           group
-        "
+          ${theme === 'dark' ? activeClass : 'bg-transparent'}
+        `}
         aria-label="Toggle Dark Mode"
+        aria-pressed={theme === 'dark'}
       >
         <Moon
           className="
@@ -62,26 +85,30 @@ export const Component = () => {
         />
         <span className="select-none">Dark</span>
       </button>
+
       <button
-        className="
+        onClick={() => setSettingsOpen(v => !v)}
+        className={`
           px-4 py-2 rounded-r-lg
           flex items-center gap-2
           text-black dark:text-white
-          bg-transparent
           hover:bg-black/10 dark:hover:bg-white/10
           transition-colors duration-300
           focus:outline-none focus:ring-0
           group
-        "
+          ${settingsOpen ? activeClass : 'bg-transparent'}
+        `}
         aria-label="Open Settings"
+        aria-pressed={settingsOpen}
       >
         <Settings
-          className="
+          className={`
             w-5 h-5
             text-current
             transition-transform duration-300
             group-hover:scale-110
-          "
+            ${settingsOpen ? 'rotate-45' : ''}
+          `}
           aria-hidden="true"
         />
         <span className="select-none">Settings</span>
