@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="tokens.css">
 <link rel="stylesheet" href="desktop.css">
+<link rel="stylesheet" href="dist-dock/dock-widget.css">
 </head>
 <body>
 <div class="bg"></div>
@@ -30,6 +31,7 @@
     <div class="tstat"><span class="tstat-num" id="sVita">0</span> vita ok</div>
     <div class="tstat">showing <span class="tstat-num" id="sCount">0</span></div>
   </div>
+  <div id="dock-widget-root" style="flex-shrink:0;display:flex;align-items:center"></div>
   <a href="mobile.html" style="font-family:var(--fm);font-size:11px;color:var(--t2);
     border:1px solid var(--bdr);padding:5px 11px;border-radius:var(--rs);
     text-decoration:none;white-space:nowrap;background:var(--s2);flex-shrink:0"
@@ -144,5 +146,6 @@
 
 
 <script type="module" src="app.js"></script>
+<script src="dist-dock/dock-widget.iife.js"></script>
 </body>
 </html>

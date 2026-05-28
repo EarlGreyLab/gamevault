@@ -5,6 +5,7 @@
     "start": "npx --yes serve . -p 3000",
     "dev": "vite",
     "build:react": "vite build",
+    "build:dock": "./node_modules/.bin/vite build --config vite.dock.config.ts",
     "build:cutover": "node scripts/cutover-build.js"
   },
   "dependencies": {
