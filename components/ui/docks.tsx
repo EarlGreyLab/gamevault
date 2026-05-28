@@ -3,10 +3,16 @@ import { Sun, Moon, Settings } from 'lucide-react';
 
 type Theme = 'light' | 'dark';
 
+const STORAGE_KEY = 'gamevault-theme';
+
 export const Component = () => {
-  const [theme, setTheme] = useState<Theme>(() =>
-    document.documentElement.classList.contains('dark') ? 'dark' : 'light'
-  );
+  const [theme, setTheme] = useState<Theme>(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY) as Theme | null;
+      if (saved === 'light' || saved === 'dark') return saved;
+    } catch {}
+    return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+  });
   const [settingsOpen, setSettingsOpen] = useState(false);
 
   useEffect(() => {
@@ -17,6 +23,9 @@ export const Component = () => {
       document.documentElement.classList.remove('dark');
       document.documentElement.setAttribute('data-theme', 'light');
     }
+    try {
+      localStorage.setItem(STORAGE_KEY, theme);
+    } catch {}
   }, [theme]);
 
   const activeClass = 'bg-black/15 dark:bg-white/15';
