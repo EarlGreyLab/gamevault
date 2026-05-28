@@ -273,12 +273,12 @@ You might need to use a local HTTP server (instead of file://): https://reactjs.
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
- */const NT=Jm("Sun",[["circle",{cx:"12",cy:"12",r:"4",key:"4exip2"}],["path",{d:"M12 2v2",key:"tus03m"}],["path",{d:"M12 20v2",key:"1lh1kg"}],["path",{d:"m4.93 4.93 1.41 1.41",key:"149t6j"}],["path",{d:"m17.66 17.66 1.41 1.41",key:"ptbguv"}],["path",{d:"M2 12h2",key:"1t8f8n"}],["path",{d:"M20 12h2",key:"1q8mjw"}],["path",{d:"m6.34 17.66-1.41 1.41",key:"1m8zz5"}],["path",{d:"m19.07 4.93-1.41 1.41",key:"1shlcs"}]]),ME="gamevault-theme",zT=()=>{const[W,G]=Zl.useState(()=>{try{const We=localStorage.getItem(ME);if(We==="light"||We==="dark")return We}catch{}return document.documentElement.classList.contains("dark")?"dark":"light"}),[z,st]=Zl.useState(!1);Zl.useEffect(()=>{W==="dark"?(document.documentElement.classList.add("dark"),document.documentElement.removeAttribute("data-theme")):(document.documentElement.classList.remove("dark"),document.documentElement.setAttribute("data-theme","light"));try{localStorage.setItem(ME,W)}catch{}},[W]);const Xe="bg-black/15 dark:bg-white/15";return oi.jsxs("div",{className:`
+ */const NT=Jm("Sun",[["circle",{cx:"12",cy:"12",r:"4",key:"4exip2"}],["path",{d:"M12 2v2",key:"tus03m"}],["path",{d:"M12 20v2",key:"1lh1kg"}],["path",{d:"m4.93 4.93 1.41 1.41",key:"149t6j"}],["path",{d:"m17.66 17.66 1.41 1.41",key:"ptbguv"}],["path",{d:"M2 12h2",key:"1t8f8n"}],["path",{d:"M20 12h2",key:"1q8mjw"}],["path",{d:"m6.34 17.66-1.41 1.41",key:"1m8zz5"}],["path",{d:"m19.07 4.93-1.41 1.41",key:"1shlcs"}]]),ME="gamevault-theme",zT=()=>{const[W,G]=Zl.useState(()=>{try{const We=localStorage.getItem(ME);if(We==="light"||We==="dark")return We}catch{}return document.documentElement.classList.contains("dark")?"dark":"light"}),[z,st]=Zl.useState(!1);Zl.useEffect(()=>{W==="dark"?(document.documentElement.classList.add("dark"),document.documentElement.removeAttribute("data-theme")):(document.documentElement.classList.remove("dark"),document.documentElement.setAttribute("data-theme","light"));try{localStorage.setItem(ME,W)}catch{}},[W]);const Xe="bg-black/20 dark:bg-white/20";return oi.jsxs("div",{className:`
         inline-flex rounded-lg overflow-hidden relative
-        bg-white/20 dark:bg-black/40
+        bg-black/10 dark:bg-white/10
         backdrop-blur-md
         shadow-lg shadow-black/20
-        border border-gray-300 dark:border-black/60
+        border border-black/20 dark:border-white/20
         transition-colors duration-500
       `,children:[oi.jsxs("button",{onClick:()=>G("light"),className:`
           px-4 py-2 rounded-l-lg
@@ -287,7 +287,7 @@ You might need to use a local HTTP server (instead of file://): https://reactjs.
           hover:bg-black/10 dark:hover:bg-white/10
           transition-colors duration-300
           focus:outline-none focus:ring-0
-          border-r border-gray-300 dark:border-black/60
+          border-r border-black/20 dark:border-white/20
           group
           ${W==="light"?Xe:"bg-transparent"}
         `,"aria-label":"Toggle Light Mode","aria-pressed":W==="light",children:[oi.jsx(NT,{className:`
@@ -302,7 +302,7 @@ You might need to use a local HTTP server (instead of file://): https://reactjs.
           hover:bg-black/10 dark:hover:bg-white/10
           transition-colors duration-300
           focus:outline-none focus:ring-0
-          border-r border-gray-300 dark:border-black/60
+          border-r border-black/20 dark:border-white/20
           group
           ${W==="dark"?Xe:"bg-transparent"}
         `,"aria-label":"Toggle Dark Mode","aria-pressed":W==="dark",children:[oi.jsx(LT,{className:`
