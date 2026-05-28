@@ -109,3 +109,109 @@
      Platform-specific values are further overridden in desktop/mobile CSS  */
   --sidebar: 280px;   /* desktop sidebar width */
 }
+
+/* =============================================================================
+   LIGHT MODE — applied when JS sets data-theme="light" on <html>
+   ============================================================================= */
+
+html[data-theme="light"] {
+  --bg:  #f1f4f9;
+  --s1:  #ffffff;
+  --s2:  #f4f6fb;
+  --s3:  #e8ecf4;
+  --s4:  #c8d0de;
+  --acc:  #2563eb;
+  --acc2: #7c3aed;
+  --grn:  #16a34a;
+  --ylw:  #b45309;
+  --org:  #c2410c;
+  --pnk:  #be185d;
+  --tel:  #0e7490;
+  --red:  #dc2626;
+  --t1:   #0f1117;
+  --t2:   #3d5068;
+  --t3:   #7888a0;
+  --t4:   #e8ecf4;
+  --bdr:  rgba(0, 0, 0, .11);
+  --bdrg: rgba(37, 99, 235, .45);
+  --shadow-card:       0 4px 24px rgba(0, 0, 0, .10);
+  --shadow-card-glow:  0 0 0 1px rgba(37, 99, 235, .10), 0 0 20px rgba(37, 99, 235, .07);
+  --shadow-card-must:  0 0 20px rgba(180, 83, 9, .12);
+  --shadow-chip:       0 2px 10px rgba(37, 99, 235, .20);
+  --shadow-modal:      0 8px 48px rgba(0, 0, 0, .18), 0 0 0 1px rgba(0, 0, 0, .07);
+}
+
+/* Overrides for hardcoded dark values in desktop.css */
+html[data-theme="light"] body { background: var(--bg); }
+html[data-theme="light"] .bg {
+  background:
+    radial-gradient(ellipse 80% 55% at 12%  8%, rgba(96,165,250,.07) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 45% at 88% 90%, rgba(167,139,250,.05) 0%, transparent 60%);
+}
+html[data-theme="light"] .bg-grid { opacity: .014; }
+html[data-theme="light"] .topbar {
+  background: rgba(241, 244, 249, .96);
+  border-bottom-color: rgba(0, 0, 0, .10);
+}
+html[data-theme="light"] .topbar-logo {
+  background: linear-gradient(135deg, var(--t1), var(--acc), var(--acc2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+html[data-theme="light"] .sidebar {
+  background: rgba(244, 246, 251, .92);
+  border-right-color: rgba(0, 0, 0, .08);
+}
+html[data-theme="light"] .atags  { background: rgba(241, 244, 249, .80); }
+html[data-theme="light"] .main-toolbar { background: rgba(255, 255, 255, .60); }
+html[data-theme="light"] .card {
+  background: linear-gradient(150deg, #ffffff, #edf1fb);
+  border-color: rgba(0, 0, 0, .07);
+}
+html[data-theme="light"] .card:hover { border-color: rgba(37, 99, 235, .30); }
+html[data-theme="light"] .ctitle { color: var(--t1); }
+html[data-theme="light"] .yr {
+  background: rgba(255, 255, 255, .88);
+  color: var(--t2);
+}
+html[data-theme="light"] .modal-overlay { background: rgba(0, 0, 0, .55); }
+html[data-theme="light"] .modal-box {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, .10);
+}
+html[data-theme="light"] .modal-title { color: var(--t1); }
+html[data-theme="light"] .modal-screenshots {
+  background: #f4f6fb;
+  border-bottom-color: rgba(0, 0, 0, .08);
+}
+html[data-theme="light"] .modal-shot { border-color: rgba(0, 0, 0, .12); }
+html[data-theme="light"] .modal-shot:hover,
+html[data-theme="light"] .modal-shot.active { border-color: rgba(37, 99, 235, .55); }
+html[data-theme="light"] .modal-hero-grad {
+  background: linear-gradient(to bottom, rgba(255,255,255,.06) 0%, rgba(255,255,255,0) 30%, rgba(255,255,255,1) 100%);
+}
+html[data-theme="light"] .modal-hero-ph {
+  background: linear-gradient(135deg, #dde4ef, #e8eaf6);
+}
+html[data-theme="light"] .modal-portrait-ph { background: #dde4ef; }
+html[data-theme="light"] .modal-body::-webkit-scrollbar-thumb { background: #b8c4d4; }
+html[data-theme="light"] .modal-vita-box {
+  background: rgba(0, 0, 0, .03);
+  border-color: rgba(0, 0, 0, .08);
+}
+html[data-theme="light"] .modal-divider { background: rgba(0, 0, 0, .08); }
+html[data-theme="light"] .modal-close-btn {
+  background: rgba(255, 255, 255, .85);
+  border-color: rgba(0, 0, 0, .14);
+  color: var(--t1);
+}
+html[data-theme="light"] .modal-close-btn:hover {
+  background: rgba(0, 0, 0, .06);
+}
+html[data-theme="light"] .modal-steam-link {
+  background: rgba(0, 0, 0, .04);
+  border-color: rgba(0, 0, 0, .10);
+}
+html[data-theme="light"] .modal-steam-link:hover { background: rgba(0, 0, 0, .08); }
+html[data-theme="light"] ::-webkit-scrollbar-thumb { background: #c0c9d8; }
