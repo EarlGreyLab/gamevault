@@ -166,6 +166,7 @@ body{font-family:var(--fd);background:var(--bg);color:var(--t1);
   color:var(--t3);margin-bottom:10px;display:flex;align-items:center;gap:6px}
 .sheet-title::after{content:'';flex:1;height:1px;background:var(--bdr)}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
+.pi{flex-shrink:0;display:block}
 .chip{display:inline-flex;align-items:center;gap:4px;font-family:var(--fd);font-size:13px;
   font-weight:600;padding:8px 16px;border-radius:999px;border:1px solid var(--bdr);
   cursor:pointer;white-space:nowrap;background:var(--s2);color:var(--t2);
@@ -317,18 +318,18 @@ body{font-family:var(--fd);background:var(--bg);color:var(--t1);
     <div class="sheet-section">
       <div class="sheet-title">Platform</div>
       <div class="chips" id="PF">
-        <button class="chip p-chip active" data-plat="all">All</button>
-        <button class="chip p-chip" data-plat="PC">💻 PC</button>
-        <button class="chip p-chip" data-plat="PS1">PS1</button>
-        <button class="chip p-chip" data-plat="PS2">PS2</button>
-        <button class="chip p-chip" data-plat="PS3">PS3</button>
-        <button class="chip p-chip" data-plat="PSP">PSP</button>
-        <button class="chip p-chip" data-plat="VITA">PS Vita</button>
-        <button class="chip p-chip" data-plat="NDS">DS</button>
-        <button class="chip p-chip" data-plat="N3DS">3DS</button>
-        <button class="chip p-chip" data-plat="WII">Wii</button>
-        <button class="chip p-chip" data-plat="WIIU">Wii U</button>
-        <button class="chip p-chip" data-plat="NSW">Switch</button>
+        <button class="chip p-chip active" data-plat="all"><svg class="pi" width="13" height="13" viewBox="0 0 12 12" fill="currentColor" opacity=".75"><rect x="0" y="0" width="5.2" height="5.2" rx="1"/><rect x="6.8" y="0" width="5.2" height="5.2" rx="1"/><rect x="0" y="6.8" width="5.2" height="5.2" rx="1"/><rect x="6.8" y="6.8" width="5.2" height="5.2" rx="1"/></svg> All</button>
+        <button class="chip p-chip" data-plat="PC"><svg class="pi" width="18" height="15" viewBox="0 0 16 13" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x=".8" y=".8" width="14.4" height="9.5" rx="1.5"/><path d="M5.5 12.2h5M8 10.3v1.9"/></svg> PC</button>
+        <button class="chip p-chip" data-plat="PS1"><svg class="pi" width="16" height="16" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6.2" stroke="currentColor" stroke-width="1.3"/><text x="7" y="10.2" text-anchor="middle" font-size="6.5" font-weight="800" fill="currentColor" font-family="system-ui,sans-serif">PS</text></svg> PS1</button>
+        <button class="chip p-chip" data-plat="PS2"><svg class="pi" width="16" height="16" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6.2" stroke="currentColor" stroke-width="1.3"/><text x="7" y="10.2" text-anchor="middle" font-size="6.5" font-weight="800" fill="currentColor" font-family="system-ui,sans-serif">PS</text></svg> PS2</button>
+        <button class="chip p-chip" data-plat="PS3"><svg class="pi" width="16" height="16" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6.2" stroke="currentColor" stroke-width="1.3"/><text x="7" y="10.2" text-anchor="middle" font-size="6.5" font-weight="800" fill="currentColor" font-family="system-ui,sans-serif">PS</text></svg> PS3</button>
+        <button class="chip p-chip" data-plat="PSP"><svg class="pi" width="22" height="13" viewBox="0 0 19 11" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x=".8" y=".8" width="17.4" height="9.4" rx="2.5"/><rect x="4" y="2" width="11" height="7" rx=".7"/><circle cx="2.2" cy="5.5" r=".8" fill="currentColor" stroke="none"/><circle cx="16.8" cy="5.5" r=".8" fill="currentColor" stroke="none"/></svg> PSP</button>
+        <button class="chip p-chip" data-plat="VITA"><svg class="pi" width="22" height="13" viewBox="0 0 19 11" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x=".8" y="1.2" width="17.4" height="8.6" rx="4"/><rect x="3.5" y="2.2" width="12" height="6.6" rx=".6"/><circle cx="2" cy="4.2" r="1" fill="currentColor" stroke="none"/><circle cx="17" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg> PS Vita</button>
+        <button class="chip p-chip" data-plat="NDS"><svg class="pi" width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x=".8" y=".8" width="12.4" height="5.6" rx=".9"/><rect x=".8" y="7.6" width="12.4" height="5.6" rx=".9"/><line x1="2.5" y1="6.4" x2="11.5" y2="6.4" stroke-dasharray="1 1.5" stroke-width=".7"/></svg> DS</button>
+        <button class="chip p-chip" data-plat="N3DS"><svg class="pi" width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x=".8" y=".8" width="12.4" height="5.6" rx=".9"/><circle cx="3" cy="2.5" r=".7" fill="currentColor" stroke="none"/><rect x=".8" y="7.6" width="12.4" height="5.6" rx=".9"/><line x1="2.5" y1="6.4" x2="11.5" y2="6.4" stroke-dasharray="1 1.5" stroke-width=".7"/></svg> 3DS</button>
+        <button class="chip p-chip" data-plat="WII"><svg class="pi" width="11" height="18" viewBox="0 0 9 15" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x=".8" y=".8" width="7.4" height="13.4" rx="2.8"/><circle cx="4.5" cy="4.2" r="1.5"/><rect x="2.8" y="7.3" width="3.4" height="2" rx=".7"/><circle cx="4.5" cy="11.5" r=".7" fill="currentColor" stroke="none"/></svg> Wii</button>
+        <button class="chip p-chip" data-plat="WIIU"><svg class="pi" width="22" height="14" viewBox="0 0 19 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x=".8" y="1.5" width="17.4" height="9" rx="2.5"/><rect x="5.5" y="2.7" width="8" height="5.5" rx=".8"/><circle cx="3" cy="5" r="1.2"/><circle cx="16" cy="7.5" r="1.2"/></svg> Wii U</button>
+        <button class="chip p-chip" data-plat="NSW"><svg class="pi" width="22" height="15" viewBox="0 0 19 13" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x="4.8" y=".8" width="9.4" height="11.4" rx="1.3"/><rect x=".8" y="1.8" width="4.4" height="9.4" rx="1.8"/><rect x="13.8" y="1.8" width="4.4" height="9.4" rx="1.8"/><circle cx="3" cy="4.5" r=".9" fill="currentColor" stroke="none"/><circle cx="16" cy="8" r=".9" fill="currentColor" stroke="none"/></svg> Switch</button>
       </div>
     </div>
     <div class="sheet-section">
