@@ -576,7 +576,7 @@ async function bootstrap(){
     const data=await res.json();
     if(!data.IMG||!data.GAMES)throw new Error('Invalid data format');
     IMG=data.IMG;
-    GAMES=data.GAMES;
+    GAMES=data.GAMES.filter(Boolean);
     const seen=new Set();
     G=GAMES.filter(g=>{if(seen.has(g.t))return false;seen.add(g.t);return true;});
     dataReady=true;
