@@ -1,17 +1,20 @@
 const IMG = {};
 
-const PC_PLAT={
-  "PS1":  {c:"#1d4ed8",l:"PS1"},
-  "PS2":  {c:"#1d4ed8",l:"PS2"},
-  "PS3":  {c:"#1d4ed8",l:"PS3"},
-  "PSP":  {c:"#1d4ed8",l:"PSP"},
-  "VITA": {c:"#3b82f6",l:"Vita"},
-  "NDS":  {c:"#dc2626",l:"DS"},
-  "N3DS": {c:"#dc2626",l:"3DS"},
-  "WII":  {c:"#0284c7",l:"Wii"},
-  "WIIU": {c:"#0284c7",l:"Wii U"},
-  "NSW":  {c:"#ef4444",l:"Switch"},
-  "PC":   {c:"#3b82f6",l:"PC"},
+// Platform colors read live from CSS variables defined in tokens.css.
+// To change a platform color, edit --plat-* in tokens.css — no JS change needed.
+const _platC = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const PC_PLAT = {
+  "PS1":  { get c() { return _platC('--plat-ps');     }, l: "PS1"    },
+  "PS2":  { get c() { return _platC('--plat-ps');     }, l: "PS2"    },
+  "PS3":  { get c() { return _platC('--plat-ps');     }, l: "PS3"    },
+  "PSP":  { get c() { return _platC('--plat-ps');     }, l: "PSP"    },
+  "VITA": { get c() { return _platC('--plat-vita');   }, l: "Vita"   },
+  "NDS":  { get c() { return _platC('--plat-ds');     }, l: "DS"     },
+  "N3DS": { get c() { return _platC('--plat-ds');     }, l: "3DS"    },
+  "WII":  { get c() { return _platC('--plat-wii');    }, l: "Wii"    },
+  "WIIU": { get c() { return _platC('--plat-wii');    }, l: "Wii U"  },
+  "NSW":  { get c() { return _platC('--plat-switch'); }, l: "Switch" },
+  "PC":   { get c() { return _platC('--plat-pc');     }, l: "PC"     },
 };
 const GE={"open-world":"&#127757;","action":"&#9876;","shooter":"&#128299;","rpg":"&#129497;","coop":"&#129309;","racing":"&#127950;","strategy":"&#127959;","platformer":"&#128377;","fighting":"&#129354;","sports":"&#9917;"};
 const GAMES = [];

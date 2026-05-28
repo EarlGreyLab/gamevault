@@ -1,0 +1,111 @@
+/* =============================================================================
+   GAMEVAULT · Design Tokens
+   Single source of truth for all visual design decisions.
+   Edit values here to retheme the entire app — no other files need changing
+   for color, type scale, spacing, or platform palette changes.
+   ============================================================================= */
+
+:root {
+
+  /* ── BACKGROUND SURFACES ──────────────────────────────────────────────────
+     Layered dark surfaces from deepest to lightest                          */
+  --bg:  #07080d;    /* page background — deepest */
+  --s1:  #0c0e1a;    /* surface 1 — cards */
+  --s2:  #13151f;    /* surface 2 — inputs, sidebar */
+  --s3:  #1a1d2b;    /* surface 3 — hover, subtle bg */
+  --s4:  #252840;    /* surface 4 — scrollbar thumb */
+
+  /* ── ACCENT COLORS ────────────────────────────────────────────────────────
+     Primary and secondary interactive accents                               */
+  --acc:  #7cc5ff;   /* primary accent — blue */
+  --acc2: #c4b5fd;   /* secondary accent — purple */
+
+  /* ── SEMANTIC TAG COLORS ──────────────────────────────────────────────────
+     One color per content category / game mode                              */
+  --grn:  #4ade80;   /* co-op, vita compatible */
+  --ylw:  #fde047;   /* must-play, gold */
+  --org:  #fb923c;   /* classic */
+  --pnk:  #f9a8d4;   /* party */
+  --tel:  #67e8f9;   /* solo */
+  --red:  #fca5a5;   /* vita warning */
+
+  /* ── TEXT HIERARCHY ───────────────────────────────────────────────────────
+     Four levels from primary white to very muted                            */
+  --t1:   #ffffff;   /* primary text */
+  --t2:   #bdd0e6;   /* secondary text */
+  --t3:   #7d96b4;   /* tertiary / muted */
+  --t4:   #1e2235;   /* text on dark fills */
+
+  /* ── BORDERS ──────────────────────────────────────────────────────────────
+     Default subtle border and focus/glow border                             */
+  --bdr:  rgba(255, 255, 255, .12);     /* default border */
+  --bdrg: rgba(124, 197, 255, .38);     /* glow / focus border */
+
+  /* ── PLATFORM PALETTE ─────────────────────────────────────────────────────
+     One color per platform family, used in chips and JS badge backgrounds.
+     Changing these updates both the CSS chip active states and the
+     dynamically rendered platform badges in cards and modals.              */
+  --plat-ps:     #1d4ed8;   /* PS1 · PS2 · PS3 · PSP */
+  --plat-vita:   #3b82f6;   /* PS Vita */
+  --plat-ds:     #dc2626;   /* DS · 3DS */
+  --plat-wii:    #0284c7;   /* Wii · Wii U */
+  --plat-switch: #ef4444;   /* Nintendo Switch */
+  --plat-pc:     #3b82f6;   /* PC */
+
+  /* ── TYPOGRAPHY SCALE ─────────────────────────────────────────────────────
+     Font families are overridden per platform in desktop.css / mobile.css  */
+  --fd: 'DM Sans', system-ui, sans-serif;   /* display / UI font */
+  --fm: 'DM Mono', monospace;               /* mono / label font */
+
+  /* Named font sizes — 10 px baseline steps */
+  --fs-xs:   10px;   /* micro labels, year badge, tags */
+  --fs-sm:   11px;   /* toolbar labels, kbd hints, atags */
+  --fs-md:   12px;   /* chips, meta text, secondary UI */
+  --fs-base: 13px;   /* body text, descriptions */
+  --fs-lg:   15px;   /* card titles, modal body copy */
+  --fs-xl:   16px;   /* topbar logo, search input */
+  --fs-2xl:  19px;   /* detail panel title */
+  --fs-3xl:  24px;   /* modal title */
+  --fs-4xl:  26px;   /* modal title (alternate) */
+
+  /* ── SPACING SCALE ────────────────────────────────────────────────────────
+     Based on a 4 px grid                                                    */
+  --sp-1:  4px;
+  --sp-2:  6px;
+  --sp-3:  8px;
+  --sp-4:  10px;
+  --sp-5:  12px;
+  --sp-6:  14px;
+  --sp-7:  16px;
+  --sp-8:  18px;
+  --sp-9:  20px;
+  --sp-10: 24px;
+
+  /* ── BORDER RADIUS ────────────────────────────────────────────────────────
+     --r and --rs are the two primary radii used throughout the app          */
+  --r:       14px;    /* main elements: cards, modal, sheet */
+  --rs:       8px;    /* smaller elements: inputs, buttons */
+  --r-xs:     4px;    /* tiny elements: kbd badges */
+  --r-pill: 999px;    /* pills: chips, tags, badges */
+  --r-modal:  18px;   /* modal box corners */
+
+  /* ── ELEVATION / SHADOWS ──────────────────────────────────────────────────
+     Layer your shadows here; referenced in component styles below          */
+  --shadow-card:       0 16px 48px rgba(0, 0, 0, .70);
+  --shadow-card-glow:  0 0 0 1px rgba(124, 197, 255, .08), 0 0 28px rgba(124, 197, 255, .07);
+  --shadow-card-must:  0 0 28px rgba(253, 224, 71, .09);
+  --shadow-modal:      0 24px 80px rgba(0, 0, 0, .88), 0 0 0 1px rgba(255, 255, 255, .07);
+  --shadow-chip:       0 2px 14px rgba(124, 197, 255, .25);
+
+  /* ── TRANSITIONS ──────────────────────────────────────────────────────────
+     Three speed tiers + a spring easing curve for opening animations       */
+  --dur-fast:    .12s;
+  --dur-base:    .20s;
+  --dur-slow:    .30s;
+  --dur-slower:  .40s;
+  --ease-spring: cubic-bezier(.22, 1, .36, 1);
+
+  /* ── LAYOUT CONSTANTS ─────────────────────────────────────────────────────
+     Platform-specific values are further overridden in desktop/mobile CSS  */
+  --sidebar: 280px;   /* desktop sidebar width */
+}
