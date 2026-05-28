@@ -16,7 +16,7 @@ const PC_PLAT={
 const GE={"open-world":"&#127757;","action":"&#9876;","shooter":"&#128299;","rpg":"&#129497;","coop":"&#129309;","racing":"&#127950;","strategy":"&#127959;","platformer":"&#128377;","fighting":"&#129354;","sports":"&#9917;"};
 const GAMES = [];
 
-const DATA_URL = 'data/games.json';
+const DATA_URL = 'games.json';
 let dataSource = 'loading';
 let dataReady = false;
 
@@ -507,9 +507,9 @@ async function bootstrap() {
   if (!loaded) {
     const fileHint = window.location.protocol === 'file:'
       ? 'You opened this page via <code>file://</code>. Browsers block loading local JSON that way.<br>Run a local server from the repo root, for example: <code>npx serve .</code> or <code>python -m http.server</code>, then open <code>http://localhost:...</code>.'
-      : 'Check that <code>data/games.json</code> exists and is valid JSON.';
+      : 'Check that <code>games.json</code> exists and is valid JSON.';
     showDataLoadError(fileHint);
-    console.error('GAMEVAULT: failed to load data/games.json');
+    console.error('GAMEVAULT: failed to load games.json');
     return;
   }
   dataReady = true;
@@ -517,3 +517,5 @@ async function bootstrap() {
   render();
   console.info('GAMEVAULT data source: ' + dataSource + ' (' + GAMES.length + ' games)');
 }
+
+bootstrap();

@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GAMEVAULT</title>
+<script>if(/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)&&!location.search.includes('desktop'))location.replace('mobile.html');</script>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -415,7 +416,7 @@ body{font-family:var(--fd);background:#000;color:var(--t1);display:flex;flex-dir
     <div class="tstat"><span class="tstat-num" id="sVita">0</span> vita ok</div>
     <div class="tstat">showing <span class="tstat-num" id="sCount">0</span></div>
   </div>
-  <a href="gamevault_mobile.html" style="font-family:var(--fm);font-size:10px;color:var(--t3);
+  <a href="mobile.html" style="font-family:var(--fm);font-size:10px;color:var(--t3);
     border:1px solid var(--bdr);padding:4px 10px;border-radius:var(--rs);
     text-decoration:none;white-space:nowrap;background:var(--s2);flex-shrink:0"
     title="Mobile version">📱</a>
@@ -528,6 +529,6 @@ body{font-family:var(--fd);background:#000;color:var(--t1);display:flex;flex-dir
 </div>
 
 
-<script type="module" src="src/app.js"></script>
+<script type="module" src="app.js"></script>
 </body>
 </html>
