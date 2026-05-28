@@ -38,7 +38,7 @@ function applyExternalData(payload) {
   for (const key of Object.keys(IMG)) delete IMG[key];
   Object.assign(IMG, payload.IMG);
 
-  GAMES.splice(0, GAMES.length, ...payload.GAMES);
+  GAMES.splice(0, GAMES.length, ...payload.GAMES.filter(Boolean));
   dataSource = 'external-json';
   return true;
 }
