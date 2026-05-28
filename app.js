@@ -1,17 +1,17 @@
 const IMG = {};
 
 const PC_PLAT={
-  "PS1":  {c:"#003087",l:"PS1"},
-  "PS2":  {c:"#00439C",l:"PS2"},
-  "PS3":  {c:"#003791",l:"PS3"},
-  "PSP":  {c:"#003087",l:"PSP"},
-  "VITA": {c:"#06439C",l:"Vita"},
-  "NDS":  {c:"#C8102E",l:"DS"},
-  "N3DS": {c:"#C8102E",l:"3DS"},
-  "WII":  {c:"#009AC7",l:"Wii"},
-  "WIIU": {c:"#009AC7",l:"Wii U"},
-  "NSW":  {c:"#E4000F",l:"Switch"},
-  "PC":   {c:"#63b3ed",l:"PC"},
+  "PS1":  {c:"#1d4ed8",l:"PS1"},
+  "PS2":  {c:"#1d4ed8",l:"PS2"},
+  "PS3":  {c:"#1d4ed8",l:"PS3"},
+  "PSP":  {c:"#1d4ed8",l:"PSP"},
+  "VITA": {c:"#3b82f6",l:"Vita"},
+  "NDS":  {c:"#dc2626",l:"DS"},
+  "N3DS": {c:"#dc2626",l:"3DS"},
+  "WII":  {c:"#0284c7",l:"Wii"},
+  "WIIU": {c:"#0284c7",l:"Wii U"},
+  "NSW":  {c:"#ef4444",l:"Switch"},
+  "PC":   {c:"#3b82f6",l:"PC"},
 };
 const GE={"open-world":"&#127757;","action":"&#9876;","shooter":"&#128299;","rpg":"&#129497;","coop":"&#129309;","racing":"&#127950;","strategy":"&#127959;","platformer":"&#128377;","fighting":"&#129354;","sports":"&#9917;"};
 const GAMES = [];
