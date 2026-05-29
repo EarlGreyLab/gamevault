@@ -95,6 +95,15 @@ body{font-family:var(--fd);background:#000;color:var(--t1)}
   border:1px solid var(--bdr);padding:3px 8px;border-radius:6px;white-space:nowrap;flex-shrink:0}
 .hero-stats-row{display:flex;gap:20px;font-family:var(--fd);font-size:12px;
   font-weight:500;color:var(--t3);margin-top:4px}
+.hero-stat-btn{background:none;border:none;cursor:pointer;padding:0;
+  font-family:var(--fd);font-size:12px;font-weight:500;color:var(--t3);
+  display:inline-flex;align-items:center;gap:4px;position:relative;
+  transition:color .15s}
+.hero-stat-btn:hover{color:var(--t1)}
+.hero-stat-btn::after{content:'';position:absolute;bottom:-1px;left:0;right:0;
+  height:1.5px;background:currentColor;border-radius:1px;
+  transform:scaleX(0);transform-origin:right center;transition:transform .18s ease}
+.hero-stat-btn:hover::after{transform:scaleX(1);transform-origin:left center}
 .hero-stat-num{color:var(--acc);font-weight:700}
 .hero-scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
   display:flex;flex-direction:column;align-items:center;gap:8px;

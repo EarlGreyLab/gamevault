@@ -34,3 +34,32 @@ test('sidebar chips have position:relative for underline animation', async ({ pa
   });
   expect(position).toBe('relative');
 });
+
+test('hero stats row contains button elements after data loads', async ({ page }) => {
+  const buttons = page.locator('#HS button');
+  await expect(buttons).toHaveCount(3);
+});
+
+test('clicking vita ok stat button activates the vita filter chip', async ({ page }) => {
+  const vitaBtn = page.locator('#HS button').filter({ hasText: 'vita ok' });
+  await vitaBtn.click();
+  await expect(page.locator('#FF [data-flag="vita"]')).toHaveClass(/active/);
+});
+
+test('clicking must play stat button activates the must filter chip', async ({ page }) => {
+  const mustBtn = page.locator('#HS button').filter({ hasText: 'must play' });
+  await mustBtn.click();
+  await expect(page.locator('#FF [data-flag="must"]')).toHaveClass(/active/);
+});
+
+test('clicking games stat button resets all active filters', async ({ page }) => {
+  // Apply a filter first
+  await page.locator('#FF [data-flag="must"]').click();
+  await expect(page.locator('#FF [data-flag="must"]')).toHaveClass(/active/);
+
+  // Reset via hero stat
+  const gamesBtn = page.locator('#HS button').filter({ hasText: 'games' });
+  await gamesBtn.click();
+  await expect(page.locator('#FF [data-flag="must"]')).not.toHaveClass(/active/);
+  await expect(page.locator('#GF [data-genre="all"]')).toHaveClass(/active/);
+});

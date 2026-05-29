@@ -43,11 +43,51 @@ function refreshHeaderStats() {
   document.getElementById('sVita').textContent = vita;
   const sOwned = document.getElementById('sOwned');
   if (sOwned) sOwned.textContent = GAMES.filter(g => g.f.includes('owned')).length;
+
   const hs = document.getElementById('HS');
-  if (hs) hs.innerHTML =
-    `<span><span class="hero-stat-num">${total}</span> games</span>` +
-    `<span><span class="hero-stat-num">${must}</span> must play</span>` +
-    `<span><span class="hero-stat-num">${vita}</span> vita ok</span>`;
+  if (!hs) return;
+
+  const scrollToLibrary = () =>
+    document.querySelector('.library-section')?.scrollIntoView({ behavior: 'smooth' });
+
+  const makeStatBtn = (count, label, action) => {
+    const btn = document.createElement('button');
+    btn.className = 'hero-stat-btn';
+    btn.innerHTML = `<span class="hero-stat-num">${count}</span> ${label}`;
+    btn.addEventListener('click', () => { action(); scrollToLibrary(); });
+    return btn;
+  };
+
+  const toggleFlag = (flag) => {
+    const chip = document.querySelector(`#FF [data-flag="${flag}"]`);
+    if (activeFlags.has(flag)) {
+      activeFlags.delete(flag);
+      chip?.classList.remove('active');
+    } else {
+      activeFlags.add(flag);
+      chip?.classList.add('active');
+    }
+    render();
+  };
+
+  hs.innerHTML = '';
+
+  hs.appendChild(makeStatBtn(total, 'games', () => {
+    curGenre = 'all';
+    curPlat = 'all';
+    activeFlags.clear();
+    document.getElementById('SI').value = '';
+    document.getElementById('HI').value = '';
+    document.querySelectorAll('#GF .chip').forEach(b => b.classList.remove('active'));
+    document.querySelector('#GF [data-genre="all"]')?.classList.add('active');
+    document.querySelectorAll('#PF .chip').forEach(b => b.classList.remove('active'));
+    document.querySelector('#PF [data-plat="all"]')?.classList.add('active');
+    document.querySelectorAll('#FF .chip').forEach(b => b.classList.remove('active'));
+    render();
+  }));
+
+  hs.appendChild(makeStatBtn(must, 'must play', () => toggleFlag('must')));
+  hs.appendChild(makeStatBtn(vita, 'vita ok',   () => toggleFlag('vita')));
 }
 
 function applyExternalData(payload) {
