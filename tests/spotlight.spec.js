@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from 'playwright/test';
 
 test('each card has --glow-color set to a hex color', async ({ page }) => {
   await page.goto('/');
