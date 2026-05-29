@@ -63,3 +63,11 @@ test('clicking games stat button resets all active filters', async ({ page }) =>
   await expect(page.locator('#FF [data-flag="must"]')).not.toHaveClass(/active/);
   await expect(page.locator('#GF [data-genre="all"]')).toHaveClass(/active/);
 });
+
+test('clicking must play stat button twice toggles filter off', async ({ page }) => {
+  const mustBtn = page.locator('#HS button').filter({ hasText: 'must play' });
+  await mustBtn.click();
+  await expect(page.locator('#FF [data-flag="must"]')).toHaveClass(/active/);
+  await mustBtn.click();
+  await expect(page.locator('#FF [data-flag="must"]')).not.toHaveClass(/active/);
+});
