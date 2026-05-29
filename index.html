@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script>
   document.documentElement.classList.add('intro-active');
-  if(localStorage.getItem('gv-theme')==='light')document.documentElement.setAttribute('data-theme','light');
+  (function(){var t=localStorage.getItem('gv-theme'),l=t==='light';document.documentElement.setAttribute('data-theme',l?'light':'dark');if(!l)document.documentElement.classList.add('dark');}());
 </script>
 <style>
 :root{
@@ -328,12 +328,6 @@ html[data-theme="light"] .hero-kbd{background:var(--s2)}
 
 @keyframes fu{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 
-/* THEME TOGGLE */
-.theme-toggle{width:28px;height:28px;display:flex;align-items:center;justify-content:center;
-  border-radius:var(--rs);border:1px solid var(--bdr);background:var(--s2);
-  color:var(--t2);cursor:pointer;font-size:15px;line-height:1;
-  transition:all .12s;flex-shrink:0;font-family:var(--fm)}
-.theme-toggle:hover{border-color:var(--bdrg);color:var(--t1);background:var(--s3)}
 
 /* ── LIGHT THEME ── */
 html[data-theme="light"]{
@@ -638,7 +632,7 @@ html[data-theme="light"] .detail-close:hover{background:var(--s3);color:var(--t1
       <span class="topbar-kbd">Ctrl+K</span>
     </div>
   </div>
-  <button class="theme-toggle" id="TT" title="Toggle light/dark mode">☽</button>
+  <div id="TT-root" style="flex-shrink:0;display:flex;align-items:center;justify-content:center"></div>
   <div class="topbar-stats">
     <div class="tstat"><span class="tstat-num" id="sTotal">0</span> games</div>
     <div class="tstat"><span class="tstat-num" id="sMust">0</span> must play</div>

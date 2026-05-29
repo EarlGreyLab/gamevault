@@ -622,20 +622,3 @@ async function bootstrap() {
 }
 
 bootstrap();
-
-// ── THEME TOGGLE ──────────────────────────────────────────────────────────
-(function() {
-  const btn = document.getElementById('TT');
-  function applyTheme(light) {
-    document.documentElement.setAttribute('data-theme', light ? 'light' : 'dark');
-    btn.textContent = light ? '☀' : '☽';
-    btn.title = light ? 'Switch to dark mode' : 'Switch to light mode';
-  }
-  let isLight = localStorage.getItem('gv-theme') === 'light';
-  applyTheme(isLight);
-  btn.addEventListener('click', () => {
-    isLight = !isLight;
-    localStorage.setItem('gv-theme', isLight ? 'light' : 'dark');
-    applyTheme(isLight);
-  });
-})();
