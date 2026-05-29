@@ -10,6 +10,7 @@ function parseArgs() {
   return {
     input: get('--input') || path.join(__dirname, '..', 'data', 'igdb-enrichment.json'),
     overwrite: args.includes('--overwrite'),
+    overwriteCover: args.includes('--overwrite-cover'),
     dryRun: args.includes('--dry-run')
   };
 }
@@ -27,7 +28,7 @@ function setIfBlank(obj, key, value, overwrite) {
 const CONSOLE_PLATFORMS = new Set(['PS1', 'PS2', 'PS3', 'PSP', 'VITA', 'NDS', 'N3DS', 'WII', 'WIIU', 'NSW']);
 
 async function main() {
-  const { input, overwrite, dryRun } = parseArgs();
+  const { input, overwrite, overwriteCover, dryRun } = parseArgs();
 
   if (!fs.existsSync(input)) {
     console.error(`Enrichment file not found: ${input}`);
@@ -52,7 +53,7 @@ async function main() {
 
     if (dryRun) {
       const changes = [];
-      if (data.coverUrl && (overwrite || !game.consoleCover))
+      if (data.coverUrl && (overwrite || overwriteCover || !game.consoleCover))
         changes.push(`consoleCover → ${data.coverUrl}`);
       if (data.summary && (overwrite || !game.d))
         changes.push(`d → "${data.summary.slice(0, 80)}..."`);
@@ -67,7 +68,7 @@ async function main() {
       continue;
     }
 
-    if (setIfBlank(game, 'consoleCover', data.coverUrl, overwrite)) coversSet++;
+    if (setIfBlank(game, 'consoleCover', data.coverUrl, overwrite || overwriteCover)) coversSet++;
     if (setIfBlank(game, 'd', data.summary, overwrite)) descriptionsSet++;
     if (setIfBlank(game, 'y', data.year, overwrite)) yearsSet++;
     if (data.rating !== null && data.rating !== undefined) {
