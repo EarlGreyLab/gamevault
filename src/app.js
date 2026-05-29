@@ -428,6 +428,9 @@ function openDetail(g) {
     ? `<a class="modal-steam-link" href="https://steamdb.info/app/${appId}/" target="_blank" rel="noopener">📊 View on SteamDB</a>`
     : '';
 
+  const isFav = favourites.has(g.t);
+  const favBtn = `<button class="modal-fav-btn${isFav ? ' active' : ''}" id="MFavBtn">${isFav ? '♥ Favourited' : '♥ Favourite'}</button>`;
+
   // Portrait img or placeholder
   const portraitFallback = makeFallbackPortrait(g);
   const portraitHtml =
@@ -448,6 +451,7 @@ function openDetail(g) {
         </div>
         ${steamLink}
         ${steamDbLink}
+        ${favBtn}
       </div>
       <div class="modal-content">
         <div class="modal-title">${g.t}</div>
@@ -470,6 +474,19 @@ function openDetail(g) {
         </div>
       </div>
     </div>`;
+
+  // Wire up fav button
+  document.getElementById('MFavBtn').addEventListener('click', () => {
+    if (favourites.has(g.t)) favourites.delete(g.t);
+    else favourites.add(g.t);
+    saveFavourites();
+    refreshFavouritesStat();
+    render();
+    const btn = document.getElementById('MFavBtn');
+    const nowFav = favourites.has(g.t);
+    btn.textContent = nowFav ? '♥ Favourited' : '♥ Favourite';
+    btn.classList.toggle('active', nowFav);
+  });
 
   // Open overlay
   document.getElementById('MO').classList.add('open');
