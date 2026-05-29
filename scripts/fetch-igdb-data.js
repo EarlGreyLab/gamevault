@@ -15,6 +15,8 @@ const RATE_LIMIT_DELAY_MS = 250;
 
 // Strips trailing platform disambiguation like "(PS2)", "(Wii)", "(Switch)"
 const PLATFORM_SUFFIX_RE = /\s*\((PS[123]|PSP|Vita|Wii U|Wii|N3DS|3DS|Switch|NDS|NSW|WIIU)\)\s*$/i;
+// Strips trailing year disambiguation like "(1998)"
+const YEAR_SUFFIX_RE = /\s*\(\d{4}\)\s*$/;
 
 // ── OAuth2 ────────────────────────────────────────────────────────────────────
 
@@ -40,7 +42,7 @@ function getAccessToken(clientId, clientSecret) {
 // ── Title helpers ─────────────────────────────────────────────────────────────
 
 function normalizeTitle(title) {
-  return title.replace(PLATFORM_SUFFIX_RE, '').trim();
+  return title.replace(PLATFORM_SUFFIX_RE, '').replace(YEAR_SUFFIX_RE, '').trim();
 }
 
 function levenshtein(a, b) {
