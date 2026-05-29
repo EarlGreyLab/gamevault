@@ -22,6 +22,14 @@ const FLAG_SENTENCES = {
   solo:   'Best enjoyed solo.',
 };
 
+function getSteamId(g, imgMap) {
+  if (g.steamId) return String(g.steamId);
+  const u = imgMap[g.t];
+  if (!u) return null;
+  const m = u.match(/apps\/(\d+)\//);
+  return m ? m[1] : null;
+}
+
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -58,10 +66,11 @@ async function main() {
       continue;
     }
 
-    if (g.steamId) {
+    const steamId = getSteamId(g, payload.IMG);
+    if (steamId) {
       try {
         await sleep(DELAY_MS);
-        const desc = await fetchSteamDescription(g.steamId);
+        const desc = await fetchSteamDescription(steamId);
         g.d = desc || generateTemplate(g);
         if (!desc) console.warn(`⚠  Empty Steam desc, used template: ${g.t}`);
         else        console.log(`✓  Steam: ${g.t}`);
