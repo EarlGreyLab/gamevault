@@ -4,7 +4,7 @@ const path = require('path');
 
 const DATA_PATH     = path.join(__dirname, '..', 'data', 'games.json');
 const SKIP_EXISTING = process.argv.includes('--skip-existing');
-const DELAY_MS      = 300;
+const DELAY_MS      = 300; // Steam's unofficial API; increase to 1000+ if you hit 429s
 
 const PLAT_NAMES = {
   PC:'PC', PS1:'PS1', PS2:'PS2', PS3:'PS3', PSP:'PSP',
@@ -76,6 +76,10 @@ async function main() {
     updated++;
   }
 
+  if (updated === 0) {
+    console.log(`\nDone — nothing to update (skipped: ${skipped})`);
+    return;
+  }
   fs.writeFileSync(DATA_PATH, JSON.stringify(payload, null, 2), 'utf8');
   console.log(`\nDone — updated: ${updated}, skipped: ${skipped}`);
 }
