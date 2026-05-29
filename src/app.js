@@ -210,6 +210,8 @@ function buildCard(g, idx) {
   const pi = PC_PLAT[plat] || PC_PLAT.PC;
   const ge = GE[g.g] || '🎮';
 
+  const favBadge = favourites.has(g.t) ? `<span class="fav-badge">♥</span>` : '';
+
   const vitaClass = g.vita === 'yes' ? 'ct-vy' : g.vita === 'warn' ? 'ct-vw' : 'ct-vn';
   const vitaLabel = g.vita === 'yes' ? 'Vita✓' : g.vita === 'warn' ? 'Vita±' : 'No Vita';
 
@@ -229,11 +231,13 @@ function buildCard(g, idx) {
         <img src="${img}" alt="${g.t}" loading="lazy"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="cip" style="display:none">${ge}</div>
+        ${favBadge}
         <span class="yr">${g.y}</span>
         <span class="pb" style="background:${pi.c}">${pi.l}</span>
       </div>`
     : `<div class="ciw">
         <div class="cip">${ge}</div>
+        ${favBadge}
         <span class="yr">${g.y}</span>
         <span class="pb" style="background:${pi.c}">${pi.l}</span>
       </div>`;
