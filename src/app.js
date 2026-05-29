@@ -276,7 +276,8 @@ function getSorted() {
       const match = g.t.toLowerCase().includes(q) ||
                     g.d.toLowerCase().includes(q) ||
                     (g.p || 'PC').toLowerCase().includes(q) ||
-                    g.g.toLowerCase().includes(q);
+                    g.g.toLowerCase().includes(q) ||
+                    (GL[g.g] || g.g).toLowerCase().includes(q);
       if (!match) return false;
     }
     for (const fl of activeFlags) {
