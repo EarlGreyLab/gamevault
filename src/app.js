@@ -245,6 +245,12 @@ function buildCard(g, idx) {
   const card = document.createElement('div');
   card.className = 'card' + (isMust ? ' must' : '');
   card.style.animationDelay = Math.min(idx * 0.025, 0.5) + 's';
+  card.style.setProperty('--glow-color', pi.c);
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  });
   card.innerHTML = `
     ${imgHtml}
     <div class="cbody">
