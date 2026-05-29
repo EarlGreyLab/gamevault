@@ -272,6 +272,7 @@ function getSorted() {
     for (const fl of activeFlags) {
       if (fl === 'vita') { if (g.vita !== 'yes') return false; }
       else if (fl === 'vita_warn') { if (g.vita !== 'warn' && g.vita !== 'yes') return false; }
+      else if (fl === 'favs') { if (!favourites.has(g.t)) return false; }
       else if (!g.f.includes(fl)) return false;
     }
     return true;
@@ -286,7 +287,7 @@ function getSorted() {
 // ── ACTIVE TAG LABELS ─────────────────────────────────────────────────────
 const FL = { must:'Must Play', owned:'Owned', classic:'Classic', couch:'Couch',
              party:'Party', coop:'Co-op', online:'Online', solo:'Solo',
-             vita:'Vita ok', vita_warn:'Vita±' };
+             vita:'Vita ok', vita_warn:'Vita±', favs:'Favourites' };
 const GL = { 'open-world':'Open World', action:'Action', shooter:'Shooter', rpg:'RPG',
              coop:'Co-op', racing:'Racing', strategy:'Strategy',
              platformer:'Platformer', fighting:'Fighting', sports:'Sports' };
