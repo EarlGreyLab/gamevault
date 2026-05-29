@@ -11,7 +11,7 @@ export function ThemeToggler() {
     const obs = new MutationObserver(() => {
       const dark = html.classList.contains('dark');
       html.setAttribute('data-theme', dark ? 'dark' : 'light');
-      localStorage.setItem('gv-theme', dark ? 'dark' : 'light');
+      try { localStorage.setItem('gv-theme', dark ? 'dark' : 'light'); } catch { /* quota/sandboxed */ }
     });
     obs.observe(html, { attributeFilter: ['class'] });
     return () => obs.disconnect();
