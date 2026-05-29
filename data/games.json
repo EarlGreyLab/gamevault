@@ -2850,7 +2850,8 @@
         "classic"
       ],
       "d": "Hideo Kojima's masterpiece. Stealth action with a cinematic story decades ahead of its time. Foundation of the entire genre.",
-      "consoleCover": "covers/ps1/metal-gear-solid.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobpak.jpg",
+      "igdbRating": 90.5
     },
     {
       "t": "Final Fantasy VII",
@@ -2863,7 +2864,8 @@
         "classic"
       ],
       "d": "The RPG that defined a generation. Cloud, Sephiroth, Midgar — a story and world that changed gaming forever.",
-      "consoleCover": "covers/ps1/final-fantasy-vii.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobny6.jpg",
+      "igdbRating": 80.1
     },
     {
       "t": "Final Fantasy IX",
@@ -2876,7 +2878,8 @@
         "classic"
       ],
       "d": "The most beloved Final Fantasy. Classic fantasy setting, memorable cast, emotional story. Available on PC and mobile too.",
-      "consoleCover": "covers/ps1/final-fantasy-ix.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2unc.jpg",
+      "igdbRating": 88.1
     },
     {
       "t": "Resident Evil 2 (1998)",
@@ -2889,7 +2892,8 @@
         "classic"
       ],
       "d": "The survival horror classic. Leon and Claire, Raccoon City, the Spencer Mansion. Terrifying and brilliantly designed.",
-      "consoleCover": "covers/ps1/resident-evil-2-1998.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2vz0.jpg",
+      "igdbRating": 83.7
     },
     {
       "t": "Castlevania: Symphony of the Night",
@@ -2902,7 +2906,8 @@
         "classic"
       ],
       "d": "The Metroidvania that defined the genre. Richter, Alucard, the inverted castle — a perfect 2D action RPG.",
-      "consoleCover": "covers/ps1/castlevania-symphony-of-the-night.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co53m8.jpg",
+      "igdbRating": 92.1
     },
     {
       "t": "Tekken 3",
@@ -2917,7 +2922,8 @@
         "party"
       ],
       "d": "The fighting game peak of the PS1 era. Fluid combat, massive roster, still playable and fun in couch sessions.",
-      "consoleCover": "covers/ps1/tekken-3.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8d7r.jpg",
+      "igdbRating": 77
     },
     {
       "t": "Tony Hawk's Pro Skater 2 (PS1)",
@@ -2930,7 +2936,8 @@
         "classic"
       ],
       "d": "The definitive skateboarding game of its era. Two-minute sessions, perfect feel, iconic soundtrack.",
-      "consoleCover": "covers/ps1/tony-hawks-pro-skater-2-ps1.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1y77.jpg",
+      "igdbRating": 85.9
     },
     {
       "t": "Crash Team Racing (PS1)",
@@ -2945,7 +2952,8 @@
         "party"
       ],
       "d": "The kart racer that rivaled Mario Kart on PS1. Tight controls, personality-packed, still holds up beautifully.",
-      "consoleCover": "covers/ps1/crash-team-racing-ps1.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7r52.jpg",
+      "igdbRating": 83.9
     },
     {
       "t": "Silent Hill",
@@ -2958,7 +2966,8 @@
         "classic"
       ],
       "d": "The horror game that understood psychological fear. Foggy town, radio static, monsters from your own mind.",
-      "consoleCover": "covers/ps1/silent-hill.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2vye.jpg",
+      "igdbRating": 83.9
     },
     {
       "t": "Gran Turismo 2",
@@ -2970,7 +2979,8 @@
         "classic"
       ],
       "d": "Over 650 cars on PS1. The simulation racing bible of its era — absurdly deep for the hardware.",
-      "consoleCover": "covers/ps1/gran-turismo-2.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co20af.jpg",
+      "igdbRating": 81.6
     },
     {
       "t": "Medievil",
@@ -2982,7 +2992,8 @@
         "classic"
       ],
       "d": "Undead knight saves the kingdom. Quirky British humor, great atmosphere, PS1 cult classic with a great remake.",
-      "consoleCover": "covers/ps1/medievil.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1tjk.jpg",
+      "igdbRating": 77.7
     },
     {
       "t": "Driver (PS1)",
@@ -2994,7 +3005,8 @@
         "classic"
       ],
       "d": "Precursor to GTA driving gameplay. Chase scenes, free roaming cities, stunt mode — ahead of its time.",
-      "consoleCover": "covers/ps1/driver-ps1.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6he0.jpg",
+      "igdbRating": 76.2
     },
     {
       "t": "Shadow of the Colossus",
@@ -3007,7 +3019,8 @@
         "classic"
       ],
       "d": "16 colossi, no other enemies. A meditation on violence, loss, and forbidden resurrection. Gaming as art, still unmatched.",
-      "consoleCover": "covers/ps2/shadow-of-the-colossus.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1ozz.jpg",
+      "igdbRating": 89
     },
     {
       "t": "God of War (PS2)",
@@ -3020,7 +3033,8 @@
         "classic"
       ],
       "d": "Kratos' origin. Greek mythology, brutal combat, insane set pieces for 2005 hardware. Defined a generation of action games.",
-      "consoleCover": "covers/ps2/god-of-war-ps2.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3ddc.jpg",
+      "igdbRating": 83.6
     },
     {
       "t": "God of War II",
@@ -3033,7 +3047,8 @@
         "classic"
       ],
       "d": "Bigger, better, more spectacular. Best PS2 action game ever made. The Colossus of Rhodes intro remains jaw-dropping.",
-      "consoleCover": "covers/ps2/god-of-war-ii.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3dik.jpg",
+      "igdbRating": 85.6
     },
     {
       "t": "Ico",
@@ -3046,7 +3061,8 @@
         "classic"
       ],
       "d": "Boy holds girl's hand through a castle. One of gaming's most atmospheric experiences. Companion AI before it existed.",
-      "consoleCover": "covers/ps2/ico.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3r78.jpg",
+      "igdbRating": 85.2
     },
     {
       "t": "Okami",
@@ -3059,7 +3075,8 @@
         "classic"
       ],
       "d": "Play as the sun goddess Amaterasu as a white wolf. Zelda-like with watercolor aesthetic that still looks stunning today.",
-      "consoleCover": "covers/ps2/okami.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3mpk.jpg",
+      "igdbRating": 87.8
     },
     {
       "t": "Kingdom Hearts",
@@ -3072,7 +3089,8 @@
         "classic"
       ],
       "d": "Disney meets Final Fantasy in a surprisingly deep action RPG. Emotional story, brilliant world-hopping concept.",
-      "consoleCover": "covers/ps2/kingdom-hearts.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co30zf.jpg",
+      "igdbRating": 82.9
     },
     {
       "t": "Kingdom Hearts II",
@@ -3085,7 +3103,8 @@
         "classic"
       ],
       "d": "The sequel that perfected the combat system. More complex, more emotional, more Disney worlds — peak Kingdom Hearts.",
-      "consoleCover": "covers/ps2/kingdom-hearts-ii.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co30t1.jpg",
+      "igdbRating": 88.4
     },
     {
       "t": "Jak and Daxter",
@@ -3111,7 +3130,8 @@
         "classic"
       ],
       "d": "Platformer meets third-person shooter. Ridiculous arsenal of weapons, great humor, massive worlds for PS2 hardware.",
-      "consoleCover": "covers/ps2/ratchet-clank-ps2.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1oym.jpg",
+      "igdbRating": 81.4
     },
     {
       "t": "Ratchet & Clank: Up Your Arsenal",
@@ -3124,7 +3144,8 @@
         "classic"
       ],
       "d": "The peak of the PS2 Ratchet games. More weapons, online multiplayer, refined everything. A perfect sequel.",
-      "consoleCover": "covers/ps2/ratchet-clank-up-your-arsenal.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1oyn.jpg",
+      "igdbRating": 80.8
     },
     {
       "t": "Sly Cooper and the Thievius Raccoonus",
@@ -3137,7 +3158,8 @@
         "classic"
       ],
       "d": "Stylish cel-shaded stealth platformer. Thief raccoon with a gang. Charming, tight, criminally underrated.",
-      "consoleCover": "covers/ps2/sly-cooper-and-the-thievius-raccoonus.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1p0r.jpg",
+      "igdbRating": 79.2
     },
     {
       "t": "Dragon Ball Z: Budokai Tenkaichi 3",
@@ -3152,7 +3174,8 @@
         "party"
       ],
       "d": "The definitive DBZ fighting game with 150+ characters. Couch battles that never get old. Maximum anime chaos.",
-      "consoleCover": "covers/ps2/dragon-ball-z-budokai-tenkaichi-3.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3r52.jpg",
+      "igdbRating": 79.2
     },
     {
       "t": "SSX 3",
@@ -3165,7 +3188,8 @@
         "classic"
       ],
       "d": "The best snowboarding game ever made. One connected mountain, incredible soundtrack, perfect arcade feel.",
-      "consoleCover": "covers/ps2/ssx-3.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1o4m.jpg",
+      "igdbRating": 89.2
     },
     {
       "t": "The Simpsons: Hit & Run",
@@ -3178,7 +3202,8 @@
         "classic"
       ],
       "d": "GTA but Simpsons. Springfield fully realized, hilarious writing, best licensed game ever made.",
-      "consoleCover": "covers/ps2/the-simpsons-hit-run.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2uk7.jpg",
+      "igdbRating": 76.9
     },
     {
       "t": "Metal Gear Solid 2: Sons of Liberty",
@@ -3191,7 +3216,8 @@
         "classic"
       ],
       "d": "The tanker and Big Shell. Raiden's story. Kojima's most postmodern game — about information, identity, and control.",
-      "consoleCover": "covers/ps2/metal-gear-solid-2-sons-of-liberty.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5e1c.jpg",
+      "igdbRating": 88.9
     },
     {
       "t": "Metal Gear Solid 3: Snake Eater",
@@ -3204,7 +3230,8 @@
         "classic"
       ],
       "d": "Cold War jungle espionage. Big Boss origin. The Cobra Unit, The Boss ending — one of gaming's greatest stories.",
-      "consoleCover": "covers/ps2/metal-gear-solid-3-snake-eater.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5ei5.jpg",
+      "igdbRating": 92.7
     },
     {
       "t": "Resident Evil 4 (PS2)",
@@ -3217,7 +3244,8 @@
         "classic"
       ],
       "d": "Reinvented the action game. Over-the-shoulder camera, Ganados, chainsaw man, regenerators — still holds up perfectly.",
-      "consoleCover": "covers/ps2/resident-evil-4-ps2.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2wki.jpg",
+      "igdbRating": 87.9
     },
     {
       "t": "Silent Hill 2",
@@ -3230,7 +3258,8 @@
         "classic"
       ],
       "d": "The greatest survival horror game ever made. Pyramid Head, guilt, grief — psychological horror as high art.",
-      "consoleCover": "covers/ps2/silent-hill-2.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2vyg.jpg",
+      "igdbRating": 91.2
     },
     {
       "t": "Katamari Damacy",
@@ -3243,7 +3272,8 @@
         "classic"
       ],
       "d": "Roll a sticky ball to pick up everything. Completely original concept, joyful soundtrack, impossible to describe.",
-      "consoleCover": "covers/ps2/katamari-damacy.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co67mq.jpg",
+      "igdbRating": 87.6
     },
     {
       "t": "Tony Hawk's Underground",
@@ -3255,7 +3285,8 @@
         "classic"
       ],
       "d": "First Tony Hawk with a story mode. Open world cities, create-a-skater, still one of the best in the series.",
-      "consoleCover": "covers/ps2/tony-hawks-underground.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2g2b.jpg",
+      "igdbRating": 80
     },
     {
       "t": "Need for Speed: Underground (PS2)",
@@ -3268,7 +3299,8 @@
         "classic"
       ],
       "d": "Night racing tuner culture at its PS2 peak. Underground 1 and 2 defined a generation of racing fans.",
-      "consoleCover": "covers/ps2/need-for-speed-underground-ps2.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co209g.jpg",
+      "igdbRating": 83
     },
     {
       "t": "Midnight Club 3: DUB Edition (PS2)",
@@ -3280,7 +3312,8 @@
         "classic"
       ],
       "d": "Open world street racing with licensed vehicles and DUB Magazine culture. Best in the Midnight Club series.",
-      "consoleCover": "covers/ps2/midnight-club-3-dub-edition-ps2.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2lco.jpg",
+      "igdbRating": 68.1
     },
     {
       "t": "Bully (PS2)",
@@ -3293,7 +3326,8 @@
         "classic"
       ],
       "d": "Rockstar's most overlooked masterpiece. Navigate school cliques, fight bullies, romance classmates — GTA in a school.",
-      "consoleCover": "covers/ps2/bully-ps2.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2lc9.jpg",
+      "igdbRating": 81.1
     },
     {
       "t": "Devil May Cry 3",
@@ -3320,7 +3354,8 @@
         "party"
       ],
       "d": "Dark vehicular combat game. Unhinged characters, brutal gameplay, couch multiplayer carnage.",
-      "consoleCover": "covers/ps2/twisted-metal-black.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1p3q.jpg",
+      "igdbRating": 81
     },
     {
       "t": "Burnout Revenge (PS2)",
@@ -3333,7 +3368,8 @@
         "couch"
       ],
       "d": "Traffic checking added to the Burnout formula. Couch racing chaos at its finest.",
-      "consoleCover": "covers/ps2/burnout-revenge-ps2.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2nhp.jpg",
+      "igdbRating": 79.2
     },
     {
       "t": "Red Faction II",
@@ -3345,7 +3381,8 @@
         "classic"
       ],
       "d": "Geo-Mod engine lets you blow up everything. Destructible environments in 2002 — impressive and still fun.",
-      "consoleCover": "covers/ps2/red-faction-ii.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3yd5.jpg",
+      "igdbRating": 66.6
     },
     {
       "t": "Demon's Souls (PS3)",
@@ -3358,7 +3395,8 @@
         "classic"
       ],
       "d": "The original Souls game. Brutally hard, atmospheric, landmark in game design. Where FromSoftware's legacy began.",
-      "consoleCover": "covers/ps3/demons-souls-ps3.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co27sk.jpg",
+      "igdbRating": 85.5
     },
     {
       "t": "Uncharted 2: Among Thieves",
@@ -3371,7 +3409,8 @@
         "classic"
       ],
       "d": "The game that redefined cinematic action. Train sequence, Nepal, the monastery — still one of gaming's greatest adventures.",
-      "consoleCover": "covers/ps3/uncharted-2-among-thieves.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1tnb.jpg",
+      "igdbRating": 88.6
     },
     {
       "t": "God of War III",
@@ -3384,7 +3423,8 @@
         "classic"
       ],
       "d": "Greek mythology conclusion. Zeus as final boss, Kratos' rage at full force. PS3 showcase title that still looks incredible.",
-      "consoleCover": "covers/ps3/god-of-war-iii.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3koi.jpg",
+      "igdbRating": 86.2
     },
     {
       "t": "Metal Gear Solid 4",
@@ -3397,7 +3437,7 @@
         "classic"
       ],
       "d": "Old Snake's final mission. Longest cutscenes in gaming, but the gameplay and conclusion hit incredibly hard.",
-      "consoleCover": "covers/ps3/metal-gear-solid-4.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2qoi.jpg"
     },
     {
       "t": "Ni no Kuni: Wrath of the White Witch",
@@ -3409,7 +3449,8 @@
         "must"
       ],
       "d": "Studio Ghibli animated JRPG. Oliver's journey to save his mother — the most beautiful RPG on PS3.",
-      "consoleCover": "covers/ps3/ni-no-kuni-wrath-of-the-white-witch.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1rbw.jpg",
+      "igdbRating": 86.2
     },
     {
       "t": "Valkyria Chronicles",
@@ -3422,7 +3463,8 @@
         "classic"
       ],
       "d": "Watercolor-style WWII tactical RPG. Unique blend of real-time movement and turn-based combat. Hidden gem.",
-      "consoleCover": "covers/ps3/valkyria-chronicles.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/bvmjjiorjpcclmdorauw.jpg",
+      "igdbRating": 85.2
     },
     {
       "t": "Journey (PS3)",
@@ -3435,7 +3477,8 @@
         "classic"
       ],
       "d": "Walk across a desert to a glowing mountain with a stranger. No words, no combat. One of gaming's most moving experiences.",
-      "consoleCover": "covers/ps3/journey-ps3.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob9lk.jpg",
+      "igdbRating": 85.8
     },
     {
       "t": "LittleBigPlanet (PS3)",
@@ -3450,7 +3493,8 @@
         "couch"
       ],
       "d": "Play, create, share. Sackboy platformer with a full level editor. 4-player couch co-op childhood staple.",
-      "consoleCover": "covers/ps3/littlebigplanet-ps3.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4p0f.jpg",
+      "igdbRating": 79.2
     },
     {
       "t": "LittleBigPlanet 2",
@@ -3464,7 +3508,8 @@
         "couch"
       ],
       "d": "Expanded creation tools and a great story mode. The definitive LBP experience.",
-      "consoleCover": "covers/ps3/littlebigplanet-2.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2ijw.jpg",
+      "igdbRating": 82.6
     },
     {
       "t": "Heavy Rain (PS3)",
@@ -3477,7 +3522,8 @@
         "classic"
       ],
       "d": "Interactive noir thriller. Four characters, one killer, branching story. Perfect couch watch-together experience.",
-      "consoleCover": "covers/ps3/heavy-rain-ps3.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coaajv.jpg",
+      "igdbRating": 81.5
     },
     {
       "t": "Infamous (PS3)",
@@ -3490,7 +3536,8 @@
         "classic"
       ],
       "d": "Electricity-powered open world superhero game. Cole MacGrath in Empire City — moral choices shape your powers.",
-      "consoleCover": "covers/ps3/infamous-ps3.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co525t.jpg",
+      "igdbRating": 76.3
     },
     {
       "t": "Fallout 3 (PS3)",
@@ -3503,7 +3550,8 @@
         "classic"
       ],
       "d": "Post-apocalyptic Washington DC. VATS, exploration, radio — the game that made open world RPGs mainstream.",
-      "consoleCover": "covers/ps3/fallout-3-ps3.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1ycw.jpg",
+      "igdbRating": 83.3
     },
     {
       "t": "Fallout: New Vegas (PS3)",
@@ -3516,7 +3564,8 @@
         "classic"
       ],
       "d": "The best Fallout. Faction politics, real consequences, the Mojave wasteland. Obsidian's masterpiece.",
-      "consoleCover": "covers/ps3/fallout-new-vegas-ps3.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1u60.jpg",
+      "igdbRating": 87.1
     },
     {
       "t": "Saints Row: The Third",
@@ -3530,7 +3579,8 @@
         "online"
       ],
       "d": "GTA but completely unhinged. Superpowers, wrestling matches, airdrops — the most chaotic open world game ever.",
-      "consoleCover": "covers/ps3/saints-row-the-third.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2634.jpg",
+      "igdbRating": 78.1
     },
     {
       "t": "Spec Ops: The Line",
@@ -3542,7 +3592,8 @@
         "must"
       ],
       "d": "Third-person shooter that deconstructs shooter violence. Heart of Darkness in Dubai. Haunting and important.",
-      "consoleCover": "covers/ps3/spec-ops-the-line.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2acb.jpg",
+      "igdbRating": 82.1
     },
     {
       "t": "3D Dot Game Heroes",
@@ -3552,7 +3603,8 @@
       "p": "PS3",
       "f": [],
       "d": "Pixel voxel art Zelda homage. Create your own hero sprite, explore dungeons — charming love letter to retro gaming.",
-      "consoleCover": "covers/ps3/3d-dot-game-heroes.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1uui.jpg",
+      "igdbRating": 73.8
     },
     {
       "t": "Puppeteer (PS3)",
@@ -3565,7 +3617,8 @@
         "couch"
       ],
       "d": "Japanese theatrical platformer. Puppets on a stage, heads as power-ups, stunning visual design. Forgotten masterpiece.",
-      "consoleCover": "covers/ps3/puppeteer-ps3.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7k0q.jpg",
+      "igdbRating": 82.3
     },
     {
       "t": "Rayman Origins (PS3)",
@@ -3579,7 +3632,8 @@
         "couch"
       ],
       "d": "Gorgeous 2D platformer with 4-player couch co-op. UbiArt engine at its most beautiful. Pure platforming joy.",
-      "consoleCover": "covers/ps3/rayman-origins-ps3.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1v7k.jpg",
+      "igdbRating": 83.1
     },
     {
       "t": "God of War: Chains of Olympus",
@@ -3592,7 +3646,8 @@
         "classic"
       ],
       "d": "Full God of War experience on PSP. Prequel to the PS2 games, incredible for handheld hardware.",
-      "consoleCover": "covers/psp/god-of-war-chains-of-olympus.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3dip.jpg",
+      "igdbRating": 77.4
     },
     {
       "t": "God of War: Ghost of Sparta",
@@ -3605,7 +3660,8 @@
         "classic"
       ],
       "d": "Even better than Chains of Olympus. Deimos' story, emotional beats, best PSP action game ever made.",
-      "consoleCover": "covers/psp/god-of-war-ghost-of-sparta.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3dio.jpg",
+      "igdbRating": 81.2
     },
     {
       "t": "GTA: Liberty City Stories",
@@ -3618,7 +3674,8 @@
         "classic"
       ],
       "d": "Full GTA experience on handheld. Liberty City stories set before GTA III — impressively faithful port.",
-      "consoleCover": "covers/psp/gta-liberty-city-stories.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2lbg.jpg",
+      "igdbRating": 73.7
     },
     {
       "t": "GTA: Vice City Stories",
@@ -3631,7 +3688,8 @@
         "classic"
       ],
       "d": "Empire building mechanic added to Vice City. One of the best PSP open world games ever made.",
-      "consoleCover": "covers/psp/gta-vice-city-stories.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2lc8.jpg",
+      "igdbRating": 75.8
     },
     {
       "t": "Persona 3 Portable",
@@ -3644,7 +3702,8 @@
         "classic"
       ],
       "d": "Full Persona 3 on handheld with new female protagonist route. JRPG masterpiece — available now on modern platforms.",
-      "consoleCover": "covers/psp/persona-3-portable.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1n1z.jpg",
+      "igdbRating": 84.4
     },
     {
       "t": "Crisis Core: Final Fantasy VII",
@@ -3657,7 +3716,8 @@
         "classic"
       ],
       "d": "Zack Fair's story before FFVII. Real-time combat, emotional ending — essential for any Final Fantasy fan.",
-      "consoleCover": "covers/psp/crisis-core-final-fantasy-vii.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1trb.jpg",
+      "igdbRating": 81.6
     },
     {
       "t": "Monster Hunter Freedom Unite",
@@ -3671,7 +3731,8 @@
         "coop"
       ],
       "d": "The game that made Monster Hunter. Hunt monsters, craft gear, repeat forever. Addictive loop that never gets old.",
-      "consoleCover": "covers/psp/monster-hunter-freedom-unite.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2hcz.jpg",
+      "igdbRating": 85.3
     },
     {
       "t": "Patapon",
@@ -3684,7 +3745,8 @@
         "classic"
       ],
       "d": "Rhythm-based strategy with tribal warriors. Drum commands, impossible to describe, impossible to put down.",
-      "consoleCover": "covers/psp/patapon.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobe8f.jpg",
+      "igdbRating": 79.1
     },
     {
       "t": "LocoRoco",
@@ -3697,7 +3759,8 @@
         "classic"
       ],
       "d": "Tilt to roll colorful blobs through a world. Completely original concept, joyful music, Vita-perfect controls.",
-      "consoleCover": "covers/psp/locoroco.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1pnk.jpg",
+      "igdbRating": 81.8
     },
     {
       "t": "Metal Gear Solid: Peace Walker",
@@ -3711,7 +3774,8 @@
         "coop"
       ],
       "d": "Big Boss builds Mother Base. Co-op missions, base management, emotional conclusion to the Cold War MGS saga.",
-      "consoleCover": "covers/psp/metal-gear-solid-peace-walker.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coawb5.jpg",
+      "igdbRating": 80.1
     },
     {
       "t": "Dissidia: Final Fantasy",
@@ -3724,7 +3788,8 @@
         "classic"
       ],
       "d": "Fighting game with every Final Fantasy hero and villain. 3D arena battles, deep RPG leveling, fan service peak.",
-      "consoleCover": "covers/psp/dissidia-final-fantasy.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co205i.jpg",
+      "igdbRating": 73.9
     },
     {
       "t": "Lumines (PSP)",
@@ -3737,7 +3802,8 @@
         "classic"
       ],
       "d": "Music-rhythm puzzle game. Falling blocks matched to electronic music. Created by Tetsuya Mizuguchi — still incredible.",
-      "consoleCover": "covers/psp/lumines-psp.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co53gv.jpg",
+      "igdbRating": 80.9
     },
     {
       "t": "Wipeout Pure",
@@ -3749,7 +3815,8 @@
         "classic"
       ],
       "d": "Anti-gravity racing at its best. Incredible techno soundtrack, tight controls, beautiful for PSP hardware.",
-      "consoleCover": "covers/psp/wipeout-pure.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4azw.jpg",
+      "igdbRating": 80
     },
     {
       "t": "Tekken: Dark Resurrection",
@@ -3762,7 +3829,8 @@
         "couch"
       ],
       "d": "Full Tekken 5 on a handheld. Ad-hoc multiplayer, ghost battles, the best PSP fighting game.",
-      "consoleCover": "covers/psp/tekken-dark-resurrection.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co46qz.jpg",
+      "igdbRating": 70
     },
     {
       "t": "Persona 4 Golden",
@@ -3775,7 +3843,8 @@
         "classic"
       ],
       "d": "The definitive version of the best JRPG ever made. Social links, dungeon crawling, Inaba — perfect in every way.",
-      "consoleCover": "covers/vita/persona-4-golden.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1n1x.jpg",
+      "igdbRating": 94.4
     },
     {
       "t": "Gravity Rush (Vita)",
@@ -3788,7 +3857,8 @@
         "classic"
       ],
       "d": "Shift gravity to fall in any direction. Kat is one of gaming's best characters. Unique traversal on Vita.",
-      "consoleCover": "covers/vita/gravity-rush-vita.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5tgy.jpg",
+      "igdbRating": 80.3
     },
     {
       "t": "Uncharted: Golden Abyss",
@@ -3801,7 +3871,8 @@
         "classic"
       ],
       "d": "Full Uncharted experience on Vita. Incredible tech showcase for the hardware on launch.",
-      "consoleCover": "covers/vita/uncharted-golden-abyss.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1un0.jpg",
+      "igdbRating": 71.9
     },
     {
       "t": "Killzone: Mercenary",
@@ -3814,7 +3885,8 @@
         "classic"
       ],
       "d": "The best FPS ever made on a handheld. Console-quality graphics and gameplay on Vita hardware.",
-      "consoleCover": "covers/vita/killzone-mercenary.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1v41.jpg",
+      "igdbRating": 75.8
     },
     {
       "t": "Tearaway (Vita)",
@@ -3827,7 +3899,8 @@
         "classic"
       ],
       "d": "Paper craft world that uses every Vita feature. Rear touchpad, front camera — charming and completely original.",
-      "consoleCover": "covers/vita/tearaway-vita.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2h0d.jpg",
+      "igdbRating": 82.8
     },
     {
       "t": "Freedom Wars",
@@ -3841,7 +3914,8 @@
         "coop"
       ],
       "d": "Post-apocalyptic action RPG. Sentenced prisoners, monster hunts, chain mechanics — co-op on Vita via ad-hoc.",
-      "consoleCover": "covers/vita/freedom-wars.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2h0f.jpg",
+      "igdbRating": 73.2
     },
     {
       "t": "Danganronpa: Trigger Happy Havoc",
@@ -3854,7 +3928,8 @@
         "classic"
       ],
       "d": "Visual novel murder mystery. Trapped students, killing game, Monokuma — completely gripping from start to finish.",
-      "consoleCover": "covers/vita/danganronpa-trigger-happy-havoc.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1n1w.jpg",
+      "igdbRating": 82
     },
     {
       "t": "Danganronpa 2: Goodbye Despair",
@@ -3867,7 +3942,8 @@
         "classic"
       ],
       "d": "Sequel that improves on every aspect. New island, new cast, even more shocking twists. Now available on PC too.",
-      "consoleCover": "covers/vita/danganronpa-2-goodbye-despair.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2h6j.jpg",
+      "igdbRating": 83.4
     },
     {
       "t": "Wipeout 2048 (Vita)",
@@ -3880,7 +3956,8 @@
         "classic"
       ],
       "d": "Anti-gravity racing prequel. Beautiful visuals for Vita hardware, tight controls, incredible soundtrack.",
-      "consoleCover": "covers/vita/wipeout-2048-vita.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobpvf.jpg",
+      "igdbRating": 81.4
     },
     {
       "t": "Hotline Miami (Vita)",
@@ -3893,7 +3970,8 @@
         "classic"
       ],
       "d": "Top-down ultra-violent action puzzle. Plan, execute, die, repeat. Psychedelic, brutal, unforgettable.",
-      "consoleCover": "covers/vita/hotline-miami-vita.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1vqp.jpg",
+      "igdbRating": 83
     },
     {
       "t": "OlliOlli (Vita)",
@@ -3906,7 +3984,8 @@
         "classic"
       ],
       "d": "2D skateboarding roguelite. One-button trick system with incredible depth. Built for handheld play.",
-      "consoleCover": "covers/vita/olliolli-vita.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1ihr.jpg",
+      "igdbRating": 70.3
     },
     {
       "t": "Velocity 2X",
@@ -3919,7 +3998,8 @@
         "classic"
       ],
       "d": "Shoot-em-up combined with foot sections. Teleporting mechanic, incredible speed, best Vita exclusive.",
-      "consoleCover": "covers/vita/velocity-2x.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3wij.jpg",
+      "igdbRating": 88.2
     },
     {
       "t": "Muramasa Rebirth",
@@ -3931,7 +4011,8 @@
         "classic"
       ],
       "d": "Japanese watercolor art action game. Two characters, hundreds of swords, gorgeous 2D combat.",
-      "consoleCover": "covers/vita/muramasa-rebirth.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4hjj.jpg",
+      "igdbRating": 80.2
     },
     {
       "t": "Dragon's Crown",
@@ -3944,7 +4025,8 @@
         "coop"
       ],
       "d": "Side-scrolling beat-em-up with RPG depth. 6 classes, beautiful painted art style, co-op dungeons.",
-      "consoleCover": "covers/vita/dragons-crown.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3wc6.jpg",
+      "igdbRating": 78.5
     },
     {
       "t": "Sound Shapes (Vita)",
@@ -3956,7 +4038,8 @@
         "classic"
       ],
       "d": "Platformer where everything you touch creates music. Deadmau5 and Beck contributed levels — unique experience.",
-      "consoleCover": "covers/vita/sound-shapes-vita.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2itt.jpg",
+      "igdbRating": 73.9
     },
     {
       "t": "Pokemon HeartGold / SoulSilver",
@@ -4008,7 +4091,8 @@
         "classic"
       ],
       "d": "First portable Mario Kart with proper online play. Retro tracks, mission mode — still one of the best in the series.",
-      "consoleCover": "covers/nds/mario-kart-ds.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob9rx.jpg",
+      "igdbRating": 81.9
     },
     {
       "t": "New Super Mario Bros. DS",
@@ -4021,7 +4105,7 @@
         "classic"
       ],
       "d": "2D Mario returned after 20 years. Fresh, tight, nostalgic — launched a new era of 2D platformers.",
-      "consoleCover": "covers/nds/new-super-mario-bros-ds.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6vyz.jpg"
     },
     {
       "t": "Mario & Luigi: Bowser's Inside Story",
@@ -4034,7 +4118,8 @@
         "classic"
       ],
       "d": "Best Mario & Luigi game. Play inside Bowser's body and outside simultaneously. Hilarious, creative writing.",
-      "consoleCover": "covers/nds/mario-luigi-bowsers-inside-story.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co21vr.jpg",
+      "igdbRating": 89.4
     },
     {
       "t": "The Legend of Zelda: Phantom Hourglass",
@@ -4047,7 +4132,8 @@
         "classic"
       ],
       "d": "Wind Waker sequel on DS. Touchscreen controls work beautifully. The Temple of the Ocean King is brilliant.",
-      "consoleCover": "covers/nds/the-legend-of-zelda-phantom-hourglass.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3ocu.jpg",
+      "igdbRating": 76.4
     },
     {
       "t": "Chrono Trigger DS",
@@ -4073,7 +4159,8 @@
         "classic"
       ],
       "d": "Best DS Metroidvania. Soul system lets you absorb enemy powers. Tight, deep, endlessly replayable.",
-      "consoleCover": "covers/nds/castlevania-dawn-of-sorrow.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob9z0.jpg",
+      "igdbRating": 84.5
     },
     {
       "t": "Elite Beat Agents",
@@ -4086,7 +4173,8 @@
         "classic"
       ],
       "d": "Western rhythm game with touching stories. Tap to the beat, save people's lives. One of DS's greatest games.",
-      "consoleCover": "covers/nds/elite-beat-agents.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2dyd.jpg",
+      "igdbRating": 79.3
     },
     {
       "t": "Advance Wars: Dual Strike",
@@ -4099,7 +4187,8 @@
         "classic"
       ],
       "d": "Turn-based military strategy at its finest. CO powers, dual screen battles, deep and accessible.",
-      "consoleCover": "covers/nds/advance-wars-dual-strike.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob9nk.jpg",
+      "igdbRating": 85.9
     },
     {
       "t": "Animal Crossing: Wild World",
@@ -4112,7 +4201,8 @@
         "classic"
       ],
       "d": "First portable Animal Crossing. Real-time clock, online trading — endlessly relaxing daily life sim.",
-      "consoleCover": "covers/nds/animal-crossing-wild-world.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3wms.jpg",
+      "igdbRating": 78.4
     },
     {
       "t": "Professor Layton and the Curious Village",
@@ -4125,7 +4215,8 @@
         "classic"
       ],
       "d": "Puzzle adventure with an English village mystery. Hundreds of puzzles, charming story, great music.",
-      "consoleCover": "covers/nds/professor-layton-and-the-curious-village.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob8lr.jpg",
+      "igdbRating": 81.9
     },
     {
       "t": "Phoenix Wright: Ace Attorney",
@@ -4138,7 +4229,8 @@
         "classic"
       ],
       "d": "Objection! Defense lawyer visual novel. Five cases, memorable characters, iconic writing. Still brilliant today.",
-      "consoleCover": "covers/nds/phoenix-wright-ace-attorney.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5z8s.jpg",
+      "igdbRating": 82.6
     },
     {
       "t": "Pokemon X / Y",
@@ -4190,7 +4282,8 @@
         "classic"
       ],
       "d": "The greatest game ever made, now perfectly playable on handheld. 3D makes sense here — masterpiece remastered.",
-      "consoleCover": "covers/n3ds/the-legend-of-zelda-ocarina-of-time-3d.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co600u.jpg",
+      "igdbRating": 90.1
     },
     {
       "t": "The Legend of Zelda: Majora's Mask 3D",
@@ -4203,7 +4296,8 @@
         "classic"
       ],
       "d": "The darkest and most complex Zelda. Three-day cycle, 72 hours, the moon falls — brilliant and haunting.",
-      "consoleCover": "covers/n3ds/the-legend-of-zelda-majoras-mask-3d.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob9x9.jpg",
+      "igdbRating": 90.4
     },
     {
       "t": "The Legend of Zelda: A Link Between Worlds",
@@ -4216,7 +4310,8 @@
         "classic"
       ],
       "d": "Top-down Zelda set in A Link to the Past's Hyrule. Wall-merge mechanic is genius. The best new Zelda in years.",
-      "consoleCover": "covers/n3ds/the-legend-of-zelda-a-link-between-worlds.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3p0j.jpg",
+      "igdbRating": 87.2
     },
     {
       "t": "Super Mario 3D Land",
@@ -4229,7 +4324,8 @@
         "classic"
       ],
       "d": "3D Mario designed for handheld. Tanooki suit returns, 3D effect actually adds depth, hundreds of clever levels.",
-      "consoleCover": "covers/n3ds/super-mario-3d-land.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobab1.jpg",
+      "igdbRating": 80.9
     },
     {
       "t": "Mario Kart 7",
@@ -4242,7 +4338,8 @@
         "classic"
       ],
       "d": "Kart customization and gliders added. Online multiplayer, great track selection — essential 3DS title.",
-      "consoleCover": "covers/n3ds/mario-kart-7.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2146.jpg",
+      "igdbRating": 81.4
     },
     {
       "t": "Fire Emblem: Awakening",
@@ -4255,7 +4352,8 @@
         "classic"
       ],
       "d": "The Fire Emblem that saved the series. Accessible, emotional, deep tactics. Chrom and Lucina's story is brilliant.",
-      "consoleCover": "covers/n3ds/fire-emblem-awakening.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobcko.jpg",
+      "igdbRating": 85.2
     },
     {
       "t": "Animal Crossing: New Leaf",
@@ -4268,7 +4366,8 @@
         "classic"
       ],
       "d": "You are the mayor. Most content of any AC game, deep customization, daily rituals — the best handheld AC.",
-      "consoleCover": "covers/n3ds/animal-crossing-new-leaf.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob8m6.jpg",
+      "igdbRating": 85.5
     },
     {
       "t": "Bravely Default",
@@ -4281,7 +4380,8 @@
         "classic"
       ],
       "d": "Classic JRPG in a gorgeous art style. Brave and Default mechanics reinvent turn-based combat. Love letter to FF.",
-      "consoleCover": "covers/n3ds/bravely-default.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co25nj.jpg",
+      "igdbRating": 74.3
     },
     {
       "t": "Monster Hunter 4 Ultimate",
@@ -4295,7 +4395,8 @@
         "coop"
       ],
       "d": "The peak of handheld Monster Hunter. Mounting system, insect glaive, deep co-op — the gold standard.",
-      "consoleCover": "covers/n3ds/monster-hunter-4-ultimate.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2gkk.jpg",
+      "igdbRating": 90.3
     },
     {
       "t": "Kid Icarus: Uprising",
@@ -4308,7 +4409,8 @@
         "classic"
       ],
       "d": "Masahiro Sakurai's 3DS masterpiece. Air battles, ground sections, 25 chapters of pure creativity and humor.",
-      "consoleCover": "covers/n3ds/kid-icarus-uprising.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob9me.jpg",
+      "igdbRating": 80.5
     },
     {
       "t": "Luigi's Mansion: Dark Moon",
@@ -4321,7 +4423,8 @@
         "classic"
       ],
       "d": "Multiple haunted mansions for Luigi to explore. Poltergust vacuum, clever puzzles, co-op ScareScraper mode.",
-      "consoleCover": "covers/n3ds/luigis-mansion-dark-moon.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3vjj.jpg",
+      "igdbRating": 78.7
     },
     {
       "t": "Shovel Knight (3DS)",
@@ -4334,7 +4437,8 @@
         "classic"
       ],
       "d": "Perfect NES homage with four full campaigns. Beautifully adapted for 3DS handheld play.",
-      "consoleCover": "covers/n3ds/shovel-knight-3ds.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobaa7.jpg",
+      "igdbRating": 85.8
     },
     {
       "t": "Steamworld Dig 2",
@@ -4347,7 +4451,8 @@
         "classic"
       ],
       "d": "Metroidvania mining game. Dig deeper, find upgrades, discover the story. Perfect handheld loop.",
-      "consoleCover": "covers/n3ds/steamworld-dig-2.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co24u8.jpg",
+      "igdbRating": 82.5
     },
     {
       "t": "Metroid: Samus Returns",
@@ -4360,7 +4465,8 @@
         "classic"
       ],
       "d": "Metroid II remake. Melee counter added to the formula, atmospheric, one of the last great 3DS titles.",
-      "consoleCover": "covers/n3ds/metroid-samus-returns.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3j82.jpg",
+      "igdbRating": 82.8
     },
     {
       "t": "Phoenix Wright: Dual Destinies",
@@ -4373,7 +4479,8 @@
         "classic"
       ],
       "d": "The Ace Attorney revival. Great cases, Athena Cykes, emotional finale — essential for visual novel fans.",
-      "consoleCover": "covers/n3ds/phoenix-wright-dual-destinies.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5z8o.jpg",
+      "igdbRating": 74.3
     },
     {
       "t": "Super Mario Galaxy",
@@ -4386,7 +4493,8 @@
         "classic"
       ],
       "d": "3D platformer in space. Gravity-bending levels, orchestral soundtrack, the most creative Mario ever made.",
-      "consoleCover": "covers/wii/super-mario-galaxy.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co21ro.jpg",
+      "igdbRating": 88.7
     },
     {
       "t": "Super Mario Galaxy 2",
@@ -4399,7 +4507,8 @@
         "classic"
       ],
       "d": "More galaxies, more ideas, Yoshi added. Some argue it's even better than the first — top 5 games ever made.",
-      "consoleCover": "covers/wii/super-mario-galaxy-2.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co21tl.jpg",
+      "igdbRating": 89.2
     },
     {
       "t": "The Legend of Zelda: Twilight Princess",
@@ -4412,7 +4521,8 @@
         "classic"
       ],
       "d": "Dark, mature Zelda. Wolf Link, Midna, Hyrule in shadow — the most epic Zelda scope. Gorgeous HD remaster exists.",
-      "consoleCover": "covers/wii/the-legend-of-zelda-twilight-princess.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3w1h.jpg",
+      "igdbRating": 79.6
     },
     {
       "t": "The Legend of Zelda: Skyward Sword",
@@ -4425,7 +4535,8 @@
         "classic"
       ],
       "d": "Zelda's origin story. Motion controls for sword combat, Groose, emotional conclusion to the timeline.",
-      "consoleCover": "covers/wii/the-legend-of-zelda-skyward-sword.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5wrj.jpg",
+      "igdbRating": 81.9
     },
     {
       "t": "Super Smash Bros. Brawl",
@@ -4440,7 +4551,8 @@
         "couch"
       ],
       "d": "The Subspace Emissary adventure plus legendary couch multiplayer. Snake, Sonic added. A generation's party game.",
-      "consoleCover": "covers/wii/super-smash-bros-brawl.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co221w.jpg",
+      "igdbRating": 81.8
     },
     {
       "t": "Mario Kart Wii",
@@ -4455,7 +4567,8 @@
         "couch"
       ],
       "d": "Bikes, 12-player online, Wii Wheel — the best-selling Mario Kart for years. Grumble Volcano still hits hard.",
-      "consoleCover": "covers/wii/mario-kart-wii.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co214e.jpg",
+      "igdbRating": 79.9
     },
     {
       "t": "Metroid Prime Trilogy",
@@ -4468,7 +4581,8 @@
         "classic"
       ],
       "d": "Three Metroid Prime games in one. First-person Metroid with exploration and atmosphere unlike anything else.",
-      "consoleCover": "covers/wii/metroid-prime-trilogy.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co404a.jpg",
+      "igdbRating": 95.2
     },
     {
       "t": "Donkey Kong Country Returns (Wii)",
@@ -4483,7 +4597,8 @@
         "couch"
       ],
       "d": "DKC revival with Retro Studios. Hard as nails, gorgeous, 2-player couch co-op — one of the best 2D platformers.",
-      "consoleCover": "covers/wii/donkey-kong-country-returns-wii.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1wf4.jpg",
+      "igdbRating": 82.8
     },
     {
       "t": "Wii Sports Resort",
@@ -4498,7 +4613,8 @@
         "couch"
       ],
       "d": "The definitive party game of the Wii era. Swordplay, basketball, table tennis — MotionPlus made this perfect.",
-      "consoleCover": "covers/wii/wii-sports-resort.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2may.jpg",
+      "igdbRating": 78.5
     },
     {
       "t": "Rayman Origins (Wii)",
@@ -4513,7 +4629,8 @@
         "couch"
       ],
       "d": "Gorgeous 2D platformer with 4-player couch co-op. UbiArt engine at its most joyful and creative.",
-      "consoleCover": "covers/wii/rayman-origins-wii.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1v7k.jpg",
+      "igdbRating": 83.1
     },
     {
       "t": "The Last Story (Wii)",
@@ -4526,7 +4643,8 @@
         "classic"
       ],
       "d": "Hironobu Sakaguchi's Wii RPG. Online multiplayer, real-time combat, emotional story. Rare Western release.",
-      "consoleCover": "covers/wii/the-last-story-wii.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob8gc.jpg",
+      "igdbRating": 77
     },
     {
       "t": "No More Heroes (Wii)",
@@ -4539,7 +4657,8 @@
         "classic"
       ],
       "d": "Travis Touchdown ranks up by assassinating the top 10. Stylish, bizarre, Suda51 at his most original.",
-      "consoleCover": "covers/wii/no-more-heroes-wii.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobloo.jpg",
+      "igdbRating": 79.7
     },
     {
       "t": "The Legend of Zelda: Breath of the Wild (Wii U)",
@@ -4551,7 +4670,8 @@
         "must"
       ],
       "d": "Open world Zelda that reinvented the series. Physics engine, cooking, climbing — the definitive BOTW version for collectors.",
-      "consoleCover": "covers/wiiu/the-legend-of-zelda-breath-of-the-wild-wii-u.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3p2d.jpg",
+      "igdbRating": 92.5
     },
     {
       "t": "Mario Kart 8 (Wii U)",
@@ -4566,7 +4686,8 @@
         "party"
       ],
       "d": "Anti-gravity tracks, incredible visuals, 200cc mode. The definitive Mario Kart before Deluxe refined it further.",
-      "consoleCover": "covers/wiiu/mario-kart-8-wii-u.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co213q.jpg",
+      "igdbRating": 86.6
     },
     {
       "t": "Super Smash Bros. for Wii U",
@@ -4581,7 +4702,8 @@
         "party"
       ],
       "d": "Huge roster, custom movesets, 8-player smash. The most ambitious Smash before Ultimate.",
-      "consoleCover": "covers/wiiu/super-smash-bros-for-wii-u.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co213x.jpg",
+      "igdbRating": 83.4
     },
     {
       "t": "Splatoon (Wii U)",
@@ -4596,7 +4718,8 @@
         "online"
       ],
       "d": "Nintendo's original shooter. Ink-based territory control, original concept — proof Nintendo can do shooters.",
-      "consoleCover": "covers/wiiu/splatoon-wii-u.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob8ra.jpg",
+      "igdbRating": 81.1
     },
     {
       "t": "Bayonetta 2 (Wii U)",
@@ -4609,7 +4732,8 @@
         "classic"
       ],
       "d": "Best action game ever made. Witch Time, hair weapons, hair portals — technical mastery beyond any other game.",
-      "consoleCover": "covers/wiiu/bayonetta-2-wii-u.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob9e9.jpg",
+      "igdbRating": 87.5
     },
     {
       "t": "Donkey Kong Country: Tropical Freeze (Wii U)",
@@ -4624,7 +4748,8 @@
         "couch"
       ],
       "d": "Retro Studios' masterpiece. Beautifully crafted levels, David Wise soundtrack, challenging and gorgeous.",
-      "consoleCover": "covers/wiiu/donkey-kong-country-tropical-freeze-wii-u.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1wf2.jpg",
+      "igdbRating": 83.1
     },
     {
       "t": "Pikmin 3 (Wii U)",
@@ -4639,7 +4764,8 @@
         "couch"
       ],
       "d": "Alien planet strategy game. Beautifully detailed world, 3-captain system, co-op mission mode.",
-      "consoleCover": "covers/wiiu/pikmin-3-wii-u.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1p9e.jpg",
+      "igdbRating": 79.1
     },
     {
       "t": "Super Mario Maker (Wii U)",
@@ -4654,7 +4780,8 @@
         "couch"
       ],
       "d": "Create and share Mario levels. The most creative Nintendo game ever released. Gamepad is perfect for building.",
-      "consoleCover": "covers/wiiu/super-mario-maker-wii-u.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co21vl.jpg",
+      "igdbRating": 81
     },
     {
       "t": "Hyrule Warriors (Wii U)",
@@ -4668,7 +4795,8 @@
         "couch"
       ],
       "d": "Zelda meets Dynasty Warriors. Mow down thousands of enemies as Zelda characters — couch co-op chaos.",
-      "consoleCover": "covers/wiiu/hyrule-warriors-wii-u.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3p0r.jpg",
+      "igdbRating": 73.3
     },
     {
       "t": "The Legend of Zelda: Breath of the Wild",
@@ -4680,7 +4808,8 @@
         "must"
       ],
       "d": "Open world Zelda that reinvented the series. Physics-based puzzles, cooking, emergent moments — paradigm shift.",
-      "consoleCover": "covers/nsw/the-legend-of-zelda-breath-of-the-wild.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3p2d.jpg",
+      "igdbRating": 92.5
     },
     {
       "t": "The Legend of Zelda: Tears of the Kingdom",
@@ -4692,7 +4821,8 @@
         "must"
       ],
       "d": "Built on BOTW's world with Ultrahand and Fuse. Sky islands, Depths, building vehicles — sequel that surpasses original.",
-      "consoleCover": "covers/nsw/the-legend-of-zelda-tears-of-the-kingdom.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5vmg.jpg",
+      "igdbRating": 92.9
     },
     {
       "t": "Super Mario Odyssey (Switch)",
@@ -4704,7 +4834,8 @@
         "must"
       ],
       "d": "Mario captures enemies with his hat. New Donk City, Moon Kingdom, incredible density of ideas per level.",
-      "consoleCover": "covers/nsw/super-mario-odyssey-switch.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1mxf.jpg",
+      "igdbRating": 89
     },
     {
       "t": "Animal Crossing: New Horizons",
@@ -4718,7 +4849,8 @@
         "online"
       ],
       "d": "Deserted island daily life. Launched during COVID lockdowns and became cultural phenomenon. Co-op visiting islands.",
-      "consoleCover": "covers/nsw/animal-crossing-new-horizons.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3wls.jpg",
+      "igdbRating": 82.4
     },
     {
       "t": "Splatoon 2",
@@ -4733,7 +4865,8 @@
         "couch"
       ],
       "d": "Expanded on the original with Salmon Run co-op mode. Ink turf wars, fresh fashion, great multiplayer.",
-      "consoleCover": "covers/nsw/splatoon-2.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob8r9.jpg",
+      "igdbRating": 81.8
     },
     {
       "t": "Splatoon 3",
@@ -4747,7 +4880,8 @@
         "couch"
       ],
       "d": "New maps, new weapons, Tableturf card game. Best Salmon Run yet — the definitive Splatoon experience.",
-      "consoleCover": "covers/nsw/splatoon-3.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co59x3.jpg",
+      "igdbRating": 82.1
     },
     {
       "t": "Fire Emblem: Three Houses",
@@ -4759,7 +4893,8 @@
         "must"
       ],
       "d": "Teach students at a military academy then go to war. Four routes, deep relationships, best strategy game on Switch.",
-      "consoleCover": "covers/nsw/fire-emblem-three-houses.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1n8t.jpg",
+      "igdbRating": 86.2
     },
     {
       "t": "Astral Chain",
@@ -4771,7 +4906,8 @@
         "must"
       ],
       "d": "PlatinumGames action game with Legions tethered to you. Unique dual-combat system, incredible style and pace.",
-      "consoleCover": "covers/nsw/astral-chain.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobd39.jpg",
+      "igdbRating": 81
     },
     {
       "t": "Metroid Dread",
@@ -4783,7 +4919,8 @@
         "must"
       ],
       "d": "2D Metroid masterpiece. EMMI enemies create pure terror, movement system the best in any 2D Metroid ever.",
-      "consoleCover": "covers/nsw/metroid-dread.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coba9g.jpg",
+      "igdbRating": 84.8
     },
     {
       "t": "Kirby and the Forgotten Land",
@@ -4797,7 +4934,8 @@
         "couch"
       ],
       "d": "First fully 3D Kirby. Post-apocalyptic world, Mouthful Mode, 2-player co-op — charming and surprisingly deep.",
-      "consoleCover": "covers/nsw/kirby-and-the-forgotten-land.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3vlw.jpg",
+      "igdbRating": 82.5
     },
     {
       "t": "Luigi's Mansion 3",
@@ -4811,7 +4949,8 @@
         "couch"
       ],
       "d": "Ghost-hunting in a hotel. Gooigi enables co-op, floor-by-floor exploration, best Luigi's Mansion ever made.",
-      "consoleCover": "covers/nsw/luigis-mansion-3.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co22a9.jpg",
+      "igdbRating": 83.4
     },
     {
       "t": "Mario + Rabbids Kingdom Battle",
@@ -4825,7 +4964,8 @@
         "couch"
       ],
       "d": "XCOM meets Mario — should be terrible, is brilliant. Turn-based tactics with Mario humor. Co-op campaign included.",
-      "consoleCover": "covers/nsw/mario-rabbids-kingdom-battle.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2274.jpg",
+      "igdbRating": 77.3
     },
     {
       "t": "Xenoblade Chronicles 3",
@@ -4837,7 +4977,8 @@
         "must"
       ],
       "d": "Emotional JRPG epic. Six characters from opposing armies, colony system, over 100 hours — best in the series.",
-      "consoleCover": "covers/nsw/xenoblade-chronicles-3.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4ocq.jpg",
+      "igdbRating": 85
     },
     {
       "t": "Pokemon Legends: Arceus",
@@ -4849,7 +4990,8 @@
         "must"
       ],
       "d": "Open world Pokemon in feudal Sinnoh. Catch without battling, seamless world, finally a different Pokemon formula.",
-      "consoleCover": "covers/nsw/pokemon-legends-arceus.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3d03.jpg",
+      "igdbRating": 77
     },
     {
       "t": "Bayonetta 3 (Switch)",
@@ -4861,7 +5003,8 @@
         "classic"
       ],
       "d": "Multiverse Bayonetta with Viola added as new character. Summoning demons in real-time combat — chaotic and spectacular.",
-      "consoleCover": "covers/nsw/bayonetta-3-switch.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4z2i.jpg",
+      "igdbRating": 81.6
     },
     {
       "t": "Pikmin 4",
@@ -4874,7 +5017,8 @@
         "couch"
       ],
       "d": "Most accessible Pikmin. New dog companion Oatchi, time rewind, Dandori challenges — great entry point to the series.",
-      "consoleCover": "covers/nsw/pikmin-4.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coba9h.jpg",
+      "igdbRating": 85.3
     },
     {
       "t": "Hollow Knight (Switch)",
@@ -4886,7 +5030,8 @@
         "must"
       ],
       "d": "Team Cherry's masterpiece on Switch. Portable Metroidvania perfection — one of the best games ever made.",
-      "consoleCover": "covers/nsw/hollow-knight-switch.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobfzp.jpg",
+      "igdbRating": 91.9
     },
     {
       "t": "Hades (Switch)",
@@ -4898,7 +5043,8 @@
         "must"
       ],
       "d": "The best roguelite on Switch. Portable roguelite in handheld mode is the perfect way to play.",
-      "consoleCover": "covers/nsw/hades-switch.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob9kr.jpg",
+      "igdbRating": 89.4
     },
     {
       "t": "Celeste (Switch)",
@@ -4910,7 +5056,8 @@
         "must"
       ],
       "d": "Perfect platformer on Switch. Assist mode makes it accessible to all. Emotional narrative hits differently portable.",
-      "consoleCover": "covers/nsw/celeste-switch.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob9dh.jpg",
+      "igdbRating": 86.7
     },
     {
       "t": "Stardew Valley (Switch)",
@@ -4923,7 +5070,8 @@
         "coop"
       ],
       "d": "Farming life RPG on Switch is the ultimate portable comfort game. Co-op added makes it even better.",
-      "consoleCover": "covers/nsw/stardew-valley-switch.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coa93h.jpg",
+      "igdbRating": 86.2
     },
     {
       "t": "Mario & Luigi: Dream Team",
@@ -4936,7 +5084,8 @@
         "classic"
       ],
       "d": "Bros attacks in the dream world. Giant battles on the bottom screen — the most creative Mario & Luigi entry.",
-      "consoleCover": "covers/n3ds/mario-luigi-dream-team.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4ahq.jpg",
+      "igdbRating": 77.9
     },
     {
       "t": "Mario & Luigi: Paper Jam",
@@ -4948,7 +5097,8 @@
         "classic"
       ],
       "d": "Two RPG universes collide. Paper Mario meets Mario & Luigi. Trio attacks, great humor, solid entry.",
-      "consoleCover": "covers/n3ds/mario-luigi-paper-jam.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4ahr.jpg",
+      "igdbRating": 65.4
     },
     {
       "t": "Kirby: Triple Deluxe",
@@ -4961,7 +5111,8 @@
         "classic"
       ],
       "d": "Kirby platformer with hypernova power. Beautiful 3D depth effects, tight levels, fantastic boss fights.",
-      "consoleCover": "covers/n3ds/kirby-triple-deluxe.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1q9m.jpg",
+      "igdbRating": 80.8
     },
     {
       "t": "Kirby: Planet Robobot",
@@ -4974,7 +5125,8 @@
         "classic"
       ],
       "d": "Kirby absorbs mechs. Mechanical aesthetic twist on the formula — arguably the best 3DS Kirby game.",
-      "consoleCover": "covers/n3ds/kirby-planet-robobot.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobcm6.jpg",
+      "igdbRating": 83.3
     },
     {
       "t": "Tomodachi Life",
@@ -4987,7 +5139,8 @@
         "classic"
       ],
       "d": "Import your Miis and watch them live their bizarre lives. Zero gameplay, infinite entertainment — social sim chaos.",
-      "consoleCover": "covers/n3ds/tomodachi-life.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6tg3.jpg",
+      "igdbRating": 74.1
     },
     {
       "t": "Fantasy Life",
@@ -5000,7 +5153,8 @@
         "classic"
       ],
       "d": "Action RPG where you choose one of 12 life classes. Blacksmith, mage, paladin — deep and endlessly charming.",
-      "consoleCover": "covers/n3ds/fantasy-life.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co53xk.jpg",
+      "igdbRating": 85.5
     },
     {
       "t": "Rune Factory 4",
@@ -5013,7 +5167,8 @@
         "classic"
       ],
       "d": "Harvest Moon meets dungeon crawling. Farm, fight, fall in love. One of the best relaxation RPGs ever made.",
-      "consoleCover": "covers/n3ds/rune-factory-4.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2xko.jpg",
+      "igdbRating": 78.3
     },
     {
       "t": "Story of Seasons",
@@ -5025,7 +5180,8 @@
         "classic"
       ],
       "d": "Original Harvest Moon rebranded. Farming, shipping crops, building relationships — the definitive 3DS farm sim.",
-      "consoleCover": "covers/n3ds/story-of-seasons.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2xl4.jpg",
+      "igdbRating": 71.5
     },
     {
       "t": "Etrian Odyssey IV",
@@ -5051,7 +5207,8 @@
         "classic"
       ],
       "d": "Post-apocalyptic demon collection RPG. Press-turn system, alignment choices, dark tone. Gateway SMT game.",
-      "consoleCover": "covers/n3ds/shin-megami-tensei-iv.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1n26.jpg",
+      "igdbRating": 80.1
     },
     {
       "t": "Persona Q: Shadow of the Labyrinth",
@@ -5064,7 +5221,8 @@
         "classic"
       ],
       "d": "Persona meets Etrian Odyssey dungeon crawling. P3 and P4 casts together — fan service done right.",
-      "consoleCover": "covers/n3ds/persona-q-shadow-of-the-labyrinth.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6jpi.jpg",
+      "igdbRating": 89.1
     },
     {
       "t": "Fire Emblem Fates: Conquest",
@@ -5077,7 +5235,8 @@
         "classic"
       ],
       "d": "The hardest Fire Emblem. No grinding, brutal maps, demands strategic mastery. For veterans.",
-      "consoleCover": "covers/n3ds/fire-emblem-fates-conquest.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobaaj.jpg",
+      "igdbRating": 79.3
     },
     {
       "t": "Fire Emblem Echoes: Shadows of Valentia",
@@ -5090,7 +5249,8 @@
         "classic"
       ],
       "d": "Gaiden remake with full voice acting. Dungeon exploration, unique class system, emotional story.",
-      "consoleCover": "covers/n3ds/fire-emblem-echoes-shadows-of-valentia.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coba3w.jpg",
+      "igdbRating": 83.9
     },
     {
       "t": "Bravely Second: End Layer",
@@ -5103,7 +5263,8 @@
         "classic"
       ],
       "d": "Sequel to Bravely Default. Improved job system, great new characters, more of what made the first brilliant.",
-      "consoleCover": "covers/n3ds/bravely-second-end-layer.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobcnw.jpg",
+      "igdbRating": 70.3
     },
     {
       "t": "Theatrhythm Final Fantasy",
@@ -5116,7 +5277,8 @@
         "classic"
       ],
       "d": "Final Fantasy music rhythm game. Tap along to 70+ iconic tracks. One of the best music games ever made.",
-      "consoleCover": "covers/n3ds/theatrhythm-final-fantasy.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2x5n.jpg",
+      "igdbRating": 80
     },
     {
       "t": "Theatrhythm Final Fantasy: Curtain Call",
@@ -5128,7 +5290,8 @@
         "classic"
       ],
       "d": "200+ songs, versus mode added. The definitive Theatrhythm experience.",
-      "consoleCover": "covers/n3ds/theatrhythm-final-fantasy-curtain-call.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2roh.jpg",
+      "igdbRating": 82.4
     },
     {
       "t": "Professor Layton vs. Phoenix Wright",
@@ -5141,7 +5304,8 @@
         "classic"
       ],
       "d": "Two iconic puzzle series crossover. Courtroom meets Laytonesque logic — a collaboration that actually works perfectly.",
-      "consoleCover": "covers/n3ds/professor-layton-vs-phoenix-wright.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob8ey.jpg",
+      "igdbRating": 78.3
     },
     {
       "t": "Professor Layton and the Azran Legacy",
@@ -5154,7 +5318,8 @@
         "classic"
       ],
       "d": "Final chapter of the original Layton trilogy. Global adventure, emotional conclusion to the Hershel Layton saga.",
-      "consoleCover": "covers/n3ds/professor-layton-and-the-azran-legacy.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coba9q.jpg",
+      "igdbRating": 72.4
     },
     {
       "t": "Ghost Trick: Phantom Detective",
@@ -5180,7 +5345,8 @@
         "classic"
       ],
       "d": "Escape rooms plus branching story. Prisoner's dilemma with 9 characters. One of the best visual novel games ever.",
-      "consoleCover": "covers/n3ds/zero-escape-virtues-last-reward.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co260l.jpg",
+      "igdbRating": 88.2
     },
     {
       "t": "Nine Hours, Nine Persons, Nine Doors",
@@ -5206,7 +5372,8 @@
         "classic"
       ],
       "d": "Time-travel tactical RPG. Manipulate timelines to find the true history. Deep combat, emotional story.",
-      "consoleCover": "covers/n3ds/radiant-historia-perfect-chronology.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co26im.jpg",
+      "igdbRating": 60.7
     },
     {
       "t": "Xenoblade Chronicles 3D",
@@ -5219,7 +5386,8 @@
         "classic"
       ],
       "d": "Full Xenoblade Chronicles on New 3DS. The JRPG epic fully portable — incredible for the hardware.",
-      "consoleCover": "covers/n3ds/xenoblade-chronicles-3d.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coar97.jpg",
+      "igdbRating": 79.9
     },
     {
       "t": "Monster Hunter Generations",
@@ -5233,7 +5401,8 @@
         "coop"
       ],
       "d": "Hunter Arts and Styles added. Celebration of the series history. Co-op hunting at its most varied.",
-      "consoleCover": "covers/n3ds/monster-hunter-generations.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3xrh.jpg",
+      "igdbRating": 79.7
     },
     {
       "t": "Dragon Quest VII: Fragments of the Forgotten Past",
@@ -5246,7 +5415,8 @@
         "classic"
       ],
       "d": "Longest JRPG ever made. Reconstructing a shattered world fragment by fragment. 200+ hours of content.",
-      "consoleCover": "covers/n3ds/dragon-quest-vii-fragments-of-the-forgotten-past.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1x9h.jpg",
+      "igdbRating": 79.9
     },
     {
       "t": "Dragon Quest VIII: Journey of the Cursed King",
@@ -5259,7 +5429,8 @@
         "classic"
       ],
       "d": "Best Dragon Quest. Hero on a quest to break a curse. Voice acting, photography mechanic, gorgeous art style.",
-      "consoleCover": "covers/n3ds/dragon-quest-viii-journey-of-the-cursed-king.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2xc0.jpg",
+      "igdbRating": 95.3
     },
     {
       "t": "Resident Evil: Revelations (3DS)",
@@ -5272,7 +5443,8 @@
         "classic"
       ],
       "d": "Jill Valentine on a ship. Scan mode, tight corridors, genuinely scary. The best Resident Evil on handheld.",
-      "consoleCover": "covers/n3ds/resident-evil-revelations-3ds.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co54dy.jpg",
+      "igdbRating": 74.1
     },
     {
       "t": "Star Fox 64 3D",
@@ -5285,7 +5457,8 @@
         "classic"
       ],
       "d": "Perfect remake of the N64 classic. Barrel rolls, Lylat system, Peppy's advice — do a barrel roll.",
-      "consoleCover": "covers/n3ds/star-fox-64-3d.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coba3e.jpg",
+      "igdbRating": 81.7
     },
     {
       "t": "BoxBoy!",
@@ -5298,7 +5471,8 @@
         "classic"
       ],
       "d": "Minimalist box puzzle platformer. Create chains of boxes to solve increasingly clever puzzles. Genius simplicity.",
-      "consoleCover": "covers/n3ds/boxboy.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2595.jpg",
+      "igdbRating": 77.1
     },
     {
       "t": "VVVVVV (3DS)",
@@ -5311,7 +5485,8 @@
         "classic"
       ],
       "d": "Flip gravity instead of jumping. C418-esque chiptune soundtrack, 20 minutes or 3 hours depending on skill.",
-      "consoleCover": "covers/n3ds/vvvvvv-3ds.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4ieg.jpg",
+      "igdbRating": 79.6
     },
     {
       "t": "Shantae and the Pirate's Curse",
@@ -5324,7 +5499,8 @@
         "classic"
       ],
       "d": "Best Shantae game. Genie half lost but pirate gear gained. Tight metroidvania with incredible charm and music.",
-      "consoleCover": "covers/n3ds/shantae-and-the-pirates-curse.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4b1u.jpg",
+      "igdbRating": 80.4
     },
     {
       "t": "Steamworld Heist",
@@ -5337,7 +5513,8 @@
         "classic"
       ],
       "d": "Turn-based tactics with bullet ricocheting. Steam robots in space. More fun than it has any right to be.",
-      "consoleCover": "covers/n3ds/steamworld-heist.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob1ue.jpg",
+      "igdbRating": 79.6
     },
     {
       "t": "Pushmo",
@@ -5350,7 +5527,8 @@
         "classic"
       ],
       "d": "Pull and push blocks to climb to the top. Nintendo puzzle genius at its most elegant. Perfect for handheld.",
-      "consoleCover": "covers/n3ds/pushmo.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3wrv.jpg",
+      "igdbRating": 84.4
     },
     {
       "t": "Castlevania: Lords of Shadow - Mirror of Fate",
@@ -5363,7 +5541,8 @@
         "classic"
       ],
       "d": "Gothic Castlevania with three playable characters across generations. Beautiful and atmospheric.",
-      "consoleCover": "covers/n3ds/castlevania-lords-of-shadow-mirror-of-fate.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1pat.jpg",
+      "igdbRating": 65.8
     },
     {
       "t": "The Legend of Zelda: Tri Force Heroes",
@@ -5377,7 +5556,8 @@
         "online"
       ],
       "d": "Three-player co-op Zelda. Stack on each other's heads, solve puzzles, sew outfits — unusual but brilliant.",
-      "consoleCover": "covers/n3ds/the-legend-of-zelda-tri-force-heroes.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3p1a.jpg",
+      "igdbRating": 63.9
     },
     {
       "t": "Persona Q2: New Cinema Labyrinth",
@@ -5389,7 +5569,8 @@
         "classic"
       ],
       "d": "P3, P4, and P5 casts all together. Movie world dungeons, great character interactions, fan service peak.",
-      "consoleCover": "covers/n3ds/persona-q2-new-cinema-labyrinth.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8l09.jpg",
+      "igdbRating": 96.6
     },
     {
       "t": "Great Ace Attorney Chronicles (3DS)",
@@ -5440,7 +5621,8 @@
         "classic"
       ],
       "d": "Joan of Arc as a tactical JRPG. Beautiful anime art, deep strategy, one of PSP's most overlooked gems.",
-      "consoleCover": "covers/psp/jeanne-darc.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1pnd.jpg",
+      "igdbRating": 79.9
     },
     {
       "t": "Disgaea: Afternoon of Darkness",
@@ -5453,7 +5635,8 @@
         "classic"
       ],
       "d": "Tactical RPG with infinite depth. Level 9999, Item World, billions of stat points. Best PSP strategy game.",
-      "consoleCover": "covers/psp/disgaea-afternoon-of-darkness.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2nl8.jpg",
+      "igdbRating": 80.1
     },
     {
       "t": "Tactics Ogre: Let Us Cling Together",
@@ -5466,7 +5649,8 @@
         "classic"
       ],
       "d": "The definitive version of one of strategy gaming's greatest works. Choices that matter, systems that reward.",
-      "consoleCover": "covers/psp/tactics-ogre-let-us-cling-together.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co53gw.jpg",
+      "igdbRating": 80.5
     },
     {
       "t": "Final Fantasy Tactics: The War of the Lions",
@@ -5479,7 +5663,8 @@
         "classic"
       ],
       "d": "The definitive FFT. Updated sprites, new jobs, full voice acting. Political fantasy tactical RPG masterpiece.",
-      "consoleCover": "covers/psp/final-fantasy-tactics-the-war-of-the-lions.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1pn8.jpg",
+      "igdbRating": 89
     },
     {
       "t": "Final Fantasy IV: The Complete Collection",
@@ -5492,7 +5677,8 @@
         "classic"
       ],
       "d": "FFIV plus all sequels/prequels in one package. The complete Cecil Harvey saga beautifully remastered.",
-      "consoleCover": "covers/psp/final-fantasy-iv-the-complete-collection.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2ybu.jpg",
+      "igdbRating": 73.7
     },
     {
       "t": "Kingdom Hearts: Birth by Sleep",
@@ -5505,7 +5691,8 @@
         "classic"
       ],
       "d": "Three protagonists, three stories, one prequel to KH1. Command Board, D-Links, reveals the true lore of the series.",
-      "consoleCover": "covers/psp/kingdom-hearts-birth-by-sleep.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2ych.jpg",
+      "igdbRating": 85.3
     },
     {
       "t": "Castlevania: The Dracula X Chronicles",
@@ -5518,7 +5705,8 @@
         "classic"
       ],
       "d": "Rondo of Blood remake plus unlockable originals. The crown jewel of PSP platformers.",
-      "consoleCover": "covers/psp/castlevania-the-dracula-x-chronicles.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8t6b.jpg",
+      "igdbRating": 80.4
     },
     {
       "t": "Ys: The Oath in Felghana",
@@ -5531,7 +5719,8 @@
         "classic"
       ],
       "d": "The Ys that converts everyone. Intense boss fights, incredible rock soundtrack, tight action RPG perfection.",
-      "consoleCover": "covers/psp/ys-the-oath-in-felghana.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4kwe.jpg",
+      "igdbRating": 80.4
     },
     {
       "t": "Ys Seven",
@@ -5544,7 +5733,8 @@
         "classic"
       ],
       "d": "Party-based Ys. First team combat in the series, great story, and one of the best soundtracks on PSP.",
-      "consoleCover": "covers/psp/ys-seven.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4vde.jpg",
+      "igdbRating": 79.9
     },
     {
       "t": "Ys I & II Chronicles",
@@ -5557,7 +5747,8 @@
         "classic"
       ],
       "d": "The origins remastered beautifully. Bump combat, incredible music — essential for JRPG history fans.",
-      "consoleCover": "covers/psp/ys-i-ii-chronicles.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coa081.jpg",
+      "igdbRating": 60.7
     },
     {
       "t": "Valkyria Chronicles II (PSP)",
@@ -5570,7 +5761,8 @@
         "classic"
       ],
       "d": "Full Valkyria Chronicles on PSP. Military academy setting, excellent squad tactics, emotional story.",
-      "consoleCover": "covers/psp/valkyria-chronicles-ii-psp.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co25zm.jpg",
+      "igdbRating": 74
     },
     {
       "t": "GTA: Chinatown Wars (PSP)",
@@ -5596,7 +5788,8 @@
         "classic"
       ],
       "d": "Top-down shooter with cover mechanics. One of the best PSP exclusives — technically and gameplay-wise.",
-      "consoleCover": "covers/psp/killzone-liberation-psp.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3jj3.jpg",
+      "igdbRating": 69
     },
     {
       "t": "Half-Minute Hero",
@@ -5609,7 +5802,8 @@
         "classic"
       ],
       "d": "Save the world in 30 seconds. Parodies every RPG trope at breakneck speed. Multiple game modes, pure genius.",
-      "consoleCover": "covers/psp/half-minute-hero.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobe8l.jpg",
+      "igdbRating": 83.6
     },
     {
       "t": "Patapon 2 (PSP)",
@@ -5622,7 +5816,8 @@
         "classic"
       ],
       "d": "Bigger and better Patapon. More gods, more enemies, multiplayer added. The rhythm-strategy peak.",
-      "consoleCover": "covers/psp/patapon-2-psp.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2dzx.jpg",
+      "igdbRating": 79.8
     },
     {
       "t": "Patapon 3",
@@ -5635,7 +5830,8 @@
         "classic"
       ],
       "d": "Final Patapon. Hero units, online multiplayer, deeper build system — series conclusion done right.",
-      "consoleCover": "covers/psp/patapon-3.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3y4w.jpg",
+      "igdbRating": 70.2
     },
     {
       "t": "LocoRoco 2 (PSP)",
@@ -5647,7 +5843,8 @@
         "classic"
       ],
       "d": "More levels, more blobs, more songs. The joyful tilt-platformer expanded and refined.",
-      "consoleCover": "covers/psp/locoroco-2-psp.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7ja3.jpg",
+      "igdbRating": 84.7
     },
     {
       "t": "Wipeout Pulse",
@@ -5659,7 +5856,8 @@
         "classic"
       ],
       "d": "Anti-gravity racing sequel. New track editor, Zone mode, incredible electronic music — must-have PSP racer.",
-      "consoleCover": "covers/psp/wipeout-pulse.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2z2n.jpg",
+      "igdbRating": 73.9
     },
     {
       "t": "Street Fighter Alpha 3 Max",
@@ -5672,7 +5870,8 @@
         "classic"
       ],
       "d": "Complete SF Alpha 3 with extra characters. The portable fighting game for PSP ad-hoc battles.",
-      "consoleCover": "covers/psp/street-fighter-alpha-3-max.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6a2h.jpg",
+      "igdbRating": 81.9
     },
     {
       "t": "Midnight Club: LA Remix",
@@ -5684,7 +5883,8 @@
         "classic"
       ],
       "d": "Open world LA street racing on PSP. Surprisingly faithful to the console version — best PSP racer.",
-      "consoleCover": "covers/psp/midnight-club-la-remix.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2x7r.jpg",
+      "igdbRating": 81.7
     },
     {
       "t": "Gran Turismo (PSP)",
@@ -5696,7 +5896,8 @@
         "classic"
       ],
       "d": "800+ cars, no career mode but pure driving. The tech showcase PSP game that proved handheld sim racing.",
-      "consoleCover": "covers/psp/gran-turismo-psp.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co20bh.jpg",
+      "igdbRating": 70
     },
     {
       "t": "Ridge Racer 2 (PSP)",
@@ -5708,7 +5909,8 @@
         "classic"
       ],
       "d": "The definitive Ridge Racer handheld. Drift mechanics, massive track count, incredible soundtrack.",
-      "consoleCover": "covers/psp/ridge-racer-2-psp.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2nz3.jpg",
+      "igdbRating": 71.4
     },
     {
       "t": "Me & My Katamari",
@@ -5720,7 +5922,8 @@
         "classic"
       ],
       "d": "Roll up islands. Same wonderful Katamari DNA perfectly adapted for PSP handheld play.",
-      "consoleCover": "covers/psp/me-my-katamari.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2hix.jpg",
+      "igdbRating": 69.1
     },
     {
       "t": "Worms: Open Warfare 2",
@@ -5733,7 +5936,8 @@
         "party"
       ],
       "d": "Full Worms experience on PSP. Ad-hoc multiplayer means four players on the same platform — couch classic.",
-      "consoleCover": "covers/psp/worms-open-warfare-2.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1xmh.jpg",
+      "igdbRating": 68.4
     },
     {
       "t": "Ratchet & Clank: Size Matters",
@@ -5745,7 +5949,8 @@
         "classic"
       ],
       "d": "Full Ratchet & Clank on PSP. All the weapons and gadgets you love in a portable package.",
-      "consoleCover": "covers/psp/ratchet-clank-size-matters.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coankv.jpg",
+      "igdbRating": 68.9
     },
     {
       "t": "Daxter (PSP)",
@@ -5757,7 +5962,8 @@
         "classic"
       ],
       "d": "Ottsel exterminator spin-off. One of the best PSP platformers — more than just a spin-off filler.",
-      "consoleCover": "covers/psp/daxter-psp.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1pn3.jpg",
+      "igdbRating": 79.3
     },
     {
       "t": "Burnout Legends (PSP)",
@@ -5769,7 +5975,8 @@
         "classic"
       ],
       "d": "All modes from Burnout 1-3 in a handheld package. Ad-hoc multiplayer crash mode. Essential early PSP game.",
-      "consoleCover": "covers/psp/burnout-legends-psp.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coawah.jpg",
+      "igdbRating": 76.1
     },
     {
       "t": "Syphon Filter: Logan's Shadow",
@@ -5781,7 +5988,7 @@
         "classic"
       ],
       "d": "The best handheld third-person shooter before Killzone Mercenary. Underwater levels, incredible for PSP.",
-      "consoleCover": "covers/psp/syphon-filter-logans-shadow.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2gfv.jpg"
     },
     {
       "t": "Pursuit Force",
@@ -5793,7 +6000,8 @@
         "classic"
       ],
       "d": "Jump between cars at high speed to fight criminals. Pure arcade action unlike anything else on PSP.",
-      "consoleCover": "covers/psp/pursuit-force.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2nyy.jpg",
+      "igdbRating": 60.4
     },
     {
       "t": "No More Heroes 2: Desperate Struggle",
@@ -5806,7 +6014,8 @@
         "classic"
       ],
       "d": "Travis climbs the assassin rankings again. More bosses, better pacing, incredible metal soundtrack.",
-      "consoleCover": "covers/wii/no-more-heroes-2-desperate-struggle.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobp4c.jpg",
+      "igdbRating": 79.6
     },
     {
       "t": "Zack & Wiki: Quest for Barbaros' Treasure",
@@ -5819,7 +6028,8 @@
         "classic"
       ],
       "d": "Point-and-click adventure using Wii Remote. Most creative motion control game ever made. Criminally overlooked.",
-      "consoleCover": "covers/wii/zack-wiki-quest-for-barbaros-treasure.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7k8g.jpg",
+      "igdbRating": 74.4
     },
     {
       "t": "Little King's Story",
@@ -5832,7 +6042,8 @@
         "classic"
       ],
       "d": "Pikmin meets RPG as a child king conquers the world. Charming art, deep systems, surprising emotional depth.",
-      "consoleCover": "covers/wii/little-kings-story.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1uve.jpg",
+      "igdbRating": 70.8
     },
     {
       "t": "Okami (Wii)",
@@ -5845,7 +6056,8 @@
         "classic"
       ],
       "d": "Watercolor Zelda-like with Celestial Brush painting mechanics. Wii remote as paintbrush is the definitive version.",
-      "consoleCover": "covers/wii/okami-wii.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3mpk.jpg",
+      "igdbRating": 87.8
     },
     {
       "t": "Punch-Out!! (Wii)",
@@ -5858,7 +6070,8 @@
         "classic"
       ],
       "d": "Little Mac returns. Pattern recognition boss fights with Wii motion option. Perfect sequel to the NES classic.",
-      "consoleCover": "covers/wii/punch-out-wii.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2f72.jpg",
+      "igdbRating": 84.9
     },
     {
       "t": "Sin and Punishment: Star Successor",
@@ -5871,7 +6084,8 @@
         "classic"
       ],
       "d": "Rail shooter by Treasure. Frantic bullet-dodging, screen-filling bosses, one of the best Wii exclusives.",
-      "consoleCover": "covers/wii/sin-and-punishment-star-successor.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2mk1.jpg",
+      "igdbRating": 79.3
     },
     {
       "t": "Klonoa (Wii)",
@@ -5884,7 +6098,8 @@
         "classic"
       ],
       "d": "2.5D platformer remake. Dreamworld aesthetic, wind bullet mechanic, one of gaming's most emotional endings.",
-      "consoleCover": "covers/wii/klonoa-wii.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co85ez.jpg",
+      "igdbRating": 86.9
     },
     {
       "t": "Kirby's Return to Dream Land",
@@ -5899,7 +6114,8 @@
         "couch"
       ],
       "d": "4-player couch Kirby platformer. Super abilities, UFO copy power, best multiplayer Kirby on Wii.",
-      "consoleCover": "covers/wii/kirbys-return-to-dream-land.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coba1d.jpg",
+      "igdbRating": 86.3
     },
     {
       "t": "Kirby's Epic Yarn",
@@ -5914,7 +6130,8 @@
         "couch"
       ],
       "d": "Yarn aesthetic Kirby. Whip and wrap enemies, incredibly charming visual style, 2-player couch co-op.",
-      "consoleCover": "covers/wii/kirbys-epic-yarn.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1w9w.jpg",
+      "igdbRating": 70.7
     },
     {
       "t": "Super Paper Mario (Wii)",
@@ -5927,7 +6144,8 @@
         "classic"
       ],
       "d": "Flip between 2D and 3D dimensions. Meta humor, great writing, different from standard Paper Mario formula.",
-      "consoleCover": "covers/wii/super-paper-mario-wii.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coba44.jpg",
+      "igdbRating": 78.2
     },
     {
       "t": "Muramasa: The Demon Blade",
@@ -5940,7 +6158,8 @@
         "classic"
       ],
       "d": "Side-scrolling Japanese action with Vanillaware's gorgeous painted art. Two samurai stories, hundreds of swords.",
-      "consoleCover": "covers/wii/muramasa-the-demon-blade.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coa7qa.jpg",
+      "igdbRating": 84.9
     },
     {
       "t": "Tatsunoko vs. Capcom: Ultimate All-Stars",
@@ -5969,7 +6188,8 @@
         "online"
       ],
       "d": "MH on Wii with online lobbies. Underwater combat added, great community, defined a generation of MH fans.",
-      "consoleCover": "covers/wii/monster-hunter-tri-wii.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2ssf.jpg",
+      "igdbRating": 79.9
     },
     {
       "t": "Pandora's Tower",
@@ -5982,7 +6202,8 @@
         "classic"
       ],
       "d": "Dark Zelda-like dungeon crawler. Feed your cursed girlfriend monster flesh. Operation Rainfall cult classic.",
-      "consoleCover": "covers/wii/pandoras-tower.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co26hn.jpg",
+      "igdbRating": 70.3
     },
     {
       "t": "Fire Emblem: Radiant Dawn",
@@ -5995,7 +6216,8 @@
         "classic"
       ],
       "d": "Sequel to Path of Radiance. Ike's story continues on Wii. Harder than almost any other FE — rewarding mastery.",
-      "consoleCover": "covers/wii/fire-emblem-radiant-dawn.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobb09.jpg",
+      "igdbRating": 86.3
     },
     {
       "t": "Pikmin (Wii New Play Control)",
@@ -6034,7 +6256,8 @@
         "classic"
       ],
       "d": "Sonic's best 3D game. Wisps add power-ups, tight level design, genuinely funny writing. The Sonic revival.",
-      "consoleCover": "covers/wii/sonic-colors-wii.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4wdr.jpg",
+      "igdbRating": 68.9
     },
     {
       "t": "Bit.Trip Complete",
@@ -6047,7 +6270,8 @@
         "classic"
       ],
       "d": "All six Bit.Trip games. Commander Video's journey across rhythm-based genres — WiiWare's greatest achievement.",
-      "consoleCover": "covers/wii/bittrip-complete.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co86bm.jpg",
+      "igdbRating": 86
     },
     {
       "t": "World of Goo (WiiWare)",
@@ -6072,7 +6296,8 @@
         "classic"
       ],
       "d": "Roll a blob to paint a city. Cheerful, colorful, great motion controls — unique platformer concept.",
-      "consoleCover": "covers/wii/de-blob-wii.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1n6o.jpg",
+      "igdbRating": 66.5
     },
     {
       "t": "Xenoblade Chronicles (Wii)",
@@ -6085,7 +6310,8 @@
         "classic"
       ],
       "d": "Greatest Wii RPG. Bionis and Mechonis, real-time combat, incredible scope. 100+ hour epic.",
-      "consoleCover": "covers/wii/xenoblade-chronicles-wii.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2609.jpg",
+      "igdbRating": 85.8
     },
     {
       "t": "Arc Rise Fantasia",
@@ -6097,7 +6323,8 @@
         "classic"
       ],
       "d": "Traditional JRPG on Wii. Beautiful art, solid turn-based combat, underrated gem.",
-      "consoleCover": "covers/wii/arc-rise-fantasia.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coazjc.jpg",
+      "igdbRating": 90
     },
     {
       "t": "Boom Blox",
@@ -6111,7 +6338,8 @@
         "couch"
       ],
       "d": "Steven Spielberg produced party physics game. Throw things at blocks. Surprisingly deep and fun.",
-      "consoleCover": "covers/wii/boom-blox.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co86zg.jpg",
+      "igdbRating": 85.8
     },
     {
       "t": "Donkey Kong Jungle Beat (Wii)",
@@ -6123,7 +6351,8 @@
         "classic"
       ],
       "d": "DK platformer originally with bongo controls, updated for Wii remote. Stylish and satisfying.",
-      "consoleCover": "covers/wii/donkey-kong-jungle-beat-wii.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5y6u.jpg",
+      "igdbRating": 79.8
     },
     {
       "t": "New Super Mario Bros. U",
@@ -6137,7 +6366,8 @@
         "couch"
       ],
       "d": "Launch Wii U Mario with 4-player couch co-op. Crisp HD Mario visuals for the first time. Classic platforming.",
-      "consoleCover": "covers/wiiu/new-super-mario-bros-u.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co21ts.jpg",
+      "igdbRating": 78.4
     },
     {
       "t": "Captain Toad: Treasure Tracker (Wii U)",
@@ -6150,7 +6380,8 @@
         "classic"
       ],
       "d": "Toad explores dioramas you can rotate. Puzzle platformer with creative use of the Wii U gamepad camera.",
-      "consoleCover": "covers/wiiu/captain-toad-treasure-tracker-wii-u.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co213z.jpg",
+      "igdbRating": 80.7
     },
     {
       "t": "Yoshi's Woolly World (Wii U)",
@@ -6164,7 +6395,8 @@
         "couch"
       ],
       "d": "Yarn-crafted Yoshi adventure. Amiibo fabric designs, 2-player couch co-op, gorgeous tactile aesthetic.",
-      "consoleCover": "covers/wiiu/yoshis-woolly-world-wii-u.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob88e.jpg",
+      "igdbRating": 71.7
     },
     {
       "t": "Kirby and the Rainbow Curse",
@@ -6178,7 +6410,8 @@
         "couch"
       ],
       "d": "Draw lines on the gamepad for Kirby to follow. Claymation art style, co-op with helpers, unique and charming.",
-      "consoleCover": "covers/wiiu/kirby-and-the-rainbow-curse.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1wcc.jpg",
+      "igdbRating": 77.4
     },
     {
       "t": "Paper Mario: Color Splash",
@@ -6191,7 +6424,8 @@
         "classic"
       ],
       "d": "Card-based Paper Mario. Colorless Prism Island mystery, great humor and writing — underrated in the series.",
-      "consoleCover": "covers/wiiu/paper-mario-color-splash.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coba8x.jpg",
+      "igdbRating": 64.5
     },
     {
       "t": "Wonderful 101",
@@ -6206,7 +6440,8 @@
         "couch"
       ],
       "d": "Unite 100 heroes with drawing gestures. Hideki Kamiya's most creative game. Chaotic, stylish, brilliant.",
-      "consoleCover": "covers/wiiu/wonderful-101.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6r2f.jpg",
+      "igdbRating": 82
     },
     {
       "t": "ZombiU",
@@ -6219,7 +6454,8 @@
         "classic"
       ],
       "d": "Survival horror with permadeath. Gamepad as scanner and inventory — best use of Wii U's unique controller.",
-      "consoleCover": "covers/wiiu/zombiu.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co22ag.jpg",
+      "igdbRating": 72.5
     },
     {
       "t": "Child of Light (Wii U)",
@@ -6232,7 +6468,8 @@
         "classic"
       ],
       "d": "Watercolor fairy tale RPG. Aurora journeys through Lemuria in verse. Beautiful, short, deeply moving.",
-      "consoleCover": "covers/wiiu/child-of-light-wii-u.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co21q2.jpg",
+      "igdbRating": 82.5
     },
     {
       "t": "Affordable Space Adventures (Wii U)",
@@ -6247,7 +6484,8 @@
         "couch"
       ],
       "d": "3-player co-op spaceship puzzle game. Each player controls different ship systems. Best Wii U indie game.",
-      "consoleCover": "covers/wiiu/affordable-space-adventures-wii-u.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2y3y.jpg",
+      "igdbRating": 72.6
     },
     {
       "t": "Fast Racing Neo",
@@ -6259,7 +6497,8 @@
         "classic"
       ],
       "d": "F-Zero successor on Wii U. Phase-switching mechanic, incredible speed, competitive local multiplayer.",
-      "consoleCover": "covers/wiiu/fast-racing-neo.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2dzt.jpg",
+      "igdbRating": 70
     },
     {
       "t": "NES Remix Pack",
@@ -6272,7 +6511,8 @@
         "classic"
       ],
       "d": "Remixed NES challenges in microgame format. Brilliant way to revisit classics with new twists.",
-      "consoleCover": "covers/wiiu/nes-remix-pack.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8fre.jpg",
+      "igdbRating": 80
     },
     {
       "t": "Pokken Tournament (Wii U)",
@@ -6286,7 +6526,8 @@
         "couch"
       ],
       "d": "Pokemon fighting game by Tekken studio. Machamp vs Charizard in a real fighter — surprisingly deep.",
-      "consoleCover": "covers/wiiu/pokken-tournament-wii-u.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1zj1.jpg",
+      "igdbRating": 61.8
     },
     {
       "t": "Fatal Frame: Maiden of Black Water",
@@ -6299,7 +6540,8 @@
         "classic"
       ],
       "d": "Horror game using gamepad as Camera Obscura. Photograph ghosts to defeat them on haunted Mt. Hikami.",
-      "consoleCover": "covers/wiiu/fatal-frame-maiden-of-black-water.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2zcv.jpg",
+      "igdbRating": 81
     },
     {
       "t": "Nintendo Land (Wii U)",
@@ -6314,7 +6556,8 @@
         "couch"
       ],
       "d": "12 attraction theme park. Asymmetric multiplayer using gamepad uniquely. The best Wii U party game.",
-      "consoleCover": "covers/wiiu/nintendo-land-wii-u.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1p9c.jpg",
+      "igdbRating": 75.3
     },
     {
       "t": "Mario Party 10",
@@ -6328,7 +6571,8 @@
         "couch"
       ],
       "d": "Bowser Party mode uses gamepad vs players. Unique asymmetric party gameplay format.",
-      "consoleCover": "covers/wiiu/mario-party-10.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coba3h.jpg",
+      "igdbRating": 60.2
     },
     {
       "t": "Runbow",
@@ -6342,7 +6586,8 @@
         "couch"
       ],
       "d": "9-player couch multiplayer platformer. Platforms disappear as background color changes — chaotic fun.",
-      "consoleCover": "covers/wiiu/runbow.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1vgd.jpg",
+      "igdbRating": 79.1
     },
     {
       "t": "Shovel Knight (Wii U)",
@@ -6355,7 +6600,8 @@
         "classic"
       ],
       "d": "Best version with full GamePad features. Perfect NES-style platformer on the Wii U.",
-      "consoleCover": "covers/wiiu/shovel-knight-wii-u.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobaa7.jpg",
+      "igdbRating": 85.8
     },
     {
       "t": "Rayman Legends (Wii U)",
@@ -6369,7 +6615,8 @@
         "couch"
       ],
       "d": "Original Wii U version with Murphy GamePad touch controls. The way the game was meant to be played.",
-      "consoleCover": "covers/wiiu/rayman-legends-wii-u.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4jot.jpg",
+      "igdbRating": 83
     },
     {
       "t": "Xenoblade Chronicles X (Wii U)",
@@ -6382,7 +6629,8 @@
         "classic"
       ],
       "d": "Alien planet colonization RPG with mechs. Open world bigger than any Nintendo game, 300+ hours — criminally overlooked.",
-      "consoleCover": "covers/wiiu/xenoblade-chronicles-x-wii-u.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coavor.jpg",
+      "igdbRating": 80.9
     },
     {
       "t": "Super Mario Bros. Wonder",
@@ -6396,7 +6644,8 @@
         "couch"
       ],
       "d": "The best 2D Mario in decades. Wonder Flowers transform each course completely. 4-player couch co-op.",
-      "consoleCover": "covers/nsw/super-mario-bros-wonder.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6nnl.jpg",
+      "igdbRating": 87.4
     },
     {
       "t": "Paper Mario: The Origami King",
@@ -6408,7 +6657,8 @@
         "must"
       ],
       "d": "Ring-based battle system and open world. Best paper art design in the series, great humor and heart.",
-      "consoleCover": "covers/nsw/paper-mario-the-origami-king.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob89j.jpg",
+      "igdbRating": 76.6
     },
     {
       "t": "Paper Mario: The Thousand-Year Door (Switch)",
@@ -6420,7 +6670,8 @@
         "must"
       ],
       "d": "Remake of the best Paper Mario ever made. Shadow Sirens, X-Nauts, Crystal Stars — a love letter to fans.",
-      "consoleCover": "covers/nsw/paper-mario-the-thousand-year-door-switch.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob9xy.jpg",
+      "igdbRating": 96.6
     },
     {
       "t": "Yoshi's Crafted World",
@@ -6434,7 +6685,8 @@
         "couch"
       ],
       "d": "Front-and-back crafting world. Every level has hidden items on both sides. Adorable 2-player co-op.",
-      "consoleCover": "covers/nsw/yoshis-crafted-world.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobav7.jpg",
+      "igdbRating": 77.3
     },
     {
       "t": "Kirby's Return to Dream Land Deluxe",
@@ -6448,7 +6700,8 @@
         "couch"
       ],
       "d": "Remaster of the best Wii Kirby. New epilogue featuring Magolor. 4-player couch co-op perfected.",
-      "consoleCover": "covers/nsw/kirbys-return-to-dream-land-deluxe.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8dp2.jpg",
+      "igdbRating": 74.5
     },
     {
       "t": "Donkey Kong Country: Tropical Freeze (Switch)",
@@ -6462,7 +6715,8 @@
         "couch"
       ],
       "d": "Funky Mode makes it accessible. Still the hardest and most beautiful 2D platformer on Switch.",
-      "consoleCover": "covers/nsw/donkey-kong-country-tropical-freeze-switch.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7pmi.jpg",
+      "igdbRating": 76.6
     },
     {
       "t": "Pikmin 3 Deluxe",
@@ -6476,7 +6730,8 @@
         "couch"
       ],
       "d": "Best Pikmin game fully enhanced. 2-player co-op story, all DLC, more content than any other version.",
-      "consoleCover": "covers/nsw/pikmin-3-deluxe.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8grk.jpg",
+      "igdbRating": 77.9
     },
     {
       "t": "Xenoblade Chronicles: Definitive Edition",
@@ -6488,7 +6743,8 @@
         "must"
       ],
       "d": "The greatest JRPG finally truly portable. Future Connected epilogue added. The definitive version.",
-      "consoleCover": "covers/nsw/xenoblade-chronicles-definitive-edition.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob8r4.jpg",
+      "igdbRating": 81.2
     },
     {
       "t": "Xenoblade Chronicles 2",
@@ -6500,7 +6756,8 @@
         "must"
       ],
       "d": "Alrest and the World Tree. Blade gacha system, emotional story, Mythra and Pyra — divisive but brilliant.",
-      "consoleCover": "covers/nsw/xenoblade-chronicles-2.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob8r2.jpg",
+      "igdbRating": 90
     },
     {
       "t": "Metroid Prime Remastered",
@@ -6512,7 +6769,8 @@
         "must"
       ],
       "d": "One of the best games ever made, now in 4K. Dual-stick controls option, incredible atmosphere preserved.",
-      "consoleCover": "covers/nsw/metroid-prime-remastered.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobbn9.jpg",
+      "igdbRating": 87.6
     },
     {
       "t": "Bayonetta Origins: Cereza and the Lost Demon",
@@ -6524,7 +6782,8 @@
         "must"
       ],
       "d": "Young Bayonetta fairy tale. Dual-control system, storybook art, completely different from the main series.",
-      "consoleCover": "covers/nsw/bayonetta-origins-cereza-and-the-lost-demon.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5vch.jpg",
+      "igdbRating": 73.5
     },
     {
       "t": "Tokyo Mirage Sessions #FE Encore",
@@ -6536,7 +6795,8 @@
         "must"
       ],
       "d": "Shin Megami Tensei meets Fire Emblem in J-pop Tokyo. Unique, stylish, underrated JRPG gem.",
-      "consoleCover": "covers/nsw/tokyo-mirage-sessions-fe-encore.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob89u.jpg",
+      "igdbRating": 70.2
     },
     {
       "t": "Shin Megami Tensei V",
@@ -6548,7 +6808,8 @@
         "must"
       ],
       "d": "Post-apocalyptic Tokyo SMT. Demon fusion, press-turn system, open world — the first true Switch JRPG epic.",
-      "consoleCover": "covers/nsw/shin-megami-tensei-v.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co39zk.jpg",
+      "igdbRating": 86.4
     },
     {
       "t": "Persona 5 Royal (Switch)",
@@ -6560,7 +6821,8 @@
         "must"
       ],
       "d": "The definitive version of the best JRPG of the decade. Portable Persona 5 is a dream come true.",
-      "consoleCover": "covers/nsw/persona-5-royal-switch.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobaqh.jpg",
+      "igdbRating": 94.3
     },
     {
       "t": "Persona 4 Golden (Switch)",
@@ -6572,7 +6834,8 @@
         "must"
       ],
       "d": "P4G finally on Switch. Inaba, Junes, the Truth — portable P4G is the best way to play.",
-      "consoleCover": "covers/nsw/persona-4-golden-switch.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/coc4k1.jpg",
+      "igdbRating": 86.9
     },
     {
       "t": "Persona 3 Reload (Switch)",
@@ -6596,7 +6859,7 @@
         "must"
       ],
       "d": "The best traditional JRPG in 20 years. Symphonic soundtrack, Orchestral mode, 2D retro mode — incredible value.",
-      "consoleCover": "covers/nsw/dragon-quest-xi-s-echoes-of-an-elusive-age.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2v88.jpg"
     },
     {
       "t": "Bravely Default II",
@@ -6608,7 +6871,8 @@
         "must"
       ],
       "d": "New world, same Brave-Default mechanic. Job system, turn-based mastery, proper difficulty curves.",
-      "consoleCover": "covers/nsw/bravely-default-ii.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobrao.jpg",
+      "igdbRating": 73.2
     },
     {
       "t": "Octopath Traveler",
@@ -6620,7 +6884,8 @@
         "must"
       ],
       "d": "HD-2D visuals debuted here. Eight characters, eight stories, beautiful music by Yasunori Nishiki.",
-      "consoleCover": "covers/nsw/octopath-traveler.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co4kap.jpg",
+      "igdbRating": 79.9
     },
     {
       "t": "Octopath Traveler II",
@@ -6632,7 +6897,8 @@
         "must"
       ],
       "d": "Everything improved. Stories connect better, Latent Powers, day-night interactions — surpasses the original.",
-      "consoleCover": "covers/nsw/octopath-traveler-ii.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7ds7.jpg",
+      "igdbRating": 82.1
     },
     {
       "t": "Triangle Strategy",
@@ -6644,7 +6910,8 @@
         "must"
       ],
       "d": "War of three nations. Every vote matters, multiple endings, the most morally complex Switch game.",
-      "consoleCover": "covers/nsw/triangle-strategy.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8wc0.jpg",
+      "igdbRating": 87.7
     },
     {
       "t": "Ni no Kuni: Wrath of the White Witch (Switch)",
@@ -6656,7 +6923,8 @@
         "must"
       ],
       "d": "Studio Ghibli JRPG now portable. Oliver saves his mother across a parallel world — emotional and beautiful.",
-      "consoleCover": "covers/nsw/ni-no-kuni-wrath-of-the-white-witch-switch.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob235.jpg",
+      "igdbRating": 86.8
     },
     {
       "t": "The Witcher 3 (Switch)",
@@ -6694,7 +6962,8 @@
         "online"
       ],
       "d": "Wirebugs and Palamutes. Fluid vertical movement, Rampage mode, best-looking Switch Monster Hunter.",
-      "consoleCover": "covers/nsw/monster-hunter-rise.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3uzk.jpg",
+      "igdbRating": 81.9
     },
     {
       "t": "Monster Hunter Rise: Sunbreak",
@@ -6708,7 +6977,8 @@
         "online"
       ],
       "d": "Massive expansion. Elgado outpost, new flagship monsters, Silkbind Attacks — doubles the base game.",
-      "consoleCover": "covers/nsw/monster-hunter-rise-sunbreak.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob3ct.jpg",
+      "igdbRating": 80.7
     },
     {
       "t": "Ace Attorney Trilogy (Switch)",
@@ -6732,7 +7002,8 @@
         "must"
       ],
       "d": "13 teenagers, 13 storylines, one mystery. Vanillaware's most ambitious game — visual novel plus RTS mashup.",
-      "consoleCover": "covers/nsw/13-sentinels-aegis-rim-switch.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2uls.jpg",
+      "igdbRating": 91.8
     },
     {
       "t": "NieR:Automata (Switch)",
@@ -6756,7 +7027,8 @@
         "must"
       ],
       "d": "Shibuya life-or-death game. Dual-screen combat on one screen, incredible music, unique fashion system.",
-      "consoleCover": "covers/nsw/the-world-ends-with-you-final-remix.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1n68.jpg",
+      "igdbRating": 59.5
     },
     {
       "t": "Cadence of Hyrule",
@@ -6824,7 +7096,8 @@
         "party"
       ],
       "d": "Both Overcooked games plus DLC. The definitive party cooking experience with online co-op added.",
-      "consoleCover": "covers/nsw/overcooked-all-you-can-eat-switch.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2t83.jpg",
+      "igdbRating": 78
     },
     {
       "t": "It Takes Two (Switch)",
@@ -6838,7 +7111,8 @@
         "couch"
       ],
       "d": "Best co-op game ever on Switch. Every level reinvents itself. Portable couples' game night essential.",
-      "consoleCover": "covers/nsw/it-takes-two-switch.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob22v.jpg",
+      "igdbRating": 88.4
     },
     {
       "t": "Death's Door (Switch)",
@@ -6850,7 +7124,8 @@
         "must"
       ],
       "d": "Crow collects souls as a reaper. Isometric action with Soulslike elements. Stunning art, tight combat.",
-      "consoleCover": "covers/nsw/deaths-door-switch.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co45xc.jpg",
+      "igdbRating": 81.8
     },
     {
       "t": "Golf Story",
@@ -6862,7 +7137,8 @@
         "must"
       ],
       "d": "Golf RPG on Switch eShop. Story about a golfer trying to reclaim his glory. Charming, surprising, deep.",
-      "consoleCover": "covers/nsw/golf-story.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2q9e.jpg",
+      "igdbRating": 79.7
     },
     {
       "t": "Eastward",
@@ -6874,7 +7150,8 @@
         "must"
       ],
       "d": "Pixel art action RPG. John and Sam travel a dying world. Pixar-like storytelling in 16-bit aesthetic.",
-      "consoleCover": "covers/nsw/eastward.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co3tul.jpg",
+      "igdbRating": 89.1
     },
     {
       "t": "Neon Abyss",
@@ -6886,7 +7163,8 @@
         "must"
       ],
       "d": "Roguelite dungeon shooter. Chaotic item interactions, incredible variety — every run completely different.",
-      "consoleCover": "covers/nsw/neon-abyss.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2yg7.jpg",
+      "igdbRating": 71.9
     },
     {
       "t": "F-Zero 99 (Switch Online)",
@@ -6925,7 +7203,8 @@
         "must"
       ],
       "d": "Gorgeous toy-box remake of the Game Boy classic. Koholint Island, Dreaming, dungeons — all perfected.",
-      "consoleCover": "covers/nsw/the-legend-of-zelda-links-awakening-switch.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1qve.jpg",
+      "igdbRating": 82.5
     },
     {
       "t": "The Legend of Zelda: Echoes of Wisdom",
@@ -6937,7 +7216,8 @@
         "must"
       ],
       "d": "First Zelda game with Zelda as protagonist. Echo system creates objects to solve puzzles — fresh Zelda formula.",
-      "consoleCover": "covers/nsw/the-legend-of-zelda-echoes-of-wisdom.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8d9b.jpg",
+      "igdbRating": 83.6
     },
     {
       "t": "Valkyria Chronicles 4 (Switch)",
@@ -6949,7 +7229,8 @@
         "must"
       ],
       "d": "Best Valkyria Chronicles since the original. Squad 7 on Switch, campaign and skirmish modes, watercolor combat.",
-      "consoleCover": "covers/nsw/valkyria-chronicles-4-switch.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co20r6.jpg",
+      "igdbRating": 80.1
     },
     {
       "t": "AI: The Somnium Files (Switch)",
@@ -6961,7 +7242,8 @@
         "must"
       ],
       "d": "Detective thriller by Kotaro Uchikoshi. Enter dreams to solve murders. Mystery visual novel with twists.",
-      "consoleCover": "covers/nsw/ai-the-somnium-files-switch.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobbvz.jpg",
+      "igdbRating": 83.8
     },
     {
       "t": "Zero Escape: The Nonary Games (Switch)",
@@ -6999,7 +7281,8 @@
         "couch"
       ],
       "d": "Classic Mario Party boards return. Gem of the Mario Party series with Joy-Con motion minigames.",
-      "consoleCover": "covers/nsw/super-mario-party-switch.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cobaa9.jpg",
+      "igdbRating": 67.4
     },
     {
       "t": "Mario Strikers: Battle League",
@@ -7013,7 +7296,8 @@
         "online"
       ],
       "d": "Aggressive arcade football. Hyper Strikes, gear upgrades, 4v4 couch chaos — most fun Mario sports.",
-      "consoleCover": "covers/nsw/mario-strikers-battle-league.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co83vf.jpg",
+      "igdbRating": 68.9
     },
     {
       "t": "Nintendo Switch Sports",
@@ -7026,7 +7310,8 @@
         "couch"
       ],
       "d": "Wii Sports for the modern era. Soccer, tennis, bowling, volleyball — motion controls perfected.",
-      "consoleCover": "covers/nsw/nintendo-switch-sports.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/cob683.jpg",
+      "igdbRating": 72.3
     },
     {
       "t": "Arms (Switch)",
@@ -7040,7 +7325,8 @@
         "online"
       ],
       "d": "Extendable arms fighting game. Motion or traditional controls, 15 fighters, DNA Lab party mode.",
-      "consoleCover": "covers/nsw/arms-switch.jpg"
+      "consoleCover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1mxn.jpg",
+      "igdbRating": 69.7
     },
     {
       "t": "Dying Light",
