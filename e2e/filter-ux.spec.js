@@ -26,3 +26,11 @@ test('searching "open world" (space) surfaces open-world games that lack the phr
   const titles = await page.locator('#GRID .card .ctitle').allTextContents();
   expect(titles).toContain('Cyberpunk 2077');
 });
+
+test('sidebar chips have position:relative for underline animation', async ({ page }) => {
+  const position = await page.evaluate(() => {
+    const chip = document.querySelector('.chip');
+    return getComputedStyle(chip).position;
+  });
+  expect(position).toBe('relative');
+});

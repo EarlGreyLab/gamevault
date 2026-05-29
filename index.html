@@ -196,6 +196,15 @@ html[data-theme="light"] .hero-kbd{background:var(--s2)}
 .chip[data-flag="vita"].active{background:var(--grn);color:var(--bg)}
 .chip[data-flag="vita_warn"].active{background:var(--ylw);color:var(--bg)}
 .chip[data-flag="favs"].active{background:var(--ylw);color:var(--bg)}
+
+/* Solid underline animation (21st.dev "Solid" button pattern) */
+.chip{position:relative}
+.chip::after{content:'';position:absolute;bottom:3px;left:10px;right:10px;
+  height:1.5px;background:currentColor;border-radius:1px;
+  transform:scaleX(0);transform-origin:right center;transition:transform .18s ease}
+.chip:hover::after{transform:scaleX(1);transform-origin:left center}
+.chip.active::after{transform:scaleX(1);opacity:.4}
+
 .chip[data-plat="PC"].active{background:#63b3ed;color:#080c10}
 .chip[data-plat="PS1"].active,.chip[data-plat="PS2"].active,.chip[data-plat="PS3"].active,
 .chip[data-plat="PSP"].active,.chip[data-plat="VITA"].active{background:#003791;color:#fff}
