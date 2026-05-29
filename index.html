@@ -245,6 +245,11 @@ html[data-theme="light"] .hero-kbd{background:var(--s2)}
 .card.must::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
   background:linear-gradient(90deg,transparent,var(--red),transparent)}
 .card.must:hover{border-color:rgba(252,129,129,.5)}
+.card::after{content:'';position:absolute;inset:0;border-radius:var(--r);
+  background:radial-gradient(350px circle at var(--mx,50%) var(--my,50%),
+    color-mix(in srgb,var(--glow-color,#63b3ed) 18%,transparent),transparent 70%);
+  opacity:0;transition:opacity .3s ease;pointer-events:none;z-index:1}
+.card:hover::after{opacity:1}
 .card.hidden{display:none!important}
 /* List mode */
 .grid.list-v .card{flex-direction:row;max-height:90px}
