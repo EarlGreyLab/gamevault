@@ -34,6 +34,7 @@ const DATA_URL = 'data/games.json';
 let dataSource = 'loading';
 let dataReady = false;
 
+// called once at boot — counts intentionally reflect full library, not current filter
 function refreshHeaderStats() {
   const total = GAMES.length;
   const must = GAMES.filter(g => g.f.includes('must')).length;
