@@ -22,6 +22,7 @@
       <input class="search-input" id="SI" type="text" placeholder="Search…" autocomplete="off" spellcheck="false">
     </div>
   </div>
+  <a href="index.html?desktop=1" class="icon-btn" title="Desktop version">🖥️</a>
   <button class="icon-btn filter-btn-top" id="FBT">⊞</button>
 </div>
 
@@ -150,11 +151,57 @@ const PC_PLAT={
 const GE={"open-world":"&#127757;","action":"&#9876;","shooter":"&#128299;","rpg":"&#129497;",
   "coop":"&#129309;","racing":"&#127950;","strategy":"&#127959;","platformer":"&#128377;",
   "fighting":"&#129354;","sports":"&#9917;"};
+  const COVER_CONSOLE_PLATFORMS = new Set(["PS1","PS2","PS3","PSP","VITA","NDS","N3DS","WII","WIIU","NSW"]);
+const LOCAL_COVER_ROOT = 'covers';
+
+function slugifyTitle(text) {
+  return String(text || '')
+    .toLowerCase()
+    .replace(/[’'"?!.:,\/&]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9\-]/g, '')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+function makeLocalCoverUrl(g) {
+  const plat = (g.p || 'PC').toUpperCase();
+  return `${LOCAL_COVER_ROOT}/${plat.toLowerCase()}/${slugifyTitle(g.t || 'unknown')}.jpg`;
+}
+function makeFallbackCover(g) {
+  const plat = g.p || 'PC';
+  const pi = PC_PLAT[plat] || PC_PLAT.PC;
+  const ge = GE[g.g] || '🎮';
+  const title = (g.t || 'Unknown').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const meta = `${g.y || ''} · ${pi.l}`.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="920" height="430" viewBox="0 0 920 430">
+    <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/><stop offset="0.55" stop-color="#0b0b0f"/><stop offset="1" stop-color="${pi.c}"/>
+    </linearGradient><radialGradient id="r" cx="18%" cy="18%" r="70%">
+      <stop offset="0" stop-color="${pi.c}" stop-opacity="0.28"/><stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient></defs>
+    <rect width="920" height="430" fill="url(#g)"/><rect width="920" height="430" fill="url(#r)"/>
+    <rect x="22" y="22" width="876" height="386" rx="18" fill="rgba(0,0,0,0.28)" stroke="rgba(255,255,255,0.12)"/>
+    <text x="56" y="108" fill="rgba(255,255,255,0.9)" font-size="54" font-family="DM Sans, system-ui, sans-serif" font-weight="800">${ge}</text>
+    <text x="56" y="178" fill="rgba(255,255,255,0.92)" font-size="44" font-family="DM Sans, system-ui, sans-serif" font-weight="800">${title}</text>
+    <text x="56" y="232" fill="rgba(255,255,255,0.62)" font-size="22" font-family="DM Mono, ui-monospace, monospace">${meta}</text>
+    <text x="56" y="328" fill="rgba(255,255,255,0.52)" font-size="18" font-family="DM Mono, ui-monospace, monospace">No official cover set — generated locally</text>
+  </svg>`;
+  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+}
 
 let IMG={},GAMES=[],G=[],dataReady=false;
 let curG='all',curP='all',aF=new Set(),curS='default',navMode='all';
 
-function getImg(g){const u=IMG[g.t];return(u&&u.length>0)?u:null;}
+function getImg(g) {
+  const explicit = typeof g.cover === 'string' && g.cover.trim() ? g.cover.trim() : null;
+  if (explicit) return explicit;
+  const consoleCover = typeof g.consoleCover === 'string' && g.consoleCover.trim() ? g.consoleCover.trim() : null;
+  if (consoleCover) return consoleCover;
+  const u = IMG[g.t];
+  if (u && u.length > 0) return u;
+  if (COVER_CONSOLE_PLATFORMS.has((g.p || 'PC').toUpperCase())) return makeLocalCoverUrl(g);
+  return makeFallbackCover(g);
+}
 
 function buildCard(g,i){
   const img=getImg(g);const isMust=g.f.includes('must');
@@ -302,6 +349,11 @@ function closeSheet(){
   document.getElementById('SO').classList.remove('open');
   document.getElementById('FS').classList.remove('open');
 }
+function resetNavMode(){
+  navMode='all';
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('NB-all').classList.add('active');
+}
 
 // ── EVENTS ────────────────────────────────────────────────────────────────────
 document.getElementById('SI').addEventListener('input',render);
@@ -316,21 +368,25 @@ document.getElementById('SBC').addEventListener('click',()=>{
   document.querySelectorAll('#PF .chip').forEach(b=>b.classList.remove('active'));
   document.querySelector('#PF [data-plat="all"]').classList.add('active');
   document.querySelectorAll('#FF .chip').forEach(b=>b.classList.remove('active'));
+  resetNavMode();
   closeSheet();render();
 });
 
 document.querySelectorAll('#GF .chip').forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('#GF .chip').forEach(x=>x.classList.remove('active'));
   b.classList.add('active');curG=b.dataset.genre;
+  resetNavMode();
 }));
 document.querySelectorAll('#PF .chip').forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('#PF .chip').forEach(x=>x.classList.remove('active'));
   b.classList.add('active');curP=b.dataset.plat;
+  resetNavMode();
 }));
 document.querySelectorAll('#FF .chip').forEach(b=>b.addEventListener('click',()=>{
   const f=b.dataset.flag;
   if(aF.has(f)){aF.delete(f);b.classList.remove('active');}
   else{aF.add(f);b.classList.add('active');}
+  resetNavMode();
 }));
 document.querySelectorAll('.sort-btn').forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('.sort-btn').forEach(x=>x.classList.remove('active'));
