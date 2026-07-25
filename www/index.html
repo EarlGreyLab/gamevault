@@ -22,7 +22,6 @@
       <input class="search-input" id="SI" type="text" placeholder="Search…" autocomplete="off" spellcheck="false">
     </div>
   </div>
-  <a href="index.html?desktop=1" class="icon-btn" title="Desktop version">🖥️</a>
   <button class="icon-btn filter-btn-top" id="FBT">⊞</button>
 </div>
 
@@ -303,11 +302,6 @@ function closeSheet(){
   document.getElementById('SO').classList.remove('open');
   document.getElementById('FS').classList.remove('open');
 }
-function resetNavMode(){
-  navMode='all';
-  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
-  document.getElementById('NB-all').classList.add('active');
-}
 
 // ── EVENTS ────────────────────────────────────────────────────────────────────
 document.getElementById('SI').addEventListener('input',render);
@@ -322,25 +316,21 @@ document.getElementById('SBC').addEventListener('click',()=>{
   document.querySelectorAll('#PF .chip').forEach(b=>b.classList.remove('active'));
   document.querySelector('#PF [data-plat="all"]').classList.add('active');
   document.querySelectorAll('#FF .chip').forEach(b=>b.classList.remove('active'));
-  resetNavMode();
   closeSheet();render();
 });
 
 document.querySelectorAll('#GF .chip').forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('#GF .chip').forEach(x=>x.classList.remove('active'));
   b.classList.add('active');curG=b.dataset.genre;
-  resetNavMode();
 }));
 document.querySelectorAll('#PF .chip').forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('#PF .chip').forEach(x=>x.classList.remove('active'));
   b.classList.add('active');curP=b.dataset.plat;
-  resetNavMode();
 }));
 document.querySelectorAll('#FF .chip').forEach(b=>b.addEventListener('click',()=>{
   const f=b.dataset.flag;
   if(aF.has(f)){aF.delete(f);b.classList.remove('active');}
   else{aF.add(f);b.classList.add('active');}
-  resetNavMode();
 }));
 document.querySelectorAll('.sort-btn').forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('.sort-btn').forEach(x=>x.classList.remove('active'));

@@ -1,0 +1,8 @@
+{
+  "appId": "com.earlgreylab.gamevault",
+  "appName": "GAMEVAULT",
+  "webDir": "www",
+  "ios": {
+    "scrollEnabled": false
+  }
+}

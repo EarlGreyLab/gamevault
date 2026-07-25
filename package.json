@@ -22,6 +22,9 @@
     "vite": "^8.0.14"
   },
   "dependencies": {
+    "@capacitor/cli": "^8.4.2",
+    "@capacitor/core": "^8.4.2",
+    "@capacitor/ios": "^8.4.2",
     "framer-motion": "^12.40.0",
     "lucide-react": "^1.17.0",
     "motion": "^12.40.0",
