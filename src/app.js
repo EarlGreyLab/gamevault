@@ -4,17 +4,22 @@
 const IMG = {};
 const GAMES = [];
 
-// Intro: fade out after animations settle, then remove from DOM
-setTimeout(() => {
-  const el = document.getElementById('intro-overlay');
-  if (el) {
-    el.classList.add('fade-out');
+// Intro: plays once per session (~3.4s), skipped entirely for reduced motion
+// and return visits — the head script gates via the intro-play class.
+if (document.documentElement.classList.contains('intro-play')) {
+  try { sessionStorage.setItem('gv-intro', '1'); } catch {}
+  setTimeout(() => {
+    const el = document.getElementById('intro-overlay');
+    if (el) el.classList.add('fade-out');
+  }, 2600);
+  setTimeout(() => {
+    document.getElementById('intro-overlay')?.remove();
     document.documentElement.classList.remove('intro-active');
-  }
-}, 4200);
-setTimeout(() => {
+  }, 3400);
+} else {
   document.getElementById('intro-overlay')?.remove();
-}, 5500);
+  document.documentElement.classList.remove('intro-active');
+}
 
 const DATA_URL = 'data/games.json';
 let dataSource = 'loading';
@@ -59,19 +64,7 @@ function refreshHeaderStats() {
 
   hs.innerHTML = '';
 
-  hs.appendChild(makeStatBtn(total, 'games', () => {
-    curGenre = 'all';
-    curPlat = 'all';
-    activeFlags.clear();
-    document.getElementById('SI').value = '';
-    document.getElementById('HI').value = '';
-    document.querySelectorAll('#GF .chip').forEach(b => b.classList.remove('active'));
-    document.querySelector('#GF [data-genre="all"]')?.classList.add('active');
-    document.querySelectorAll('#PF .chip').forEach(b => b.classList.remove('active'));
-    document.querySelector('#PF [data-plat="all"]')?.classList.add('active');
-    document.querySelectorAll('#FF .chip').forEach(b => b.classList.remove('active'));
-    render();
-  }));
+  hs.appendChild(makeStatBtn(total, 'games', clearAllFilters));
 
   hs.appendChild(makeStatBtn(must, 'must play', () => toggleFlag('must')));
   hs.appendChild(makeStatBtn(vita, 'vita ok',   () => toggleFlag('vita')));
@@ -105,6 +98,20 @@ async function tryLoadExternalData() {
 // ── STATE ─────────────────────────────────────────────────────────────────
 let curGenre = 'all', curPlat = 'all', activeFlags = new Set();
 let curSort = 'default', listView = false;
+
+function clearAllFilters() {
+  curGenre = 'all';
+  curPlat = 'all';
+  activeFlags.clear();
+  document.getElementById('SI').value = '';
+  document.getElementById('HI').value = '';
+  document.querySelectorAll('#GF .chip').forEach(b => b.classList.remove('active'));
+  document.querySelector('#GF [data-genre="all"]')?.classList.add('active');
+  document.querySelectorAll('#PF .chip').forEach(b => b.classList.remove('active'));
+  document.querySelector('#PF [data-plat="all"]')?.classList.add('active');
+  document.querySelectorAll('#FF .chip').forEach(b => b.classList.remove('active'));
+  render();
+}
 
 // ── FAVOURITES ────────────────────────────────────────────────────────────
 let favourites = new Set();
@@ -160,6 +167,8 @@ function buildCard(g, idx) {
   // Local covers/ paths may not exist on disk — fall back to the generated
   // SVG cover on 404 instead of dropping to the bare emoji placeholder.
   const fbk = img.startsWith(LOCAL_COVER_ROOT + '/') ? ` data-fbk="${makeFallbackCover(g)}"` : '';
+  // Platform reads as a color dot + mono label, never a filled badge
+  const platBadge = `<span class="pb"><i style="background:${pi.c}"></i>${pi.l}</span>`;
   const imgHtml = img
     ? `<div class="ciw">
         <img src="${img}" alt="${g.t}" loading="lazy"${fbk}
@@ -167,20 +176,20 @@ function buildCard(g, idx) {
         <div class="cip" style="display:none">${ge}</div>
         ${favBadge}
         <span class="yr">${g.y}</span>
-        <span class="pb" style="background:${pi.c}">${pi.l}</span>
+        ${platBadge}
       </div>`
     : `<div class="ciw">
         <div class="cip">${ge}</div>
         ${favBadge}
         <span class="yr">${g.y}</span>
-        <span class="pb" style="background:${pi.c}">${pi.l}</span>
+        ${platBadge}
       </div>`;
 
   const card = document.createElement('div');
   card.className = 'card' + (isMust ? ' must' : '');
   card.dataset.i = idx;
-  card.style.animationDelay = Math.min(idx * 0.025, 0.5) + 's';
-  card.style.setProperty('--glow-color', pi.c);
+  // stagger only the first viewport-or-so of cards; the rest land together
+  card.style.animationDelay = Math.min(idx * 0.025, 0.3) + 's';
   card.innerHTML = `
     ${imgHtml}
     <div class="cbody">
@@ -265,7 +274,16 @@ function render() {
   curList = getSorted();
   grid.innerHTML = '';
   if (!curList.length) {
-    grid.innerHTML = '<div class="empty"><span>🔍</span>No games match.</div>';
+    const q = (document.getElementById('SI').value || '').trim();
+    const sub = q
+      ? `No match for <span style="font-family:var(--fm);color:var(--t1)">&quot;${q.replace(/&/g,'&amp;').replace(/</g,'&lt;')}&quot;</span>`
+      : 'No games match the active filters.';
+    grid.innerHTML = `<div class="empty">
+      <div class="empty-glyph">⬡</div>
+      <div class="empty-title">Nothing in the vault</div>
+      <div class="empty-sub">${sub}</div>
+      <button class="empty-clear" id="EmptyClear">Clear filters</button>
+    </div>`;
   } else {
     const frag = document.createDocumentFragment();
     curList.forEach((g, i) => frag.appendChild(buildCard(g, i)));
@@ -318,6 +336,23 @@ function openDetail(g) {
     heroImg.src = headerSrc;
     heroImg.onerror = () => heroImg.remove();
     heroEl.insertBefore(heroImg, heroEl.firstChild);
+  }
+
+  // Ambient light: the game's own hero art, blurred behind the modal box —
+  // every game tints the overlay with its own palette (no color extraction)
+  const amb = document.getElementById('MAmb');
+  if (amb) {
+    const ambSrc = heroSrc || headerSrc;
+    if (ambSrc) {
+      amb.style.display = '';
+      amb.onerror = () => {
+        if (headerSrc && amb.src !== headerSrc) { amb.src = headerSrc; }
+        else { amb.style.display = 'none'; }
+      };
+      amb.src = ambSrc;
+    } else {
+      amb.style.display = 'none';
+    }
   }
 
   // Portrait cover for sidebar: library_600x900.jpg
@@ -429,21 +464,14 @@ function closeModal() {
 }
 
 // ── EVENT LISTENERS ───────────────────────────────────────────────────────
-// Card click + hover glow, delegated once on the grid instead of two
-// listeners per card (2 × 647 across every re-render otherwise)
+// Card click delegated once on the grid instead of one listener per card
 const _GRID = document.getElementById('GRID');
 _GRID.addEventListener('click', e => {
+  if (e.target.closest('.empty-clear')) { clearAllFilters(); return; }
   const card = e.target.closest('.card');
   if (!card || card.dataset.i === undefined) return;
   const g = curList[+card.dataset.i];
   if (g) openDetail(g);
-});
-_GRID.addEventListener('mousemove', e => {
-  const card = e.target.closest('.card');
-  if (!card) return;
-  const r = card.getBoundingClientRect();
-  card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-  card.style.setProperty('--my', (e.clientY - r.top) + 'px');
 });
 
 // Search — topbar and hero inputs kept in sync; render is debounced so

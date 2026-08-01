@@ -20,17 +20,17 @@ const _platC = (v, fallback) => {
   return _platCache[v] || fallback;
 };
 const PC_PLAT = {
-  "PS1":  {get c(){return _platC('--plat-ps','#003087');},    l:"PS1"},
-  "PS2":  {get c(){return _platC('--plat-ps','#00439C');},    l:"PS2"},
-  "PS3":  {get c(){return _platC('--plat-ps','#003791');},    l:"PS3"},
-  "PSP":  {get c(){return _platC('--plat-ps','#003087');},    l:"PSP"},
-  "VITA": {get c(){return _platC('--plat-vita','#06439C');},  l:"Vita"},
-  "NDS":  {get c(){return _platC('--plat-ds','#C8102E');},    l:"DS"},
-  "N3DS": {get c(){return _platC('--plat-ds','#C8102E');},    l:"3DS"},
-  "WII":  {get c(){return _platC('--plat-wii','#009AC7');},   l:"Wii"},
-  "WIIU": {get c(){return _platC('--plat-wii','#009AC7');},   l:"Wii U"},
-  "NSW":  {get c(){return _platC('--plat-switch','#E4000F');},l:"Switch"},
-  "PC":   {get c(){return _platC('--plat-pc','#63b3ed');},    l:"PC"},
+  "PS1":  {get c(){return _platC('--plat-ps','#4a7dff');},    l:"PS1"},
+  "PS2":  {get c(){return _platC('--plat-ps','#4a7dff');},    l:"PS2"},
+  "PS3":  {get c(){return _platC('--plat-ps','#4a7dff');},    l:"PS3"},
+  "PSP":  {get c(){return _platC('--plat-ps','#4a7dff');},    l:"PSP"},
+  "VITA": {get c(){return _platC('--plat-vita','#6aa2ff');},  l:"Vita"},
+  "NDS":  {get c(){return _platC('--plat-ds','#f87171');},    l:"DS"},
+  "N3DS": {get c(){return _platC('--plat-ds','#f87171');},    l:"3DS"},
+  "WII":  {get c(){return _platC('--plat-wii','#5ac8fa');},   l:"Wii"},
+  "WIIU": {get c(){return _platC('--plat-wii','#5ac8fa');},   l:"Wii U"},
+  "NSW":  {get c(){return _platC('--plat-switch','#ff4554');},l:"Switch"},
+  "PC":   {get c(){return _platC('--plat-pc','#a8b6cc');},    l:"PC"},
 };
 const COVER_CONSOLE_PLATFORMS = new Set(["PS1","PS2","PS3","PSP","VITA","NDS","N3DS","WII","WIIU","NSW"]);
 const LOCAL_COVER_ROOT = 'covers';
@@ -66,12 +66,12 @@ function makeFallbackCover(g) {
 `<svg xmlns="http://www.w3.org/2000/svg" width="920" height="430" viewBox="0 0 920 430">
   <defs>
     <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0f172a"/>
-      <stop offset="0.55" stop-color="#0b0b0f"/>
-      <stop offset="1" stop-color="${pi.c}"/>
+      <stop offset="0" stop-color="#0a0a0c"/>
+      <stop offset="0.6" stop-color="#050506"/>
+      <stop offset="1" stop-color="${pi.c}" stop-opacity="0.55"/>
     </linearGradient>
     <radialGradient id="r" cx="18%" cy="18%" r="70%">
-      <stop offset="0" stop-color="${pi.c}" stop-opacity="0.28"/>
+      <stop offset="0" stop-color="${pi.c}" stop-opacity="0.22"/>
       <stop offset="1" stop-color="#000" stop-opacity="0"/>
     </radialGradient>
   </defs>
@@ -96,12 +96,12 @@ function makeFallbackPortrait(g) {
 `<svg xmlns="http://www.w3.org/2000/svg" width="600" height="900" viewBox="0 0 600 900">
   <defs>
     <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0b0b0f"/>
-      <stop offset="0.55" stop-color="#0a0a10"/>
-      <stop offset="1" stop-color="${pi.c}"/>
+      <stop offset="0" stop-color="#0a0a0c"/>
+      <stop offset="0.6" stop-color="#050506"/>
+      <stop offset="1" stop-color="${pi.c}" stop-opacity="0.55"/>
     </linearGradient>
     <radialGradient id="r" cx="22%" cy="18%" r="70%">
-      <stop offset="0" stop-color="${pi.c}" stop-opacity="0.28"/>
+      <stop offset="0" stop-color="${pi.c}" stop-opacity="0.22"/>
       <stop offset="1" stop-color="#000" stop-opacity="0"/>
     </radialGradient>
   </defs>

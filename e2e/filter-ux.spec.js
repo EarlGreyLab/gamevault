@@ -27,12 +27,12 @@ test('searching "open world" (space) surfaces open-world games that lack the phr
   expect(titles).toContain('Cyberpunk 2077');
 });
 
-test('sidebar chips have position:relative for underline animation', async ({ page }) => {
-  const position = await page.evaluate(() => {
-    const chip = document.querySelector('.chip');
-    return getComputedStyle(chip).position;
-  });
-  expect(position).toBe('relative');
+test('clicking a genre chip activates it and deactivates "all"', async ({ page }) => {
+  await page.locator('#GF [data-genre="rpg"]').click();
+  await expect(page.locator('#GF [data-genre="rpg"]')).toHaveClass(/active/);
+  await expect(page.locator('#GF [data-genre="all"]')).not.toHaveClass(/active/);
+  const cards = page.locator('#GRID .card');
+  await expect(cards).not.toHaveCount(0);
 });
 
 test('hero stats row contains button elements after data loads', async ({ page }) => {

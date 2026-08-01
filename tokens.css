@@ -1,75 +1,83 @@
 /* =============================================================================
-   GAMEVAULT · Design Tokens
+   GAMEVAULT · Design Tokens — "Signal Black + Ambient"
    Single source of truth for all visual design decisions.
-   Edit values here to retheme the entire app — no other files need changing
-   for color, type scale, spacing, or platform palette changes.
+   Canon: pure #000 canvas · white-alpha elevation (no gray fills) ·
+   accent #7c9fff = "actionable / selected" only · radii 10/6 ·
+   Syne ≥24px display · DM Sans UI/body · DM Mono ≤12px data.
    ============================================================================= */
 
 :root {
 
-  /* ── BACKGROUND SURFACES ──────────────────────────────────────────────────
-     Layered dark surfaces from deepest to lightest                          */
-  --bg:  #07080d;    /* page background — deepest */
-  --s1:  #0c0e1a;    /* surface 1 — cards */
-  --s2:  #13151f;    /* surface 2 — inputs, sidebar */
-  --s3:  #1a1d2b;    /* surface 3 — hover, subtle bg */
-  --s4:  #252840;    /* surface 4 — scrollbar thumb */
+  /* ── BACKGROUND / ELEVATION ───────────────────────────────────────────────
+     Pure black page; layers are white at low alpha so black stays pure.
+     Opaque overlay surfaces (sheets, modal) use --e3.                       */
+  --bg:  #000000;                  /* page background — the void */
+  --s1:  rgba(255,255,255,.04);    /* E1 — resting cards, inputs */
+  --s2:  rgba(255,255,255,.06);    /* E2 — hover, raised */
+  --s3:  rgba(255,255,255,.09);    /* pressed / strong fill */
+  --s4:  rgba(255,255,255,.16);    /* scrollbar thumb, handles */
+  --e3:  #0a0a0c;                  /* opaque overlay surface — sheets, modal */
 
-  /* ── ACCENT COLORS ────────────────────────────────────────────────────────
-     Primary and secondary interactive accents                               */
-  --acc:  #7cc5ff;   /* primary accent — blue */
-  --acc2: #c4b5fd;   /* secondary accent — purple */
+  /* ── ACCENT ───────────────────────────────────────────────────────────────
+     One accent, three forms (solid / tint / border). Accent means
+     "the thing you can act on or have selected right now".                  */
+  --acc:      #7c9fff;
+  --acc-tint: rgba(124,159,255,.12);
+  --acc-bdr:  rgba(124,159,255,.35);
+  --acc-ring: rgba(124,159,255,.20);
+  --acc2:     #a78bfa;             /* legacy secondary — avoid in new work */
 
   /* ── SEMANTIC TAG COLORS ──────────────────────────────────────────────────
-     One color per content category / game mode                              */
+     Used as text/tint/border triplets only, never as filled badges          */
   --grn:  #4ade80;   /* co-op, vita compatible */
   --ylw:  #fde047;   /* must-play, gold */
   --org:  #fb923c;   /* classic */
   --pnk:  #f9a8d4;   /* party */
   --tel:  #67e8f9;   /* solo */
-  --red:  #fca5a5;   /* vita warning */
+  --red:  #f87171;   /* vita warning / danger */
 
   /* ── TEXT HIERARCHY ───────────────────────────────────────────────────────
-     Four levels from primary white to very muted                            */
-  --t1:   #ffffff;   /* primary text */
-  --t2:   #bdd0e6;   /* secondary text */
-  --t3:   #7d96b4;   /* tertiary / muted */
-  --t4:   #1e2235;   /* text on dark fills */
+     Pure white alphas — nothing meaningful below 45%                        */
+  --t1:   #ffffff;                 /* primary */
+  --t2:   rgba(255,255,255,.64);   /* secondary */
+  --t3:   rgba(255,255,255,.45);   /* tertiary / muted */
+  --t4:   #0a0a0f;                 /* text on light/accent fills */
 
   /* ── BORDERS ──────────────────────────────────────────────────────────────
-     Default subtle border and focus/glow border                             */
-  --bdr:  rgba(255, 255, 255, .12);     /* default border */
-  --bdrg: rgba(124, 197, 255, .38);     /* glow / focus border */
+     Hairlines carry elevation; shadows are invisible on pure black          */
+  --bdr:   rgba(255,255,255,.08);  /* default hairline */
+  --bdr2:  rgba(255,255,255,.16);  /* hover / raised hairline */
+  --bdrg:  var(--acc-bdr);         /* focus / active border */
 
   /* ── PLATFORM PALETTE ─────────────────────────────────────────────────────
-     One color per platform family, used in chips and JS badge backgrounds.
-     Changing these updates both the CSS chip active states and the
-     dynamically rendered platform badges in cards and modals.              */
-  --plat-ps:     #1d4ed8;   /* PS1 · PS2 · PS3 · PSP */
-  --plat-vita:   #3b82f6;   /* PS Vita */
-  --plat-ds:     #dc2626;   /* DS · 3DS */
-  --plat-wii:    #0284c7;   /* Wii · Wii U */
-  --plat-switch: #ef4444;   /* Nintendo Switch */
-  --plat-pc:     #3b82f6;   /* PC */
+     Identity marks only: 6px dots, 2px ticks, tinted chips — never fills.
+     Read at runtime by gv-core.js for card dots and modal badges.           */
+  --plat-ps:     #4a7dff;   /* PS1 · PS2 · PS3 · PSP */
+  --plat-vita:   #6aa2ff;   /* PS Vita */
+  --plat-ds:     #f87171;   /* DS · 3DS */
+  --plat-wii:    #5ac8fa;   /* Wii · Wii U */
+  --plat-switch: #ff4554;   /* Nintendo Switch */
+  --plat-pc:     #a8b6cc;   /* PC — neutral */
 
-  /* ── TYPOGRAPHY SCALE ─────────────────────────────────────────────────────
-     Font families are overridden per platform in desktop.css / mobile.css  */
-  --fd: 'DM Sans', system-ui, sans-serif;   /* display / UI font */
-  --fm: 'DM Mono', monospace;               /* mono / label font */
+  /* ── TYPOGRAPHY ───────────────────────────────────────────────────────────
+     Three locked voices: Syne never below 24px, DM Mono never above 12px,
+     DM Sans never uppercase.                                                */
+  --fd: 'DM Sans', system-ui, sans-serif;   /* UI / body */
+  --fm: 'DM Mono', monospace;               /* data / labels ≤12px */
+  --fh: 'Syne', 'DM Sans', sans-serif;      /* display ≥24px */
 
-  /* Named font sizes — 10 px baseline steps */
+  /* Named font sizes */
   --fs-xs:   10px;   /* micro labels, year badge, tags */
-  --fs-sm:   11px;   /* toolbar labels, kbd hints, atags */
+  --fs-sm:   11px;   /* toolbar labels, kbd hints */
   --fs-md:   12px;   /* chips, meta text, secondary UI */
   --fs-base: 13px;   /* body text, descriptions */
-  --fs-lg:   15px;   /* card titles, modal body copy */
-  --fs-xl:   16px;   /* topbar logo, search input */
-  --fs-2xl:  19px;   /* detail panel title */
-  --fs-3xl:  24px;   /* modal title */
-  --fs-4xl:  26px;   /* modal title (alternate) */
+  --fs-lg:   15px;   /* card titles */
+  --fs-xl:   16px;   /* search input */
+  --fs-2xl:  19px;   /* panel titles */
+  --fs-3xl:  24px;   /* display — Syne territory begins here */
+  --fs-4xl:  27px;   /* modal title */
 
-  /* ── SPACING SCALE ────────────────────────────────────────────────────────
-     Based on a 4 px grid                                                    */
+  /* ── SPACING SCALE (4px grid) ─────────────────────────────────────────────*/
   --sp-1:  4px;
   --sp-2:  6px;
   --sp-3:  8px;
@@ -81,145 +89,74 @@
   --sp-9:  20px;
   --sp-10: 24px;
 
-  /* ── BORDER RADIUS ────────────────────────────────────────────────────────
-     --r and --rs are the two primary radii used throughout the app          */
-  --r:       14px;    /* main elements: cards, modal, sheet */
-  --rs:       8px;    /* smaller elements: inputs, buttons */
-  --r-xs:     4px;    /* tiny elements: kbd badges */
-  --r-pill: 999px;    /* pills: chips, tags, badges */
-  --r-modal:  18px;   /* modal box corners */
+  /* ── BORDER RADIUS ────────────────────────────────────────────────────────*/
+  --r:       10px;    /* main elements: cards, sheets */
+  --rs:       6px;    /* smaller elements: inputs, buttons, chips */
+  --r-xs:     4px;    /* micro: kbd badges, tags */
+  --r-pill: 999px;    /* pills — legacy, avoid in new work */
+  --r-modal: 16px;    /* modal / sheet corners */
 
-  /* ── ELEVATION / SHADOWS ──────────────────────────────────────────────────
-     Layer your shadows here; referenced in component styles below          */
-  --shadow-card:       0 16px 48px rgba(0, 0, 0, .70);
-  --shadow-card-glow:  0 0 0 1px rgba(124, 197, 255, .08), 0 0 28px rgba(124, 197, 255, .07);
-  --shadow-card-must:  0 0 28px rgba(253, 224, 71, .09);
-  --shadow-modal:      0 24px 80px rgba(0, 0, 0, .88), 0 0 0 1px rgba(255, 255, 255, .07);
-  --shadow-chip:       0 2px 14px rgba(124, 197, 255, .25);
+  /* ── ELEVATION ────────────────────────────────────────────────────────────
+     On pure black, depth = hairlines + a brighter top edge, not shadows     */
+  --edge-top:          inset 0 1px 0 rgba(255,255,255,.10);
+  --shadow-card:       none;
+  --shadow-card-glow:  none;
+  --shadow-card-must:  none;
+  --shadow-modal:      0 24px 80px rgba(0,0,0,.6);
+  --shadow-chip:       none;
 
-  /* ── TRANSITIONS ──────────────────────────────────────────────────────────
-     Three speed tiers + a spring easing curve for opening animations       */
-  --dur-fast:    .12s;
-  --dur-base:    .20s;
-  --dur-slow:    .30s;
-  --dur-slower:  .40s;
+  /* ── MOTION ───────────────────────────────────────────────────────────────
+     Four durations, one curve, one spring (overlays only). Nothing in the
+     grid ever bounces.                                                      */
+  --dur-fast:    .12s;   /* color/opacity — hover */
+  --dur-base:    .18s;   /* transforms — chips, cards */
+  --dur-slow:    .26s;   /* layout shifts */
+  --dur-slower:  .42s;   /* overlays / entrances only */
+  --ease:        cubic-bezier(.2, 0, 0, 1);
   --ease-spring: cubic-bezier(.22, 1, .36, 1);
 
-  /* ── LAYOUT CONSTANTS ─────────────────────────────────────────────────────
-     Platform-specific values are further overridden in desktop/mobile CSS  */
-  --sidebar: 280px;   /* desktop sidebar width */
+  /* ── LAYOUT CONSTANTS ─────────────────────────────────────────────────────*/
+  --sidebar: 280px;
 
-  /* ── TOPBAR ────────────────────────────────────────────────────────────────── */
-  --topbar-bg:  rgba(7, 8, 13, .96);
-  --topbar-bdr: rgba(255, 255, 255, .11);
+  /* ── TOPBAR ───────────────────────────────────────────────────────────────*/
+  --topbar-bg:  rgba(0, 0, 0, .85);
+  --topbar-bdr: rgba(255, 255, 255, .08);
   --topbar-t:   #ffffff;
 }
 
 /* =============================================================================
-   LIGHT MODE — applied when JS sets data-theme="light" on <html>
+   LIGHT MODE — same alpha system, inverted. Applied when JS sets
+   data-theme="light" on <html>.
    ============================================================================= */
 
 html[data-theme="light"] {
-  --bg:  #f1f4f9;
-  --topbar-bg:  rgba(241, 244, 249, .97);
-  --topbar-bdr: rgba(0, 0, 0, .10);
-  --topbar-t:   #0f1117;
-  --s1:  #ffffff;
-  --s2:  #f4f6fb;
-  --s3:  #e8ecf4;
-  --s4:  #c8d0de;
-  --acc:  #2563eb;
-  --acc2: #7c3aed;
-  --grn:  #16a34a;
-  --ylw:  #b45309;
+  --bg:  #f4f5f8;
+  --s1:  rgba(10,12,20,.04);
+  --s2:  rgba(10,12,20,.06);
+  --s3:  rgba(10,12,20,.09);
+  --s4:  rgba(10,12,20,.22);
+  --e3:  #ffffff;
+  --acc:      #3b5fe0;
+  --acc-tint: rgba(59,95,224,.10);
+  --acc-bdr:  rgba(59,95,224,.38);
+  --acc-ring: rgba(59,95,224,.18);
+  --acc2:     #7c5cf7;
+  --grn:  #15803d;
+  --ylw:  #a16207;
   --org:  #c2410c;
   --pnk:  #be185d;
   --tel:  #0e7490;
   --red:  #dc2626;
   --t1:   #0f1117;
-  --t2:   #3d5068;
-  --t3:   #7888a0;
-  --t4:   #e8ecf4;
-  --bdr:  rgba(0, 0, 0, .11);
-  --bdrg: rgba(37, 99, 235, .45);
-  --shadow-card:       0 4px 24px rgba(0, 0, 0, .10);
-  --shadow-card-glow:  0 0 0 1px rgba(37, 99, 235, .10), 0 0 20px rgba(37, 99, 235, .07);
-  --shadow-card-must:  0 0 20px rgba(180, 83, 9, .12);
-  --shadow-chip:       0 2px 10px rgba(37, 99, 235, .20);
-  --shadow-modal:      0 8px 48px rgba(0, 0, 0, .18), 0 0 0 1px rgba(0, 0, 0, .07);
+  --t2:   rgba(15,17,23,.66);
+  --t3:   rgba(15,17,23,.45);
+  --t4:   #f4f5f8;
+  --bdr:  rgba(0,0,0,.10);
+  --bdr2: rgba(0,0,0,.20);
+  --edge-top:     inset 0 1px 0 rgba(255,255,255,.7);
+  --shadow-modal: 0 24px 80px rgba(0,0,0,.16);
+  --topbar-bg:  rgba(244, 245, 248, .85);
+  --topbar-bdr: rgba(0, 0, 0, .09);
+  --topbar-t:   #0f1117;
 }
-
-/* Overrides for hardcoded dark values in desktop.css */
 html[data-theme="light"] body { background: var(--bg); }
-html[data-theme="light"] .bg {
-  background:
-    radial-gradient(ellipse 80% 55% at 12%  8%, rgba(96,165,250,.07) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 45% at 88% 90%, rgba(167,139,250,.05) 0%, transparent 60%);
-}
-html[data-theme="light"] .bg-grid { opacity: .014; }
-html[data-theme="light"] .topbar {
-  background: rgba(241, 244, 249, .96);
-  border-bottom-color: rgba(0, 0, 0, .10);
-}
-html[data-theme="light"] .topbar-logo {
-  background: linear-gradient(135deg, var(--t1), var(--acc), var(--acc2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-html[data-theme="light"] .sidebar {
-  background: rgba(244, 246, 251, .92);
-  border-right-color: rgba(0, 0, 0, .08);
-}
-html[data-theme="light"] .atags  { background: rgba(241, 244, 249, .80); }
-html[data-theme="light"] .main-toolbar { background: rgba(255, 255, 255, .60); }
-html[data-theme="light"] .card {
-  background: linear-gradient(150deg, #ffffff, #edf1fb);
-  border-color: rgba(0, 0, 0, .07);
-}
-html[data-theme="light"] .card:hover { border-color: rgba(37, 99, 235, .30); }
-html[data-theme="light"] .ctitle { color: var(--t1); }
-html[data-theme="light"] .yr {
-  background: rgba(255, 255, 255, .88);
-  color: var(--t2);
-}
-html[data-theme="light"] .modal-overlay { background: rgba(0, 0, 0, .55); }
-html[data-theme="light"] .modal-box {
-  background: #ffffff;
-  border-color: rgba(0, 0, 0, .10);
-}
-html[data-theme="light"] .modal-title { color: var(--t1); }
-html[data-theme="light"] .modal-screenshots {
-  background: #f4f6fb;
-  border-bottom-color: rgba(0, 0, 0, .08);
-}
-html[data-theme="light"] .modal-shot { border-color: rgba(0, 0, 0, .12); }
-html[data-theme="light"] .modal-shot:hover,
-html[data-theme="light"] .modal-shot.active { border-color: rgba(37, 99, 235, .55); }
-html[data-theme="light"] .modal-hero-grad {
-  background: linear-gradient(to bottom, rgba(255,255,255,.06) 0%, rgba(255,255,255,0) 30%, rgba(255,255,255,1) 100%);
-}
-html[data-theme="light"] .modal-hero-ph {
-  background: linear-gradient(135deg, #dde4ef, #e8eaf6);
-}
-html[data-theme="light"] .modal-portrait-ph { background: #dde4ef; }
-html[data-theme="light"] .modal-body::-webkit-scrollbar-thumb { background: #b8c4d4; }
-html[data-theme="light"] .modal-vita-box {
-  background: rgba(0, 0, 0, .03);
-  border-color: rgba(0, 0, 0, .08);
-}
-html[data-theme="light"] .modal-divider { background: rgba(0, 0, 0, .08); }
-html[data-theme="light"] .modal-close-btn {
-  background: rgba(255, 255, 255, .85);
-  border-color: rgba(0, 0, 0, .14);
-  color: var(--t1);
-}
-html[data-theme="light"] .modal-close-btn:hover {
-  background: rgba(0, 0, 0, .06);
-}
-html[data-theme="light"] .modal-steam-link {
-  background: rgba(0, 0, 0, .04);
-  border-color: rgba(0, 0, 0, .10);
-}
-html[data-theme="light"] .modal-steam-link:hover { background: rgba(0, 0, 0, .08); }
-html[data-theme="light"] ::-webkit-scrollbar-thumb { background: #c0c9d8; }
