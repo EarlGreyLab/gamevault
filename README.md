@@ -1,6 +1,6 @@
 # GAMEVAULT 🎮
 
-Personal all-time game list — 539 games across 11 platforms.
+Personal all-time game list — 647 games across 11 platforms.
 
 ## Live
 
