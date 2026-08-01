@@ -133,75 +133,14 @@
   <div id="DSC"></div>
 </div>
 
+<script src="src/gv-core.js"></script>
 <script>
-const _platC = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
-const PC_PLAT={
-  "PS1": {get c(){return _platC('--plat-ps');},   l:"PS1"},
-  "PS2": {get c(){return _platC('--plat-ps');},   l:"PS2"},
-  "PS3": {get c(){return _platC('--plat-ps');},   l:"PS3"},
-  "PSP": {get c(){return _platC('--plat-ps');},   l:"PSP"},
-  "VITA":{get c(){return _platC('--plat-vita');}, l:"Vita"},
-  "NDS": {get c(){return _platC('--plat-ds');},   l:"DS"},
-  "N3DS":{get c(){return _platC('--plat-ds');},   l:"3DS"},
-  "WII": {get c(){return _platC('--plat-wii');},  l:"Wii"},
-  "WIIU":{get c(){return _platC('--plat-wii');},  l:"Wii U"},
-  "NSW": {get c(){return _platC('--plat-switch');},l:"Switch"},
-  "PC":  {get c(){return _platC('--plat-pc');},   l:"PC"},
-};
-const GE={"open-world":"&#127757;","action":"&#9876;","shooter":"&#128299;","rpg":"&#129497;",
-  "coop":"&#129309;","racing":"&#127950;","strategy":"&#127959;","platformer":"&#128377;",
-  "fighting":"&#129354;","sports":"&#9917;"};
-  const COVER_CONSOLE_PLATFORMS = new Set(["PS1","PS2","PS3","PSP","VITA","NDS","N3DS","WII","WIIU","NSW"]);
-const LOCAL_COVER_ROOT = 'covers';
-
-function slugifyTitle(text) {
-  return String(text || '')
-    .toLowerCase()
-    .replace(/[’'"?!.:,\/&]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/[^a-z0-9\-]/g, '')
-    .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '');
-}
-function makeLocalCoverUrl(g) {
-  const plat = (g.p || 'PC').toUpperCase();
-  return `${LOCAL_COVER_ROOT}/${plat.toLowerCase()}/${slugifyTitle(g.t || 'unknown')}.jpg`;
-}
-function makeFallbackCover(g) {
-  const plat = g.p || 'PC';
-  const pi = PC_PLAT[plat] || PC_PLAT.PC;
-  const ge = GE[g.g] || '🎮';
-  const title = (g.t || 'Unknown').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-  const meta = `${g.y || ''} · ${pi.l}`.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="920" height="430" viewBox="0 0 920 430">
-    <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0f172a"/><stop offset="0.55" stop-color="#0b0b0f"/><stop offset="1" stop-color="${pi.c}"/>
-    </linearGradient><radialGradient id="r" cx="18%" cy="18%" r="70%">
-      <stop offset="0" stop-color="${pi.c}" stop-opacity="0.28"/><stop offset="1" stop-color="#000" stop-opacity="0"/>
-    </radialGradient></defs>
-    <rect width="920" height="430" fill="url(#g)"/><rect width="920" height="430" fill="url(#r)"/>
-    <rect x="22" y="22" width="876" height="386" rx="18" fill="rgba(0,0,0,0.28)" stroke="rgba(255,255,255,0.12)"/>
-    <text x="56" y="108" fill="rgba(255,255,255,0.9)" font-size="54" font-family="DM Sans, system-ui, sans-serif" font-weight="800">${ge}</text>
-    <text x="56" y="178" fill="rgba(255,255,255,0.92)" font-size="44" font-family="DM Sans, system-ui, sans-serif" font-weight="800">${title}</text>
-    <text x="56" y="232" fill="rgba(255,255,255,0.62)" font-size="22" font-family="DM Mono, ui-monospace, monospace">${meta}</text>
-    <text x="56" y="328" fill="rgba(255,255,255,0.52)" font-size="18" font-family="DM Mono, ui-monospace, monospace">No official cover set — generated locally</text>
-  </svg>`;
-  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
-}
-
+// Shared constants and helpers (PC_PLAT, GE, GL, PL, cover resolution,
+// fallback art, data fetching) come from src/gv-core.js above.
 let IMG={},GAMES=[],G=[],dataReady=false;
 let curG='all',curP='all',aF=new Set(),curS='default',navMode='all';
 
-function getImg(g) {
-  const explicit = typeof g.cover === 'string' && g.cover.trim() ? g.cover.trim() : null;
-  if (explicit) return explicit;
-  const consoleCover = typeof g.consoleCover === 'string' && g.consoleCover.trim() ? g.consoleCover.trim() : null;
-  if (consoleCover) return consoleCover;
-  const u = IMG[g.t];
-  if (u && u.length > 0) return u;
-  if (COVER_CONSOLE_PLATFORMS.has((g.p || 'PC').toUpperCase())) return makeLocalCoverUrl(g);
-  return makeFallbackCover(g);
-}
+const getImg=g=>gvGetImg(g,IMG);
 
 function buildCard(g,i){
   const img=getImg(g);const isMust=g.f.includes('must');
@@ -259,11 +198,6 @@ function getSorted(){
 
 const FL={must:'Must',owned:'Owned',classic:'Classic',couch:'Couch',
   party:'Party',coop:'Co-op',online:'Online',solo:'Solo',vita:'Vita ok',vita_warn:'Vita±'};
-const GL={'open-world':'Open World',action:'Action',shooter:'Shooter',rpg:'RPG',
-  coop:'Co-op',racing:'Racing',strategy:'Strategy',platformer:'Platformer',
-  fighting:'Fighting',sports:'Sports'};
-const PL={PC:'PC',PS1:'PS1',PS2:'PS2',PS3:'PS3',PSP:'PSP',VITA:'Vita',
-  NDS:'DS',N3DS:'3DS',WII:'Wii',WIIU:'Wii U',NSW:'Switch'};
 
 function renderATags(){
   const el=document.getElementById('AT');el.innerHTML='';
@@ -429,30 +363,18 @@ document.getElementById('DS').addEventListener('touchend',e=>{
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeDetail();closeSheet();}});
 
 // ── BOOTSTRAP ─────────────────────────────────────────────────────────────────
-// 'data/games.json' is the canonical enriched source when served from the repo
-// root; the bare 'games.json' fallback covers the Capacitor www/ bundle where
-// the file sits next to this page.
-async function fetchGameData(){
-  for(const url of ['data/games.json','games.json']){
-    try{
-      const res=await fetch(url,{cache:'no-store'});
-      if(!res.ok)continue;
-      const data=await res.json();
-      if(data.IMG&&data.GAMES)return data;
-    }catch{}
-  }
-  throw new Error('no valid game data source');
-}
-
 async function bootstrap(){
   try{
-    const data=await fetchGameData();
+    // data/games.json is the canonical enriched source when served from the
+    // repo root; the bare games.json fallback covers the Capacitor www/
+    // bundle where the file sits next to this page.
+    const data=await gvFetchGameData(['data/games.json','games.json']);
+    if(!data)throw new Error('no valid game data source');
     IMG=data.IMG;
     GAMES=data.GAMES.filter(Boolean);
     const seen=new Set();
     G=GAMES.filter(g=>{if(seen.has(g.t))return false;seen.add(g.t);return true;});
-    // precomputed lowercase haystack — avoids per-keystroke toLowerCase() on every field
-    G.forEach(g=>{g._q=[g.t,g.d,g.p||'PC',g.g].join('\n').toLowerCase();});
+    G.forEach(g=>{g._q=gvSearchKey(g);});
     dataReady=true;
     document.getElementById('sVita').textContent=G.filter(g=>g.vita==='yes').length;
     render();

@@ -4,6 +4,7 @@
   "scripts": {
     "start": "npx --yes serve . -p 3000",
     "test": "playwright test",
+    "sync:www": "node scripts/sync-www.js",
     "build:cutover": "node scripts/cutover-build.js"
   },
   "devDependencies": {

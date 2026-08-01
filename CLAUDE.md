@@ -4,7 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-**GAMEVAULT** — a static single-page game library browser. No framework, no build step required. The entire UI is `index.html` + `src/app.js`. All game data lives in `data/games.json`.
+**GAMEVAULT** — a static single-page game library browser. No framework, no build step required. Two user-facing pages share one core module:
+
+- `index.html` + `src/app.js` — desktop app
+- `mobile.html` — mobile web app (structurally separate UI, inline script)
+- `src/gv-core.js` — shared constants and helpers (platform/genre maps, cover resolution, SVG fallback art, data fetching, search-key building), loaded by **both** pages before their page script. Page-agnostic logic goes here, never duplicated into the pages.
+
+All game data lives in `data/games.json`. The `www/` directory is the Capacitor webDir (iOS shell) — a generated copy of the mobile app. Never edit `www/` by hand; run `npm run sync:www` after changing `mobile.html`, `src/gv-core.js`, styles, or game data.
 
 ## Running locally
 
@@ -29,7 +35,7 @@ The JSON shape (`src/data-types.md`):
 }
 ```
 
-### Cover resolution priority (per game, in `getImg()`)
+### Cover resolution priority (per game, in `gvGetImg()` in `src/gv-core.js`)
 1. `g.cover` explicit field
 2. `g.consoleCover` explicit field
 3. `IMG[g.t]` from the IMG map in `games.json`
@@ -56,6 +62,7 @@ Edit `data/games.json` directly and refresh the browser. No build needed.
 
 | Script | Purpose |
 |---|---|
+| `scripts/sync-www.js` | Copies mobile app + shared core + data + styles into `www/` (Capacitor webDir). Run via `npm run sync:www` |
 | `scripts/download-covers.js` | Downloads local cover images from a URL map JSON (`data/console-cover-urls.json` by default) into `covers/<platform>/` |
 | `scripts/add-console-cover-metadata.js` / `.py` | Adds `consoleCover` fields to `games.json` entries |
 | `scripts/export-console-covers.js` | Exports cover URL data |

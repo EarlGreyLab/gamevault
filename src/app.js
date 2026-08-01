@@ -1,21 +1,7 @@
+// Shared constants and helpers (PC_PLAT, GE, GL, PL, cover resolution,
+// fallback art, data fetching) come from src/gv-core.js, loaded before
+// this script by index.html.
 const IMG = {};
-
-const PC_PLAT={
-  "PS1":  {c:"#003087",l:"PS1"},
-  "PS2":  {c:"#00439C",l:"PS2"},
-  "PS3":  {c:"#003791",l:"PS3"},
-  "PSP":  {c:"#003087",l:"PSP"},
-  "VITA": {c:"#06439C",l:"Vita"},
-  "NDS":  {c:"#C8102E",l:"DS"},
-  "N3DS": {c:"#C8102E",l:"3DS"},
-  "WII":  {c:"#009AC7",l:"Wii"},
-  "WIIU": {c:"#009AC7",l:"Wii U"},
-  "NSW":  {c:"#E4000F",l:"Switch"},
-  "PC":   {c:"#63b3ed",l:"PC"},
-};
-const COVER_CONSOLE_PLATFORMS = new Set(["PS1","PS2","PS3","PSP","VITA","NDS","N3DS","WII","WIIU","NSW"]);
-const LOCAL_COVER_ROOT = 'covers';
-const GE={"open-world":"&#127757;","action":"&#9876;","shooter":"&#128299;","rpg":"&#129497;","coop":"&#129309;","racing":"&#127950;","strategy":"&#127959;","platformer":"&#128377;","fighting":"&#129354;","sports":"&#9917;"};
 const GAMES = [];
 
 // Intro: fade out after animations settle, then remove from DOM
@@ -105,24 +91,14 @@ function applyExternalData(payload) {
   Object.assign(IMG, payload.IMG);
 
   GAMES.splice(0, GAMES.length, ...validGames);
-  // Precomputed lowercase haystack so search doesn't call toLowerCase()
-  // on five fields per game per keystroke.
-  GAMES.forEach(g => {
-    g._q = [g.t, g.d, g.p || 'PC', g.g, GL[g.g] || ''].join('\n').toLowerCase();
-  });
+  GAMES.forEach(g => { g._q = gvSearchKey(g); });
   dataSource = 'external-json';
   return true;
 }
 
 async function tryLoadExternalData() {
-  try {
-    const res = await fetch(DATA_URL, { cache: 'no-store' });
-    if (!res.ok) return false;
-    const payload = await res.json();
-    return applyExternalData(payload);
-  } catch {
-    return false;
-  }
+  const payload = await gvFetchGameData([DATA_URL]);
+  return payload ? applyExternalData(payload) : false;
 }
 
 
@@ -147,98 +123,7 @@ function refreshFavouritesStat() {
 }
 
 // ── HELPERS ───────────────────────────────────────────────────────────────
-function makeFallbackCover(g) {
-  const plat = g.p || 'PC';
-  const pi = PC_PLAT[plat] || PC_PLAT.PC;
-  const ge = GE[g.g] || '🎮';
-  const title = (g.t || 'Unknown').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  const meta = `${g.y || ''} · ${pi.l}`.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  const svg =
-`<svg xmlns="http://www.w3.org/2000/svg" width="920" height="430" viewBox="0 0 920 430">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0f172a"/>
-      <stop offset="0.55" stop-color="#0b0b0f"/>
-      <stop offset="1" stop-color="${pi.c}"/>
-    </linearGradient>
-    <radialGradient id="r" cx="18%" cy="18%" r="70%">
-      <stop offset="0" stop-color="${pi.c}" stop-opacity="0.28"/>
-      <stop offset="1" stop-color="#000" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
-  <rect width="920" height="430" fill="url(#g)"/>
-  <rect width="920" height="430" fill="url(#r)"/>
-  <rect x="22" y="22" width="876" height="386" rx="18" fill="rgba(0,0,0,0.28)" stroke="rgba(255,255,255,0.12)"/>
-  <text x="56" y="108" fill="rgba(255,255,255,0.9)" font-size="54" font-family="DM Sans, system-ui, sans-serif" font-weight="800">${ge}</text>
-  <text x="56" y="178" fill="rgba(255,255,255,0.92)" font-size="44" font-family="DM Sans, system-ui, sans-serif" font-weight="800">${title}</text>
-  <text x="56" y="232" fill="rgba(255,255,255,0.62)" font-size="22" font-family="DM Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">${meta}</text>
-  <text x="56" y="328" fill="rgba(255,255,255,0.52)" font-size="18" font-family="DM Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">No official cover set — generated locally</text>
-</svg>`;
-  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
-}
-
-function makeFallbackPortrait(g) {
-  const plat = g.p || 'PC';
-  const pi = PC_PLAT[plat] || PC_PLAT.PC;
-  const ge = GE[g.g] || '🎮';
-  const title = (g.t || 'Unknown').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  const meta = `${g.y || ''} · ${pi.l}`.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  const svg =
-`<svg xmlns="http://www.w3.org/2000/svg" width="600" height="900" viewBox="0 0 600 900">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0b0b0f"/>
-      <stop offset="0.55" stop-color="#0a0a10"/>
-      <stop offset="1" stop-color="${pi.c}"/>
-    </linearGradient>
-    <radialGradient id="r" cx="22%" cy="18%" r="70%">
-      <stop offset="0" stop-color="${pi.c}" stop-opacity="0.28"/>
-      <stop offset="1" stop-color="#000" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
-  <rect width="600" height="900" fill="url(#g)"/>
-  <rect width="600" height="900" fill="url(#r)"/>
-  <rect x="22" y="22" width="556" height="856" rx="22" fill="rgba(0,0,0,0.28)" stroke="rgba(255,255,255,0.12)"/>
-  <text x="56" y="140" fill="rgba(255,255,255,0.9)" font-size="58" font-family="DM Sans, system-ui, sans-serif" font-weight="800">${ge}</text>
-  <text x="56" y="230" fill="rgba(255,255,255,0.92)" font-size="44" font-family="DM Sans, system-ui, sans-serif" font-weight="800">${title}</text>
-  <text x="56" y="288" fill="rgba(255,255,255,0.62)" font-size="22" font-family="DM Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">${meta}</text>
-  <text x="56" y="820" fill="rgba(255,255,255,0.52)" font-size="18" font-family="DM Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">Generated cover</text>
-</svg>`;
-  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
-}
-
-function slugifyTitle(text) {
-  return String(text || '')
-    .toLowerCase()
-    .replace(/[’'"?!.:,\/&]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/[^a-z0-9\-]/g, '')
-    .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '');
-}
-
-function makeLocalCoverUrl(g) {
-  const plat = (g.p || 'PC').toUpperCase();
-  const titleSlug = slugifyTitle(g.t || 'unknown');
-  return `${LOCAL_COVER_ROOT}/${plat.toLowerCase()}/${titleSlug}.jpg`;
-}
-
-function getImg(g) {
-  const explicit = typeof g.cover === 'string' && g.cover.trim() ? g.cover.trim() : null;
-  if (explicit) return explicit;
-
-  const consoleCover = typeof g.consoleCover === 'string' && g.consoleCover.trim() ? g.consoleCover.trim() : null;
-  if (consoleCover) return consoleCover;
-
-  const u = IMG[g.t];
-  if (u && u.length > 0) return u;
-
-  if (COVER_CONSOLE_PLATFORMS.has((g.p || 'PC').toUpperCase())) {
-    return makeLocalCoverUrl(g);
-  }
-
-  return makeFallbackCover(g);
-}
+const getImg = g => gvGetImg(g, IMG);
 
 function getSteamAppId(g) {
   if (g.steamId) return String(g.steamId);
@@ -336,11 +221,6 @@ function getSorted() {
 const FL = { must:'Must Play', owned:'Owned', classic:'Classic', couch:'Couch',
              party:'Party', coop:'Co-op', online:'Online', solo:'Solo',
              vita:'Vita ok', vita_warn:'Vita±', favs:'Favourites' };
-const GL = { 'open-world':'Open World', action:'Action', shooter:'Shooter', rpg:'RPG',
-             coop:'Co-op', racing:'Racing', strategy:'Strategy',
-             platformer:'Platformer', fighting:'Fighting', sports:'Sports' };
-const PL = { PC:'PC', PS1:'PS1', PS2:'PS2', PS3:'PS3', PSP:'PSP', VITA:'Vita',
-             NDS:'DS', N3DS:'3DS', WII:'Wii', WIIU:'Wii U', NSW:'Switch' };
 
 function renderActiveTags() {
   const el = document.getElementById('AT');
