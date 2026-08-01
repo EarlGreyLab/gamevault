@@ -207,6 +207,7 @@ function buildCard(g,i){
   const img=getImg(g);const isMust=g.f.includes('must');
   const c=document.createElement('div');
   c.className='card'+(isMust?' must':'');
+  c.dataset.i=i;
   c.style.animationDelay=Math.min(i*.015,.4)+'s';
   const plat=g.p||'PC';const pi=PC_PLAT[plat]||PC_PLAT.PC;
   const ge=GE[g.g]||'🎮';
@@ -229,7 +230,6 @@ function buildCard(g,i){
     <div class="cdesc">${g.d}</div>
     <div class="ctags"><span class="ct ct-genre">${g.g}</span>${ft}<span class="ct ${vc}">${vt}</span></div>
   </div>`;
-  c.addEventListener('click',()=>openDetail(g));
   return c;
 }
 
@@ -239,8 +239,7 @@ function getSorted(){
   return G.filter(g=>{
     if(curG!=='all'&&g.g!==curG)return false;
     if(curP!=='all'&&(g.p||'PC')!==curP)return false;
-    if(q&&!g.t.toLowerCase().includes(q)&&!g.d.toLowerCase().includes(q)&&
-       !(g.p||'PC').toLowerCase().includes(q))return false;
+    if(q&&!g._q.includes(q))return false;
     for(const fl of aF){
       if(fl==='vita'){if(g.vita!=='yes')return false;}
       else if(fl==='vita_warn'){if(g.vita!=='warn'&&g.vita!=='yes')return false;}
@@ -291,14 +290,20 @@ function renderATags(){
   el.style.display=el.children.length?'flex':'none';
 }
 
+// list currently shown — card taps are delegated on #CARDS via data-i lookup
+let curList=[];
 function render(){
   if(!dataReady)return;
   const cards=document.getElementById('CARDS');
-  const list=getSorted();
+  curList=getSorted();
   cards.innerHTML='';
-  if(!list.length)cards.innerHTML='<div class="empty"><span>🔍</span>No games match.</div>';
-  else list.forEach((g,i)=>cards.appendChild(buildCard(g,i)));
-  document.getElementById('sCount').textContent=list.length;
+  if(!curList.length)cards.innerHTML='<div class="empty"><span>🔍</span>No games match.</div>';
+  else{
+    const frag=document.createDocumentFragment();
+    curList.forEach((g,i)=>frag.appendChild(buildCard(g,i)));
+    cards.appendChild(frag);
+  }
+  document.getElementById('sCount').textContent=curList.length;
   document.getElementById('FBT').classList.toggle('has-filters',curG!=='all'||curP!=='all'||aF.size>0);
   renderATags();
 }
@@ -357,7 +362,20 @@ function resetNavMode(){
 }
 
 // ── EVENTS ────────────────────────────────────────────────────────────────────
-document.getElementById('SI').addEventListener('input',render);
+// delegated card tap (replaces one listener per card)
+document.getElementById('CARDS').addEventListener('click',e=>{
+  const c=e.target.closest('.card');
+  if(!c||c.dataset.i===undefined)return;
+  const g=curList[+c.dataset.i];
+  if(g)openDetail(g);
+});
+
+// debounced search — don't rebuild the full grid on every keystroke
+let _searchTimer;
+document.getElementById('SI').addEventListener('input',()=>{
+  clearTimeout(_searchTimer);
+  _searchTimer=setTimeout(render,150);
+});
 document.getElementById('FBT').addEventListener('click',openSheet);
 document.getElementById('SO').addEventListener('click',closeSheet);
 document.getElementById('DO').addEventListener('click',closeDetail);
@@ -433,6 +451,8 @@ async function bootstrap(){
     GAMES=data.GAMES.filter(Boolean);
     const seen=new Set();
     G=GAMES.filter(g=>{if(seen.has(g.t))return false;seen.add(g.t);return true;});
+    // precomputed lowercase haystack — avoids per-keystroke toLowerCase() on every field
+    G.forEach(g=>{g._q=[g.t,g.d,g.p||'PC',g.g].join('\n').toLowerCase();});
     dataReady=true;
     document.getElementById('sVita').textContent=G.filter(g=>g.vita==='yes').length;
     render();

@@ -105,6 +105,11 @@ function applyExternalData(payload) {
   Object.assign(IMG, payload.IMG);
 
   GAMES.splice(0, GAMES.length, ...validGames);
+  // Precomputed lowercase haystack so search doesn't call toLowerCase()
+  // on five fields per game per keystroke.
+  GAMES.forEach(g => {
+    g._q = [g.t, g.d, g.p || 'PC', g.g, GL[g.g] || ''].join('\n').toLowerCase();
+  });
   dataSource = 'external-json';
   return true;
 }
@@ -288,13 +293,9 @@ function buildCard(g, idx) {
 
   const card = document.createElement('div');
   card.className = 'card' + (isMust ? ' must' : '');
+  card.dataset.i = idx;
   card.style.animationDelay = Math.min(idx * 0.025, 0.5) + 's';
   card.style.setProperty('--glow-color', pi.c);
-  card.addEventListener('mousemove', e => {
-    const r = card.getBoundingClientRect();
-    card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-    card.style.setProperty('--my', (e.clientY - r.top) + 'px');
-  });
   card.innerHTML = `
     ${imgHtml}
     <div class="cbody">
@@ -306,7 +307,6 @@ function buildCard(g, idx) {
         <span class="ct ${vitaClass}">${vitaLabel}</span>
       </div>
     </div>`;
-  card.addEventListener('click', () => openDetail(g));
   return card;
 }
 
@@ -316,14 +316,7 @@ function getSorted() {
   let list = GAMES.filter(g => {
     if (curGenre !== 'all' && g.g !== curGenre) return false;
     if (curPlat !== 'all' && (g.p || 'PC') !== curPlat) return false;
-    if (q) {
-      const match = g.t.toLowerCase().includes(q) ||
-                    g.d.toLowerCase().includes(q) ||
-                    (g.p || 'PC').toLowerCase().includes(q) ||
-                    g.g.toLowerCase().includes(q) ||
-                    (GL[g.g] || g.g).toLowerCase().includes(q);
-      if (!match) return false;
-    }
+    if (q && !g._q.includes(q)) return false;
     for (const fl of activeFlags) {
       if (fl === 'vita') { if (g.vita !== 'yes') return false; }
       else if (fl === 'vita_warn') { if (g.vita !== 'warn' && g.vita !== 'yes') return false; }
@@ -382,17 +375,23 @@ function renderActiveTags() {
 }
 
 // ── RENDER ────────────────────────────────────────────────────────────────
+// The list currently shown in the grid — card click/hover handlers are
+// delegated on #GRID and look games up here via each card's data-i index.
+let curList = [];
+
 function render() {
   if (!dataReady) return;
   const grid = document.getElementById('GRID');
-  const list = getSorted();
+  curList = getSorted();
   grid.innerHTML = '';
-  if (!list.length) {
+  if (!curList.length) {
     grid.innerHTML = '<div class="empty"><span>🔍</span>No games match.</div>';
   } else {
-    list.forEach((g, i) => grid.appendChild(buildCard(g, i)));
+    const frag = document.createDocumentFragment();
+    curList.forEach((g, i) => frag.appendChild(buildCard(g, i)));
+    grid.appendChild(frag);
   }
-  document.getElementById('sCount').textContent = list.length;
+  document.getElementById('sCount').textContent = curList.length;
   renderActiveTags();
 }
 
@@ -550,11 +549,34 @@ function closeModal() {
 }
 
 // ── EVENT LISTENERS ───────────────────────────────────────────────────────
-// Search — topbar and hero inputs kept in sync
+// Card click + hover glow, delegated once on the grid instead of two
+// listeners per card (2 × 647 across every re-render otherwise)
+const _GRID = document.getElementById('GRID');
+_GRID.addEventListener('click', e => {
+  const card = e.target.closest('.card');
+  if (!card || card.dataset.i === undefined) return;
+  const g = curList[+card.dataset.i];
+  if (g) openDetail(g);
+});
+_GRID.addEventListener('mousemove', e => {
+  const card = e.target.closest('.card');
+  if (!card) return;
+  const r = card.getBoundingClientRect();
+  card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+  card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+});
+
+// Search — topbar and hero inputs kept in sync; render is debounced so
+// fast typing doesn't rebuild the full grid on every keystroke
 const _SI = document.getElementById('SI');
 const _HI = document.getElementById('HI');
-_SI.addEventListener('input', () => { _HI.value = _SI.value; render(); });
-_HI.addEventListener('input', () => { _SI.value = _HI.value; render(); });
+let _searchTimer;
+function scheduleRender() {
+  clearTimeout(_searchTimer);
+  _searchTimer = setTimeout(render, 120);
+}
+_SI.addEventListener('input', () => { _HI.value = _SI.value; scheduleRender(); });
+_HI.addEventListener('input', () => { _SI.value = _HI.value; scheduleRender(); });
 // Scroll to library when hero search is submitted/typed
 _HI.addEventListener('keydown', e => {
   if (e.key === 'Enter') {
