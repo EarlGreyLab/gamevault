@@ -216,9 +216,10 @@ function buildCard(g,i){
     ['party','ct-party','Party'],['coop','ct-coop','Co-op'],['solo','ct-solo','Solo']];
   const ft=fd.filter(([k])=>g.f.includes(k)).slice(0,3)
     .map(([,cl,l])=>`<span class="ct ${cl}">${l}</span>`).join('');
+  const fbk=img.startsWith(LOCAL_COVER_ROOT+'/')?` data-fbk="${makeFallbackCover(g)}"`:'';
   const imgH=img
-    ?`<div class="ciw"><img src="${img}" alt="${g.t}" loading="lazy"
-        onerror="this.style.display='none';this.nextElementSibling&&(this.nextElementSibling.style.display='flex')">
+    ?`<div class="ciw"><img src="${img}" alt="${g.t}" loading="lazy"${fbk}
+        onerror="if(this.dataset.fbk){this.src=this.dataset.fbk;this.removeAttribute('data-fbk');}else{this.style.display='none';this.nextElementSibling&&(this.nextElementSibling.style.display='flex')}">
        <div class="cip" style="display:none">${ge}</div>
        <span class="yr">${g.y}</span><span class="pb" style="background:${pi.c}">${pi.l}</span></div>`
     :`<div class="ciw"><div class="cip">${ge}</div>
@@ -410,12 +411,24 @@ document.getElementById('DS').addEventListener('touchend',e=>{
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeDetail();closeSheet();}});
 
 // ── BOOTSTRAP ─────────────────────────────────────────────────────────────────
+// 'data/games.json' is the canonical enriched source when served from the repo
+// root; the bare 'games.json' fallback covers the Capacitor www/ bundle where
+// the file sits next to this page.
+async function fetchGameData(){
+  for(const url of ['data/games.json','games.json']){
+    try{
+      const res=await fetch(url,{cache:'no-store'});
+      if(!res.ok)continue;
+      const data=await res.json();
+      if(data.IMG&&data.GAMES)return data;
+    }catch{}
+  }
+  throw new Error('no valid game data source');
+}
+
 async function bootstrap(){
   try{
-    const res=await fetch('games.json',{cache:'no-store'});
-    if(!res.ok)throw new Error('HTTP '+res.status);
-    const data=await res.json();
-    if(!data.IMG||!data.GAMES)throw new Error('Invalid data format');
+    const data=await fetchGameData();
     IMG=data.IMG;
     GAMES=data.GAMES.filter(Boolean);
     const seen=new Set();
@@ -426,7 +439,7 @@ async function bootstrap(){
   }catch(e){
     const hint=window.location.protocol==='file:'
       ?'You opened this via <code>file://</code>. Run a local server instead:<br><code>npx serve .</code>'
-      :'Check that <code>games.json</code> exists in the same directory.';
+      :'Check that <code>data/games.json</code> (or <code>games.json</code> next to this page) exists and is valid JSON.';
     document.getElementById('CARDS').innerHTML=
       `<div class="empty"><span>⚠️</span><strong>Could not load game data.</strong><br><br>${hint}</div>`;
     document.getElementById('sCount').textContent='0';

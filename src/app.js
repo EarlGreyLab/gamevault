@@ -267,10 +267,13 @@ function buildCard(g, idx) {
     .map(([, cls, l]) => `<span class="ct ${cls}">${l}</span>`)
     .join('');
 
+  // Local covers/ paths may not exist on disk — fall back to the generated
+  // SVG cover on 404 instead of dropping to the bare emoji placeholder.
+  const fbk = img.startsWith(LOCAL_COVER_ROOT + '/') ? ` data-fbk="${makeFallbackCover(g)}"` : '';
   const imgHtml = img
     ? `<div class="ciw">
-        <img src="${img}" alt="${g.t}" loading="lazy"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <img src="${img}" alt="${g.t}" loading="lazy"${fbk}
+          onerror="if(this.dataset.fbk){this.src=this.dataset.fbk;this.removeAttribute('data-fbk');}else{this.style.display='none';this.nextElementSibling.style.display='flex'}">
         <div class="cip" style="display:none">${ge}</div>
         ${favBadge}
         <span class="yr">${g.y}</span>
