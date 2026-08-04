@@ -5,7 +5,11 @@
     "start": "npx --yes serve . -p 3000",
     "test": "playwright test",
     "sync:www": "node scripts/sync-www.js",
-    "build:cutover": "node scripts/cutover-build.js"
+    "build:cutover": "node scripts/cutover-build.js",
+    "sync:ios": "npm run sync:www && npx cap sync ios",
+    "sync:android": "npm run sync:www && npx cap sync android",
+    "open:ios": "npx cap open ios",
+    "open:android": "npx cap open android"
   },
   "devDependencies": {
     "@playwright/test": "^1.60.0",
@@ -13,8 +17,9 @@
     "playwright": "^1.52.0"
   },
   "dependencies": {
-    "@capacitor/cli": "^8.4.2",
-    "@capacitor/core": "^8.4.2",
-    "@capacitor/ios": "^8.4.2"
+    "@capacitor/android": "^8.5.0",
+    "@capacitor/cli": "^8.5.0",
+    "@capacitor/core": "^8.5.0",
+    "@capacitor/ios": "^8.5.0"
   }
 }
