@@ -7,3 +7,7 @@ node_modules/
 /playwright/.cache/
 /playwright/.auth/
 .DS_Store
+
+# Local-only PriceCharting API key (see data/pricecharting-key.template.json)
+data/pricecharting-key.json
+www/pricecharting-key.json

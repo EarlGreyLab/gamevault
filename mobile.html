@@ -68,7 +68,21 @@
     <span class="nav-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v3M10 15v3M2 10h3M15 10h3M4.3 4.3l2.1 2.1M13.6 13.6l2.1 2.1M15.7 4.3l-2.1 2.1M6.4 13.6l-2.1 2.1"/><circle cx="10" cy="10" r="2.2" fill="currentColor" stroke="none"/></svg></span>
     <span class="nav-label">Party</span>
   </button>
+  <button class="nav-btn" id="NB-scan">
+    <span class="nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8V5a2 2 0 0 1 2-2h3M16 3h3a2 2 0 0 1 2 2v3M21 16v3a2 2 0 0 1-2 2h-3M8 21H5a2 2 0 0 1-2-2v-3"/><line x1="7" y1="8" x2="7" y2="16"/><line x1="10.3" y1="8" x2="10.3" y2="16"/><line x1="13.6" y1="8" x2="13.6" y2="16"/><line x1="17" y1="8" x2="17" y2="16"/></svg></span>
+    <span class="nav-label">Scan</span>
+  </button>
 </nav>
+
+<!-- SCAN VIEW -->
+<div class="scan-overlay" id="SCV">
+  <div class="scan-topbar">
+    <button class="scan-close" id="SCX" aria-label="Close scanner">✕</button>
+    <div class="scan-hint" id="SCH">Point the camera at a barcode</div>
+  </div>
+  <video id="SCVID" class="scan-video" playsinline muted autoplay></video>
+  <div class="scan-frame"></div>
+</div>
 
 <!-- FILTER SHEET -->
 <div class="sheet-overlay" id="SO"></div>
@@ -133,12 +147,16 @@
   <div id="DSC"></div>
 </div>
 
+<script src="vendor/zxing-browser.min.js"></script>
 <script src="src/gv-core.js"></script>
 <script>
 // Shared constants and helpers (PC_PLAT, GE, GL, PL, cover resolution,
-// fallback art, data fetching) come from src/gv-core.js above.
+// fallback art, data fetching, PriceCharting lookup, local additions) come
+// from src/gv-core.js above. ZXingBrowser (barcode decoding) comes from the
+// vendored vendor/zxing-browser.min.js UMD bundle.
 let IMG={},GAMES=[],G=[],dataReady=false;
 let curG='all',curP='all',aF=new Set(),curS='default',navMode='all';
+let priceChartingKey=null,scanControls=null;
 
 const getImg=g=>gvGetImg(g,IMG);
 
@@ -156,6 +174,7 @@ function buildCard(g,i){
     ['party','ct-party','Party'],['coop','ct-coop','Co-op'],['solo','ct-solo','Solo']];
   const ft=fd.filter(([k])=>g.f.includes(k)).slice(0,3)
     .map(([,cl,l])=>`<span class="ct ${cl}">${l}</span>`).join('');
+  const localTag=g.local?'<span class="ct ct-genre" style="opacity:.7">Scanned</span>':'';
   const fbk=img.startsWith(LOCAL_COVER_ROOT+'/')?` data-fbk="${makeFallbackCover(g)}"`:'';
   const pbH=`<span class="pb"><i style="background:${pi.c}"></i>${pi.l}</span>`;
   const imgH=img
@@ -168,7 +187,7 @@ function buildCard(g,i){
   c.innerHTML=`${imgH}<div class="cbody">
     <div class="ctitle">${g.t}</div>
     <div class="cdesc">${g.d}</div>
-    <div class="ctags"><span class="ct ct-genre">${g.g}</span>${ft}<span class="ct ${vc}">${vt}</span></div>
+    <div class="ctags"><span class="ct ct-genre">${g.g}</span>${ft}<span class="ct ${vc}">${vt}</span>${localTag}</div>
   </div>`;
   return c;
 }
@@ -299,6 +318,139 @@ function resetNavMode(){
   document.getElementById('NB-all').classList.add('active');
 }
 
+// ── BARCODE SCANNER ─────────────────────────────────────────────────────────
+// Loads the developer's own PriceCharting API key from a gitignored local
+// file (see data/pricecharting-key.template.json). Missing/invalid key just
+// disables the feature — this is optional, not load-bearing for the app.
+async function loadPriceChartingKey(){
+  for(const url of ['data/pricecharting-key.json','pricecharting-key.json']){
+    try{
+      const res=await fetch(url,{cache:'no-store'});
+      if(!res.ok)continue;
+      const j=await res.json();
+      if(j&&typeof j.apiKey==='string'&&j.apiKey.trim())return j.apiKey.trim();
+    }catch{}
+  }
+  return null;
+}
+
+// PriceCharting console names are free-text, not a fixed enum — this is a
+// best-effort mapping back to GAMEVAULT's platform keys. Wrong guesses just
+// mean the scanned game lands under the wrong platform filter; title/pricing
+// are unaffected.
+function guessPlatformFromConsole(consoleName){
+  const c=(consoleName||'').toLowerCase();
+  if(c.includes('switch'))return 'NSW';
+  if(c.includes('wii u'))return 'WIIU';
+  if(c.includes('wii'))return 'WII';
+  if(c.includes('3ds'))return 'N3DS';
+  if(c.includes('nintendo ds'))return 'NDS';
+  if(c.includes('vita'))return 'VITA';
+  if(c.includes('psp'))return 'PSP';
+  if(c.includes('playstation 3')||c.includes('ps3'))return 'PS3';
+  if(c.includes('playstation 2')||c.includes('ps2'))return 'PS2';
+  if(c.includes('playstation')||c.includes('psx'))return 'PS1';
+  return 'PC';
+}
+
+function openScan(){
+  if(typeof ZXingBrowser==='undefined'){
+    alert('Scanner failed to load. Reload the app and try again.');
+    return;
+  }
+  document.getElementById('SCH').textContent='Point the camera at a barcode';
+  document.getElementById('SCV').classList.add('open');
+  document.body.style.overflow='hidden';
+  startScanDecode();
+}
+
+function closeScan(){
+  document.getElementById('SCV').classList.remove('open');
+  document.body.style.overflow='';
+  if(scanControls){scanControls.stop();scanControls=null;}
+}
+
+async function startScanDecode(){
+  const video=document.getElementById('SCVID');
+  try{
+    const reader=new ZXingBrowser.BrowserMultiFormatReader();
+    scanControls=await reader.decodeFromConstraints(
+      {video:{facingMode:'environment'}},video,
+      (result,err,controls)=>{
+        if(result){
+          controls.stop();
+          scanControls=null;
+          onBarcodeDetected(result.getText());
+        }
+      }
+    );
+  }catch(e){
+    document.getElementById('SCH').textContent='Camera unavailable — check camera permission in Settings.';
+  }
+}
+
+async function onBarcodeDetected(upc){
+  closeScan();
+  showScanSheet('<div class="ds-body"><div class="ds-title">Looking up…</div><div class="ds-scan-status">Checking PriceCharting for barcode '+upc+'.</div></div>');
+  if(!priceChartingKey){
+    showScanSheet('<div class="ds-body"><div class="ds-title">Scanner not configured</div><div class="ds-scan-status">No PriceCharting API key found. Add one at data/pricecharting-key.json (see the template file) and reload.</div></div>');
+    return;
+  }
+  const priced=await gvLookupPriceCharting(upc,priceChartingKey);
+  if(!priced){
+    showScanSheet('<div class="ds-body"><div class="ds-title">Not found</div><div class="ds-scan-status">No pricing match for barcode '+upc+'. It may not be in PriceCharting\'s database.</div></div>');
+    return;
+  }
+  const match=G.find(g=>g.t.toLowerCase()===priced.title.toLowerCase());
+  renderScanResult(priced,match);
+}
+
+function showScanSheet(html){
+  document.getElementById('DSC').innerHTML=html;
+  document.getElementById('DO').classList.add('open');
+  document.getElementById('DS').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function renderScanResult(priced,match){
+  const price=v=>v==null?'—':`$${v.toFixed(2)}`;
+  const statusHtml=match
+    ?`<div class="ds-scan-status">✅ Already in your library${match.p?` · ${PL[match.p]||match.p}`:''}</div>`
+    :`<div class="ds-scan-status">Not yet in your library</div>`;
+  const addBtn=match?'':'<button class="sheet-btn sheet-btn-apply" id="SCADD">Add to Library</button>';
+  showScanSheet(`<div class="ds-body">
+    <div class="ds-title">${priced.title}</div>
+    <div class="ds-meta">${priced.console||''}</div>
+    ${statusHtml}
+    <div class="ds-price-grid">
+      <div class="ds-price"><div class="ds-price-label">Loose</div><div class="ds-price-value">${price(priced.loosePrice)}</div></div>
+      <div class="ds-price"><div class="ds-price-label">CIB</div><div class="ds-price-value">${price(priced.cibPrice)}</div></div>
+      <div class="ds-price"><div class="ds-price-label">New</div><div class="ds-price-value">${price(priced.newPrice)}</div></div>
+    </div>
+    <div class="ds-scan-actions">
+      <a class="sheet-btn sheet-btn-clear" href="${priced.productUrl}" target="_blank" rel="noopener">View / Buy on PriceCharting</a>
+      ${addBtn}
+    </div>
+  </div>`);
+  if(!match){
+    document.getElementById('SCADD').addEventListener('click',()=>addLocalGame(priced));
+  }
+}
+
+function addLocalGame(priced){
+  const game={
+    t:priced.title,y:new Date().getFullYear(),g:'action',vita:'no',
+    p:guessPlatformFromConsole(priced.console),f:['owned'],
+    d:priced.console?`Scanned via barcode · ${priced.console}`:'Scanned via barcode',
+    local:true,
+  };
+  gvSaveLocalAddition(game);
+  const withKey=Object.assign({},game,{_q:gvSearchKey(game)});
+  G.push(withKey);
+  render();
+  closeDetail();
+}
+
 // ── EVENTS ────────────────────────────────────────────────────────────────────
 // delegated card tap (replaces one listener per card)
 document.getElementById('CARDS').addEventListener('click',e=>{
@@ -356,6 +508,8 @@ document.querySelectorAll('.sort-btn').forEach(b=>b.addEventListener('click',()=
     navMode=mode;render();
   });
 });
+document.getElementById('NB-scan').addEventListener('click',openScan);
+document.getElementById('SCX').addEventListener('click',closeScan);
 
 // Swipe detail sheet down to close
 let _ty=0;
@@ -364,7 +518,7 @@ document.getElementById('DS').addEventListener('touchend',e=>{
   if(e.changedTouches[0].clientY-_ty>60&&document.getElementById('DS').scrollTop===0)closeDetail();
 },{passive:true});
 
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeDetail();closeSheet();}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeDetail();closeSheet();closeScan();}});
 
 // ── BOOTSTRAP ─────────────────────────────────────────────────────────────────
 async function bootstrap(){
@@ -379,6 +533,13 @@ async function bootstrap(){
     const seen=new Set();
     G=GAMES.filter(g=>{if(seen.has(g.t))return false;seen.add(g.t);return true;});
     G.forEach(g=>{g._q=gvSearchKey(g);});
+    // Barcode-scanned additions live only in this device's local storage
+    // (games.json is static) — merge them in, skipping any that now collide
+    // with a title already in the fetched catalog.
+    gvLoadLocalAdditions().filter(g=>!seen.has(g.t)).forEach(g=>{
+      seen.add(g.t);g._q=gvSearchKey(g);G.push(g);
+    });
+    loadPriceChartingKey().then(k=>{priceChartingKey=k;});
     dataReady=true;
     document.getElementById('sVita').textContent=G.filter(g=>g.vita==='yes').length;
     render();

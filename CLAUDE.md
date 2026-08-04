@@ -73,6 +73,15 @@ Edit `data/games.json` directly and refresh the browser. No build needed.
 
 **Valid flag values:** `must`, `owned`, `coop`, `online`, `solo`, `couch`, `party`, `classic`
 
+## Barcode scanner (mobile app, Capacitor iOS only)
+
+Mobile has a "Scan" nav tab that scans a game box's UPC barcode, looks it up on PriceCharting for current pricing, and lets you add it to the library. This only does anything useful inside the Capacitor iOS shell (real camera) — in a plain browser tab it degrades gracefully to an error message.
+
+- **Barcode decoding**: `vendor/zxing-browser.min.js` — a vendored MIT-licensed UMD build of `@zxing/browser` (pure JS, no native plugin). We tried `@capacitor-mlkit/barcode-scanning` first, but Google's ML Kit SDK only supports CocoaPods, and this project's iOS shell is pure SPM (`ios/App/CapApp-SPM`) — adding CocoaPods would mean restructuring the iOS build toolchain just for this. ZXing runs entirely in the WKWebView via `getUserMedia`, so it needs no native plugin, no CocoaPods, and no build step — consistent with the rest of this repo.
+- **Pricing lookup**: `gvLookupPriceCharting(upc, apiKey)` in `src/gv-core.js` — hits PriceCharting's UPC-indexed product API, normalizes the response (loose/CIB/new prices, product URL).
+- **API key**: gitignored `data/pricecharting-key.json` (`{"apiKey": "..."}`), templated by the committed `data/pricecharting-key.template.json`. Loaded at runtime by `mobile.html` (`loadPriceChartingKey()`); missing/invalid key just disables the feature. `scripts/sync-www.js` copies it into `www/` if present, skips silently if not.
+- **"Add to Library"**: `data/games.json` is static and fetched read-only at runtime (see `gvFetchGameData`) — there's no write-back path to it from a running app. Scanned additions instead go into `localStorage` (`gvLoadLocalAdditions()` / `gvSaveLocalAddition()` in `src/gv-core.js`, key `gv_local_additions`) and get merged into the render list at bootstrap. This is device-local only: it won't appear in `data/games.json` or sync to other installs unless manually copied over.
+
 ## Scripts
 
 | Script | Purpose |

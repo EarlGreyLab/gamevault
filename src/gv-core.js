@@ -1,7 +1,8 @@
 // GAMEVAULT shared core — loaded by BOTH index.html (desktop) and
 // mobile.html before their page scripts. Keep everything here page-agnostic:
-// constants, cover resolution, fallback art, data fetching. Page-specific
-// state, rendering and event wiring stay in src/app.js / mobile.html.
+// constants, cover resolution, fallback art, data fetching, pricing lookups.
+// Page-specific state, rendering and event wiring stay in src/app.js /
+// mobile.html.
 //
 // This is a classic (non-module) script on purpose: its top-level
 // declarations land in the global scope, which both the module script on
@@ -152,4 +153,61 @@ async function gvFetchGameData(urls) {
     } catch {}
   }
   return null;
+}
+
+// Looks up a scanned barcode against PriceCharting's UPC-indexed product API
+// and normalizes the result for the scanner UI. Prices come back from the API
+// in cents; we convert to dollars. Returns null on any failure (UPC not
+// found, network error, missing/bad key) so callers can show a graceful
+// "not found" state instead of crashing.
+async function gvLookupPriceCharting(upc, apiKey) {
+  if (!upc || !apiKey) return null;
+  try {
+    const url = `https://www.pricecharting.com/api/product?t=${encodeURIComponent(apiKey)}&upc=${encodeURIComponent(upc)}`;
+    const res = await fetch(url, { cache: 'no-store' });
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (!data || !data['product-name']) return null;
+
+    const toDollars = (cents) => (typeof cents === 'number' ? cents / 100 : null);
+    const title = data['product-name'];
+    return {
+      title,
+      console: data['console-name'] || null,
+      loosePrice: toDollars(data['loose-price']),
+      cibPrice: toDollars(data['cib-price']),
+      newPrice: toDollars(data['new-price']),
+      // PriceCharting's exact per-product URL shape isn't returned by every
+      // response; a search URL always resolves to the right product page as
+      // a safe fallback for "where to buy".
+      productUrl: data.url || `https://www.pricecharting.com/search-products?q=${encodeURIComponent(title)}`,
+    };
+  } catch {
+    return null;
+  }
+}
+
+const GV_LOCAL_ADDITIONS_KEY = 'gv_local_additions';
+
+// Games added on-device via barcode scan. data/games.json is static (fetched
+// read-only, see gvFetchGameData above) so there is no write-back path to it
+// from a running app — these live in browser/WebKit local storage only,
+// scoped to this device, and are merged into the render list by the caller.
+function gvLoadLocalAdditions() {
+  try {
+    const raw = localStorage.getItem(GV_LOCAL_ADDITIONS_KEY);
+    const arr = raw ? JSON.parse(raw) : [];
+    return Array.isArray(arr) ? arr : [];
+  } catch {
+    return [];
+  }
+}
+
+function gvSaveLocalAddition(game) {
+  const additions = gvLoadLocalAdditions();
+  additions.push(game);
+  try {
+    localStorage.setItem(GV_LOCAL_ADDITIONS_KEY, JSON.stringify(additions));
+  } catch {}
+  return additions;
 }
