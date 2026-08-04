@@ -280,6 +280,13 @@ html.intro-play .sa:nth-child(3){animation-delay:4s}
   box-shadow:inset 0 1px 0 rgba(255,255,255,.10)}
 .card.must .ciw::after{content:'';position:absolute;top:8px;left:8px;width:6px;height:6px;
   border-radius:50%;background:var(--ylw);box-shadow:0 0 8px rgba(253,224,71,.55)}
+/* Spotlight — soft glow that follows the cursor, tinted by platform color
+   (--glow-color/--mx/--my set in buildCard's mousemove listener) */
+.card::after{content:'';position:absolute;inset:0;border-radius:var(--r);
+  background:radial-gradient(350px circle at var(--mx,50%) var(--my,50%),
+    color-mix(in srgb,var(--glow-color,#a8b6cc) 18%,transparent),transparent 70%);
+  opacity:0;transition:opacity var(--d2);pointer-events:none}
+.card:hover::after{opacity:1}
 .card.hidden{display:none!important}
 /* List mode — richer row: description + flag tags return here */
 .grid.list-v .card{flex-direction:row;max-height:90px}
