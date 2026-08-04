@@ -190,6 +190,14 @@ function buildCard(g, idx) {
   card.dataset.i = idx;
   // stagger only the first viewport-or-so of cards; the rest land together
   card.style.animationDelay = Math.min(idx * 0.025, 0.3) + 's';
+  // Spotlight glow (see .card::after in index.html's <style>) tracks the
+  // cursor and tints itself with the game's platform color.
+  card.style.setProperty('--glow-color', pi.c);
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  });
   card.innerHTML = `
     ${imgHtml}
     <div class="cbody">
