@@ -11,11 +11,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Because work moves between tools, don't assume unstated context carries over between sessions — recap what changed if picking up mid-task.
 
-**Hardware context:**
-- Primary dev machine: PC, Ryzen 5 3600, RTX 3060 12GB, 16GB RAM, 2TB NVMe. Fine for local Ollama models, builds, dev servers — no need to economize here.
-- Secondary: 2017 Intel MacBook Pro, 8GB RAM, i7 — noticeably slow now. Avoid suggesting heavy local builds, large model inference, or resource-intensive tooling as the default when work might land on this machine; flag if a suggested step is likely to be slow on it.
+**Environment:** work moves between machines of differing capability. Don't assume a powerful one — flag when a suggested step (large local builds, model inference, resource-heavy tooling) is likely to be slow, rather than proposing it as the default.
 
-**Communication style:** Not a professional developer — enthusiastic and hands-on but still learning. For non-trivial coding/architecture decisions, give precise, detailed reasoning (the "why," not just the "what"). For simple/mechanical stuff (config tweaks, obvious fixes), keep it short — no need to over-explain the basics.
+**Explanation depth:** for non-trivial coding/architecture decisions, give precise, detailed reasoning (the "why," not just the "what"). For simple/mechanical stuff (config tweaks, obvious fixes), keep it short — no need to over-explain the basics.
 
 ## What this is
 
