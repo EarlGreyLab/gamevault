@@ -3,6 +3,10 @@
   "appName": "GAMEVAULT",
   "webDir": "www",
   "ios": {
-    "scrollEnabled": false
+    "scrollEnabled": false,
+    "backgroundColor": "#000000"
+  },
+  "android": {
+    "backgroundColor": "#000000"
   }
 }

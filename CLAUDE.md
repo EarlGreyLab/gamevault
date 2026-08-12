@@ -95,3 +95,11 @@ Mobile has a "Scan" nav tab that scans a game box's UPC barcode, looks it up on 
 | `scripts/cutover-build.js` | One-time migration script that extracted inline JS from `index.html` into `src/app.js` |
 
 Run scripts with `node scripts/<name>.js`.
+
+`scripts/app-assets/` is the exception — three Swift/CoreGraphics scripts that
+regenerate the iOS and Android launcher icons and splash screens from
+`assets/App_Icon.png`. Swift because they need no dependencies and Xcode is
+already required to build the iOS app. Never hand-edit the generated PNGs under
+`ios/App/App/Assets.xcassets/` or `android/app/src/main/res/`; see
+`scripts/app-assets/README.md` for the invocations and for why the source
+artwork can't be used as an icon directly.
