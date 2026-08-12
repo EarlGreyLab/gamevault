@@ -1,1 +1,6 @@
 CAPACITOR_DEBUG = true
+
+// Machine-local settings, gitignored — currently DEVELOPMENT_TEAM, which is a
+// personal Apple ID and must never be committed. The "?" makes the include
+// optional, so a fresh clone without the file still builds.
+#include? "local.xcconfig"

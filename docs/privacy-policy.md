@@ -77,4 +77,7 @@ changes will be noted in the app's release notes.
 
 ## Contact
 
-Questions about this policy: **open an issue on the project GitHub repository**
+Questions about this policy: open an issue on the project's GitHub repository.
+
+> If GAMEVAULT is ever submitted to the App Store, Apple requires a contact
+> method on the published policy — substitute an address here at that point.
