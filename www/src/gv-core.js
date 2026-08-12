@@ -187,6 +187,83 @@ async function gvLookupPriceCharting(upc, apiKey) {
   }
 }
 
+// Retail UPC listings name the platform inline — "Breath of the Wild - Nintendo
+// Switch", "God of War (PlayStation 4)". Split that tail off so the title is
+// clean and the platform can feed guessPlatformFromConsole(). Only strips a tail
+// that actually looks like a console, so "Portal 2" keeps its number.
+const GV_CONSOLE_HINTS = [
+  'nintendo switch', 'switch', 'wii u', 'wii', 'nintendo 3ds', '3ds',
+  'nintendo ds', 'game boy', 'gamecube', 'playstation 5', 'playstation 4',
+  'playstation 3', 'playstation 2', 'playstation vita', 'playstation',
+  'ps5', 'ps4', 'ps3', 'ps2', 'psp', 'vita', 'xbox', 'pc', 'windows',
+];
+
+function gvSplitConsoleFromTitle(rawTitle) {
+  const title = (rawTitle || '').trim();
+  // Match a trailing " - Foo", " – Foo", " — Foo", " (Foo)" or " [Foo]".
+  const m = title.match(/^(.*?)[\s]*(?:[-–—]|\(|\[)\s*([^()[\]-]+?)\s*[)\]]?$/);
+  if (!m) return { title, console: null };
+  const head = m[1].trim();
+  const tail = m[2].trim();
+  const tailLower = tail.toLowerCase();
+  // Word-boundary, not substring: short hints like "pc" and "ps4" would
+  // otherwise fire inside unrelated words.
+  const isConsole = GV_CONSOLE_HINTS.some(
+    (h) => new RegExp(`(^|\\W)${h}(\\W|$)`).test(tailLower)
+  );
+  if (!isConsole || !head) return { title, console: null };
+  return { title: head, console: tail };
+}
+
+// Free, keyless fallback when no PriceCharting key is configured. Identifies the
+// game so it can be added to the library, but carries no pricing — the trial
+// endpoint is rate limited (~100/day per IP), and any failure, including being
+// throttled, returns null so the caller shows the same "not found" state.
+async function gvLookupUpcItemDb(upc) {
+  if (!upc) return null;
+  try {
+    const url = `https://api.upcitemdb.com/prod/trial/lookup?upc=${encodeURIComponent(upc)}`;
+    const res = await fetch(url, { cache: 'no-store' });
+    if (!res.ok) return null;
+    const data = await res.json();
+    const item = data && Array.isArray(data.items) ? data.items[0] : null;
+    if (!item || !item.title) return null;
+
+    const split = gvSplitConsoleFromTitle(item.title);
+    // Unlike PriceCharting, this database covers every retail product, so a
+    // stray scan of a cereal box would otherwise offer to add it to the game
+    // library. Trust the category, falling back to "the title named a console".
+    const category = String(item.category || '');
+    const isGame = /video ?game/i.test(category) || split.console !== null;
+    return {
+      title: split.title,
+      console: split.console,
+      loosePrice: null,
+      cibPrice: null,
+      newPrice: null,
+      productUrl: null,
+      source: 'upcitemdb',
+      isGame,
+      category,
+    };
+  } catch {
+    return null;
+  }
+}
+
+// Single entry point for the scanner: full pricing when a PriceCharting key is
+// present, otherwise identification-only via the free fallback. PriceCharting
+// failures also fall through, so a UPC missing from its catalogue can still be
+// identified. Dropping a key in later upgrades this path with no code change.
+async function gvLookupBarcode(upc, apiKey) {
+  if (apiKey) {
+    // PriceCharting only catalogues games, so anything it returns is one.
+    const priced = await gvLookupPriceCharting(upc, apiKey);
+    if (priced) return Object.assign({ source: 'pricecharting', isGame: true }, priced);
+  }
+  return gvLookupUpcItemDb(upc);
+}
+
 const GV_LOCAL_ADDITIONS_KEY = 'gv_local_additions';
 
 // Games added on-device via barcode scan. data/games.json is static (fetched

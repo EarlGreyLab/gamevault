@@ -391,18 +391,20 @@ async function startScanDecode(){
 
 async function onBarcodeDetected(upc){
   closeScan();
-  showScanSheet('<div class="ds-body"><div class="ds-title">Looking up…</div><div class="ds-scan-status">Checking PriceCharting for barcode '+upc+'.</div></div>');
-  if(!priceChartingKey){
-    showScanSheet('<div class="ds-body"><div class="ds-title">Scanner not configured</div><div class="ds-scan-status">No PriceCharting API key found. Add one at data/pricecharting-key.json (see the template file) and reload.</div></div>');
+  showScanSheet('<div class="ds-body"><div class="ds-title">Looking up…</div><div class="ds-scan-status">Identifying barcode '+upc+'.</div></div>');
+  // Pricing when a key is configured, identification-only otherwise —
+  // gvLookupBarcode picks the provider, so there's no "not configured" dead end.
+  const found=await gvLookupBarcode(upc,priceChartingKey);
+  if(!found){
+    showScanSheet('<div class="ds-body"><div class="ds-title">Not found</div><div class="ds-scan-status">No match for barcode '+upc+'. It may not be in the lookup database — or, without a PriceCharting key, the free lookup\'s daily limit may have been reached.</div></div>');
     return;
   }
-  const priced=await gvLookupPriceCharting(upc,priceChartingKey);
-  if(!priced){
-    showScanSheet('<div class="ds-body"><div class="ds-title">Not found</div><div class="ds-scan-status">No pricing match for barcode '+upc+'. It may not be in PriceCharting\'s database.</div></div>');
+  if(found.isGame===false){
+    showScanSheet('<div class="ds-body"><div class="ds-title">Not a game</div><div class="ds-scan-status">That barcode is “'+escHtml(found.title)+'”, which doesn\'t look like a game. Nothing was added.</div></div>');
     return;
   }
-  const match=G.find(g=>g.t.toLowerCase()===priced.title.toLowerCase());
-  renderScanResult(priced,match);
+  const match=G.find(g=>g.t.toLowerCase()===found.title.toLowerCase());
+  renderScanResult(found,match);
 }
 
 function showScanSheet(html){
@@ -412,23 +414,35 @@ function showScanSheet(html){
   document.body.style.overflow='hidden';
 }
 
+// Titles come from a third-party API and go through innerHTML — escape them.
+function escHtml(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
 function renderScanResult(priced,match){
   const price=v=>v==null?'—':`$${v.toFixed(2)}`;
   const statusHtml=match
     ?`<div class="ds-scan-status">✅ Already in your library${match.p?` · ${PL[match.p]||match.p}`:''}</div>`
     :`<div class="ds-scan-status">Not yet in your library</div>`;
   const addBtn=match?'':'<button class="sheet-btn sheet-btn-apply" id="SCADD">Add to Library</button>';
-  showScanSheet(`<div class="ds-body">
-    <div class="ds-title">${priced.title}</div>
-    <div class="ds-meta">${priced.console||''}</div>
-    ${statusHtml}
-    <div class="ds-price-grid">
+  // The free fallback identifies but can't price, so show why rather than a
+  // grid of em-dashes that reads like a lookup failure.
+  const hasPrices=priced.loosePrice!=null||priced.cibPrice!=null||priced.newPrice!=null;
+  const priceHtml=hasPrices
+    ?`<div class="ds-price-grid">
       <div class="ds-price"><div class="ds-price-label">Loose</div><div class="ds-price-value">${price(priced.loosePrice)}</div></div>
       <div class="ds-price"><div class="ds-price-label">CIB</div><div class="ds-price-value">${price(priced.cibPrice)}</div></div>
       <div class="ds-price"><div class="ds-price-label">New</div><div class="ds-price-value">${price(priced.newPrice)}</div></div>
-    </div>
+    </div>`
+    :`<div class="ds-scan-status">No pricing — identified via free UPC lookup. Add a PriceCharting key for prices.</div>`;
+  const buyHtml=priced.productUrl
+    ?`<a class="sheet-btn sheet-btn-clear" href="${escHtml(priced.productUrl)}" target="_blank" rel="noopener">View / Buy on PriceCharting</a>`
+    :'';
+  showScanSheet(`<div class="ds-body">
+    <div class="ds-title">${escHtml(priced.title)}</div>
+    <div class="ds-meta">${escHtml(priced.console||'')}</div>
+    ${statusHtml}
+    ${priceHtml}
     <div class="ds-scan-actions">
-      <a class="sheet-btn sheet-btn-clear" href="${priced.productUrl}" target="_blank" rel="noopener">View / Buy on PriceCharting</a>
+      ${buyHtml}
       ${addBtn}
     </div>
   </div>`);
