@@ -13,6 +13,9 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:background">@null</item>
+        <!-- Without this the window flashes white between the splash and the
+             WebView's first paint, against a pure-black UI. -->
+        <item name="android:windowBackground">@color/windowBackground</item>
     </style>
 
 

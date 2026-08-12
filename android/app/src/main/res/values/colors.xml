@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Shadows the defaults in @capacitor/android's colors.xml, which are stock
+         Material indigo/pink (#3F51B5 / #303F9F / #FF4081) and clash badly with
+         GAMEVAULT. Values mirror tokens.css: pure #000 canvas, accent #7c9fff. -->
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#7C9FFF</color>
+    <color name="windowBackground">#000000</color>
+</resources>

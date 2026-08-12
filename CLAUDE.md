@@ -11,11 +11,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Because work moves between tools, don't assume unstated context carries over between sessions — recap what changed if picking up mid-task.
 
-**Hardware context:**
-- Primary dev machine: PC, Ryzen 5 3600, RTX 3060 12GB, 16GB RAM, 2TB NVMe. Fine for local Ollama models, builds, dev servers — no need to economize here.
-- Secondary: 2017 Intel MacBook Pro, 8GB RAM, i7 — noticeably slow now. Avoid suggesting heavy local builds, large model inference, or resource-intensive tooling as the default when work might land on this machine; flag if a suggested step is likely to be slow on it.
+**Environment:** work moves between machines of differing capability. Don't assume a powerful one — flag when a suggested step (large local builds, model inference, resource-heavy tooling) is likely to be slow, rather than proposing it as the default.
 
-**Communication style:** Not a professional developer — enthusiastic and hands-on but still learning. For non-trivial coding/architecture decisions, give precise, detailed reasoning (the "why," not just the "what"). For simple/mechanical stuff (config tweaks, obvious fixes), keep it short — no need to over-explain the basics.
+**Explanation depth:** for non-trivial coding/architecture decisions, give precise, detailed reasoning (the "why," not just the "what"). For simple/mechanical stuff (config tweaks, obvious fixes), keep it short — no need to over-explain the basics.
 
 ## What this is
 
@@ -78,8 +76,10 @@ Edit `data/games.json` directly and refresh the browser. No build needed.
 Mobile has a "Scan" nav tab that scans a game box's UPC barcode, looks it up on PriceCharting for current pricing, and lets you add it to the library. This only does anything useful inside the Capacitor iOS shell (real camera) — in a plain browser tab it degrades gracefully to an error message.
 
 - **Barcode decoding**: `vendor/zxing-browser.min.js` — a vendored MIT-licensed UMD build of `@zxing/browser` (pure JS, no native plugin). We tried `@capacitor-mlkit/barcode-scanning` first, but Google's ML Kit SDK only supports CocoaPods, and this project's iOS shell is pure SPM (`ios/App/CapApp-SPM`) — adding CocoaPods would mean restructuring the iOS build toolchain just for this. ZXing runs entirely in the WKWebView via `getUserMedia`, so it needs no native plugin, no CocoaPods, and no build step — consistent with the rest of this repo.
-- **Pricing lookup**: `gvLookupPriceCharting(upc, apiKey)` in `src/gv-core.js` — hits PriceCharting's UPC-indexed product API, normalizes the response (loose/CIB/new prices, product URL).
-- **API key**: gitignored `data/pricecharting-key.json` (`{"apiKey": "..."}`), templated by the committed `data/pricecharting-key.template.json`. Loaded at runtime by `mobile.html` (`loadPriceChartingKey()`); missing/invalid key just disables the feature. `scripts/sync-www.js` copies it into `www/` if present, skips silently if not.
+- **Lookup**: `gvLookupBarcode(upc, apiKey)` in `src/gv-core.js` is the single entry point. With a key it calls `gvLookupPriceCharting()` (loose/CIB/new prices + product URL); with no key — or when PriceCharting has no match — it falls back to `gvLookupUpcItemDb()`, a free keyless API that identifies the game but returns no pricing. Both return the same shape, so the UI and `addLocalGame()` are provider-agnostic; adding a key later upgrades the path with no code change.
+- **Non-game guard**: UPCitemdb catalogues *every* retail product, so a stray scan would otherwise offer to add a cereal box to the library. Results carry `isGame`, derived from the API's `category` (or from the title naming a console); `false` shows a "Not a game" sheet with no add button. PriceCharting results are always games.
+- **API key**: gitignored `data/pricecharting-key.json` (`{"apiKey": "..."}`), templated by the committed `data/pricecharting-key.template.json`. Loaded at runtime by `mobile.html` (`loadPriceChartingKey()`). `scripts/sync-www.js` copies it into `www/` if present, skips silently if not — so forgetting `npm run sync:ios` after adding a key silently leaves the app on the free fallback. Note the key ships inside the app bundle and is sent as a URL query param; fine for a sideloaded personal build, not for real distribution.
+- **Tests**: `e2e/scan-fallback.spec.js` stubs `gvLookupBarcode` to cover all four sheet states (priced, unpriced, non-game, not-found) plus the add-to-library path — no camera, and no live API calls, since the free tier is rate limited enough to make real calls flaky.
 - **"Add to Library"**: `data/games.json` is static and fetched read-only at runtime (see `gvFetchGameData`) — there's no write-back path to it from a running app. Scanned additions instead go into `localStorage` (`gvLoadLocalAdditions()` / `gvSaveLocalAddition()` in `src/gv-core.js`, key `gv_local_additions`) and get merged into the render list at bootstrap. This is device-local only: it won't appear in `data/games.json` or sync to other installs unless manually copied over.
 
 ## Scripts
@@ -95,3 +95,11 @@ Mobile has a "Scan" nav tab that scans a game box's UPC barcode, looks it up on 
 | `scripts/cutover-build.js` | One-time migration script that extracted inline JS from `index.html` into `src/app.js` |
 
 Run scripts with `node scripts/<name>.js`.
+
+`scripts/app-assets/` is the exception — three Swift/CoreGraphics scripts that
+regenerate the iOS and Android launcher icons and splash screens from
+`assets/App_Icon.png`. Swift because they need no dependencies and Xcode is
+already required to build the iOS app. Never hand-edit the generated PNGs under
+`ios/App/App/Assets.xcassets/` or `android/app/src/main/res/`; see
+`scripts/app-assets/README.md` for the invocations and for why the source
+artwork can't be used as an icon directly.

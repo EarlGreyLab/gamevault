@@ -11,3 +11,7 @@ capacitor-cordova-ios-plugins
 # Generated Config files
 App/App/capacitor.config.json
 App/App/config.xml
+
+# Machine-local signing settings (Apple Development Team ID) — personal, never committed.
+# Included optionally by debug.xcconfig; see scripts/app-assets/README.md.
+local.xcconfig
